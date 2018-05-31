@@ -1,1 +1,0 @@
-SQLCMD -S PERCY\PERCY -E -i createDTBQLNS.sql

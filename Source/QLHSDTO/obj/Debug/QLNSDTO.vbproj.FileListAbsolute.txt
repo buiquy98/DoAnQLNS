@@ -1,0 +1,9 @@
+D:\Git\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.dll
+D:\Git\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.pdb
+D:\Git\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.xml
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbprojResolveAssemblyReference.cache
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.Resources.resources
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbproj.GenerateResource.Cache
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.dll
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.xml
+D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.pdb
