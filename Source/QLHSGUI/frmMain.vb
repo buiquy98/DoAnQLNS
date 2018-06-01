@@ -24,4 +24,10 @@ Public Class frmMain
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
+
+    Private Sub QuảnLíKháchHàngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíKháchHàngToolStripMenuItem.Click
+        Dim frmdg As frmQuanLiKhachHang = New frmQuanLiKhachHang()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

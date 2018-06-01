@@ -10,12 +10,12 @@
 
     End Sub
     Public Sub New(maChiTietBaoCaoTon As Integer, maSach As Integer, maBaoCaoTon As Integer, tonDau As Integer, tonPhatSinh As Integer, tonCuoi As Integer)
-        Me.MaChiTietBaoCaoTon1 = maChiTietBaoCaoTon
-        Me.MaSach1 = maSach
-        Me.MaBaoCaoTon1 = maBaoCaoTon
-        Me.TonDau1 = tonDau
-        Me.TonPhatSinh1 = tonPhatSinh
-        Me.TonCuoi1 = tonCuoi
+        Me.maChiTietBaoCaoTon = maChiTietBaoCaoTon
+        Me.maSach = maSach
+        Me.maBaoCaoTon = maBaoCaoTon
+        Me.tonDau = tonDau
+        Me.tonPhatSinh = tonPhatSinh
+        Me.tonCuoi = tonCuoi
     End Sub
 
     Public Property MaChiTietBaoCaoTon1 As Integer

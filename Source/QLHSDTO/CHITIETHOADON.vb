@@ -9,12 +9,12 @@
 
     End Sub
     Public Sub New(maChiTietPhieuNhap As Integer, maPhieuNhap As Integer, maSach As Integer, soLuongBan As Integer, donGiaBan As Integer, thanhTien As Integer)
-        Me.MaChiTietPhieuNhap1 = maChiTietPhieuNhap
-        Me.MaPhieuNhap1 = maPhieuNhap
-        Me.MaSach1 = maSach
-        Me.SoLuongBan1 = soLuongBan
-        Me.DonGiaBan1 = donGiaBan
-        Me.ThanhTien1 = thanhTien
+        Me.maChiTietPhieuNhap = maChiTietPhieuNhap
+        Me.maPhieuNhap = maPhieuNhap
+        Me.maSach = maSach
+        Me.soLuongBan = soLuongBan
+        Me.donGiaBan = donGiaBan
+        Me.thanhTien = thanhTien
 
     End Sub
 

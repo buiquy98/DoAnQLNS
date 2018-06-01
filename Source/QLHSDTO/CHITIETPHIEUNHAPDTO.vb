@@ -8,10 +8,10 @@
 
     End Sub
     Public Sub New(maChiTietPhieuNhap As Integer, maPhieuNhap As Integer, maSach As Integer, soLuongNhap As Integer)
-        Me.MaChiTietPhieuNhap1 = maChiTietPhieuNhap
-        Me.MaPhieuNhap1 = maPhieuNhap
-        Me.MaSach1 = maSach
-        Me.SoLuongNhap1 = soLuongNhap
+        Me.maChiTietPhieuNhap = maChiTietPhieuNhap
+        Me.maPhieuNhap = maPhieuNhap
+        Me.maSach = maSach
+        Me.soLuongNhap = soLuongNhap
     End Sub
 
     Public Property MaChiTietPhieuNhap1 As Integer

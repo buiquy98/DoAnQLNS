@@ -5,8 +5,8 @@
     Public Sub New()
     End Sub
     Public Sub New(maBaoCaoTon As Integer, thang As DateTime)
-        Me.MaBaoCaoTon1 = maBaoCaoTon
-        Me.Thang1 = thang
+        Me.maBaoCaoTon = maBaoCaoTon
+        Me.thang = thang
     End Sub
 
     Public Property MaBaoCaoTon1 As Integer

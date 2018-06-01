@@ -9,12 +9,12 @@
 
     End Sub
     Public Sub New(maChiTietBaoCaoCongNo As Integer, maKH As Integer, maBaoCaoCongNo As Integer, noDau As String, noPhatSinh As String, noCuoi As String)
-        Me.MaChiTietBaoCaoCongNo1 = maChiTietBaoCaoCongNo
-        Me.MaKH1 = maKH
-        Me.MaBaoCaoCongNo1 = maBaoCaoCongNo
-        Me.NoDau1 = noDau
-        Me.NoPhatSinh1 = noPhatSinh
-        Me.NoCuoi1 = noCuoi
+        Me.maChiTietBaoCaoCongNo = maChiTietBaoCaoCongNo
+        Me.maKH = maKH
+        Me.maBaoCaoCongNo = maBaoCaoCongNo
+        Me.noDau = noDau
+        Me.noPhatSinh = noPhatSinh
+        Me.noCuoi = noCuoi
     End Sub
 
     Public Property MaChiTietBaoCaoCongNo1 As Integer

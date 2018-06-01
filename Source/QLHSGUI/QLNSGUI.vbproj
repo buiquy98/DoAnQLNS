@@ -85,6 +85,12 @@
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQuanLiKhachHang.Designer.vb">
+      <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLiKhachHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmThemKhachHang.Designer.vb">
       <DependentUpon>frmThemKhachHang.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLiKhachHang.resx">
+      <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemKhachHang.resx">
       <DependentUpon>frmThemKhachHang.vb</DependentUpon>

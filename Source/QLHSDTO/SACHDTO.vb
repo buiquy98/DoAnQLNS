@@ -8,11 +8,11 @@
 
     End Sub
     Public Sub New(maSach As Integer, tenSach As String, maLoaiSach As Integer, tacGia As String, soLuongTon As Integer)
-        Me.MaLoaiSach1 = maLoaiSach
-        Me.TenSach1 = tenSach
-        Me.MaLoaiSach1 = maLoaiSach
-        Me.TacGia1 = tacGia
-        Me.SoLuongTon1 = soLuongTon
+        Me.maLoaiSach = maLoaiSach
+        Me.tenSach = tenSach
+        Me.maLoaiSach = maLoaiSach
+        Me.tacGia = tacGia
+        Me.soLuongTon = soLuongTon
     End Sub
 
     Public Property MaSach1 As Integer

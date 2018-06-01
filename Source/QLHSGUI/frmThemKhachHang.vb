@@ -8,7 +8,7 @@ Public Class frmThemKhachHang
         khbus = New KHACHHANGBUS
 
         ' Get Next ID
-        Dim nextID As Integer
+        Dim nextID As Integer '
         Dim result As Result
         result = khbus.getNextID(nextID)
         If (result.FlagResult = True) Then

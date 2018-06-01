@@ -6,8 +6,8 @@
     Public Sub New()
     End Sub
     Public Sub New(maBaoCaoCongNo As Integer, thang As DateTime)
-        Me.MaBaoCaoCongNo1 = maBaoCaoCongNo
-        Me.Thang1 = thang
+        Me.maBaoCaoCongNo = maBaoCaoCongNo
+        Me.thang = thang
 
     End Sub
 

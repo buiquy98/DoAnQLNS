@@ -4,16 +4,16 @@
     Private tienNoKH As String
     Private diaChi As String
     Private email As String
-    Private sdt As Integer
+    Private sdt As String
     Public Sub New()
     End Sub
-    Public Sub New(maKH As Integer, hoTenKH As String, tienNOKH As String, diaChi As String, email As String, sdt As Integer)
-        Me.MaKH1 = maKH
-        Me.HoTenKH1 = hoTenKH
-        Me.TienNoKH1 = tienNOKH
-        Me.DiaChi1 = diaChi
-        Me.Email1 = email
-        Me.Sdt1 = sdt
+    Public Sub New(maKH As Integer, hoTenKH As String, tienNOKH As String, diaChi As String, email As String, sdt As String)
+        Me.maKH = maKH
+        Me.hoTenKH = hoTenKH
+        Me.tienNoKH = tienNOKH
+        Me.diaChi = diaChi
+        Me.email = email
+        Me.sdt = sdt
 
     End Sub
 
@@ -62,11 +62,11 @@
         End Set
     End Property
 
-    Public Property Sdt1 As Integer
+    Public Property Sdt1 As String
         Get
             Return sdt
         End Get
-        Set(value As Integer)
+        Set(value As String)
             sdt = value
         End Set
     End Property

@@ -14,12 +14,12 @@
         LuongTonToiThieu1 = 0
     End Sub
     Public Sub New(id As Integer, luongNhapToiThieu As Integer, luongTonToiDa As Integer, tienNoToiDa As Integer, luongTonToiThieu As Integer, apDung As String)
-        Me.Id1 = id
-        Me.LuongNhapToiThieu1 = luongNhapToiThieu
-        Me.LuongTonToiDa1 = luongTonToiDa
-        Me.TienNoToiDa1 = tienNoToiDa
-        Me.LuongTonToiThieu1 = luongTonToiThieu
-        Me.ApDung1 = apDung
+        Me.id = id
+        Me.luongNhapToiThieu = luongNhapToiThieu
+        Me.luongTonToiDa = luongTonToiDa
+        Me.tienNoToiDa = tienNoToiDa
+        Me.luongTonToiThieu = luongTonToiThieu
+        Me.apDung = apDung
     End Sub
 
     Public Property Id1 As Integer

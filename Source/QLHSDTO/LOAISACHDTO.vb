@@ -4,8 +4,8 @@
     Public Sub New()
     End Sub
     Public Sub New(maLoaiSach As Integer, tenLoaiSach As String)
-        Me.MaLoaiSach1 = maLoaiSach
-        Me.TenLoaiSach1 = tenLoaiSach
+        Me.maLoaiSach = maLoaiSach
+        Me.tenLoaiSach = tenLoaiSach
     End Sub
 
     Public Property MaLoaiSach1 As Integer

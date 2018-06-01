@@ -7,10 +7,10 @@
 
     End Sub
     Public Sub New(maPhieuThu As Integer, maKH As Integer, ngayThuTien As DateTime, soTienThu As Integer)
-        Me.MaPhieuThu1 = maPhieuThu
-        Me.MaKH1 = maKH
-        Me.NgayThuTien1 = ngayThuTien
-        Me.SoTienThu1 = soTienThu
+        Me.maPhieuThu = maPhieuThu
+        Me.maKH = maKH
+        Me.ngayThuTien = ngayThuTien
+        Me.soTienThu = soTienThu
     End Sub
 
     Public Property MaPhieuThu1 As Integer

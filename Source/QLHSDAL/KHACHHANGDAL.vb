@@ -14,11 +14,10 @@ Public Class KHACHHANGDAL
         Me.connectionString = ConnectionString
     End Sub
     Public Function getNextID(ByRef nextID As Integer) As Result
-
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MaKH1]"
+        query &= "SELECT TOP 1 [maKH]"
         query &= "FROM [QLNS].[dbo].[tblKhachHang]"
-        query &= "ORDER BY [MaKH1] DESC "
+        query &= "ORDER BY [maKH] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -35,7 +34,7 @@ Public Class KHACHHANGDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MaKH1")
+                            idOnDB = reader("maKH")
                         End While
                     End If
                     'new ID = current ID + 1
@@ -53,7 +52,7 @@ Public Class KHACHHANGDAL
 
     Public Function insert(kh As KHACHHANGDTO) As Result
         Dim query As String = String.Empty
-        query &= "INSERT INTO [dbo].[tblKhachHang]([MaKH1],[HoTenKH1],[TienNoKH1],[DiaChi1],[Email1],[Sdt1])"
+        query &= "INSERT INTO [QLNS].[dbo].[tblKhachHang]([maKH],[hoTenKH],[tienNoKH],[diaChi],[email],[sdt])"
         query &= "VALUES (@maKH,@hoTenKH,@tienNoKH,@diaChi,@email,@sdt)"
 
         Dim nextID = 0
@@ -93,13 +92,13 @@ Public Class KHACHHANGDAL
     Public Function update(kh As KHACHHANGDTO) As Result
         Dim query As String = String.Empty
         query &= " UPDATE [dbo].[tblKhachHang] SET"
-        query &= " [HoTenKH1] = @hotenKH "
-        query &= " ,[TienNoKH1] = @tienNoKH "
-        query &= " ,[DiaChi1] = @diaChi "
-        query &= " ,[Email1] = @email "
-        query &= " ,[Sdt1] = @sdt "
+        query &= " [hoTenKH] = @hotenKH "
+        query &= " ,[tienNoKH] = @tienNoKH "
+        query &= " ,[diaChi] = @diaChi "
+        query &= " ,[email] = @email "
+        query &= " ,[sdt] = @sdt "
         query &= "WHERE "
-        query &= " [MAKH1] = @maKH "
+        query &= " [maKH] = @maKH "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -147,7 +146,7 @@ Public Class KHACHHANGDAL
                     If reader.HasRows = True Then
                         listKH.Clear()
                         While reader.Read()
-                            listKH.Add(New KHACHHANGDTO(reader("MaKH1"), reader("HoTenKH1"), reader("TienNoKH1"), reader("DiaChi1"), reader("Email1"), reader("Sdt1")))
+                            listKH.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("Email1"), reader("Sdt1")))
                         End While
                     End If
                 Catch ex As Exception
@@ -164,7 +163,7 @@ Public Class KHACHHANGDAL
         Dim query As String = String.Empty
         query &= "SELECT * "
         query &= "FROM [dbo].[tblKhachHang] "
-        query &= "WHERE [MaKH1] = @makh "
+        query &= "WHERE [maKH] = @makh "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -181,7 +180,7 @@ Public Class KHACHHANGDAL
                     If reader.HasRows = True Then
                         listkh.Clear()
                         While reader.Read()
-                            listkh.Add(New KHACHHANGDTO(reader("MaKH1"), reader("HoTenKH1"), reader("TienNoKH1"), reader("DiaChi1"), reader("Email1"), reader("Sdt1")))
+                            listkh.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("email"), reader("sdt")))
                         End While
                     End If
                 Catch ex As Exception
@@ -200,7 +199,7 @@ Public Class KHACHHANGDAL
         query &= " SELECT *"
         query &= " FROM [dbo].[tblKhachHang]"
         query &= " WHERE "
-        query &= " [HoTenKH1] = @hoTenKH"
+        query &= " [hoTenKH] = @hoTenKH"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -217,7 +216,7 @@ Public Class KHACHHANGDAL
                     If reader.HasRows = True Then
                         listkh.Clear()
                         While reader.Read()
-                            listkh.Add(New KHACHHANGDTO(reader("MaKH1"), reader("HoTenKH1"), reader("TienNoKH1"), reader("DiaChi1"), reader("Email1"), reader("Sdt1")))
+                            listkh.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("email"), reader("sdt")))
                         End While
                     End If
                 Catch ex As Exception
@@ -235,7 +234,7 @@ Public Class KHACHHANGDAL
         Dim query As String = String.Empty
         query &= " DELETE FROM [dbo].[tblKhachHang] "
         query &= " WHERE "
-        query &= " [MaKH1] = @maKH "
+        query &= " [maKH] = @maKH "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()

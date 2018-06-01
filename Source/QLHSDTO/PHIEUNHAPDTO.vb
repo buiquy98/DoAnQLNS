@@ -4,8 +4,8 @@
     Public Sub New()
     End Sub
     Public Sub New(maPhieuNhap As Integer, ngayNhap As DateTime)
-        Me.MaPhieuNhap1 = maPhieuNhap
-        Me.NgayNhap1 = ngayNhap
+        Me.maPhieuNhap = maPhieuNhap
+        Me.ngayNhap = ngayNhap
     End Sub
 
     Public Property MaPhieuNhap1 As Integer
