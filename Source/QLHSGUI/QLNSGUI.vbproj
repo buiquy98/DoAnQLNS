@@ -74,9 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLapPhieuNhapSach.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmLapPhieuNhapSach.vb" />
     <Compile Include="frmLapPhieuNhapSach.Designer.vb">
       <DependentUpon>frmLapPhieuNhapSach.vb</DependentUpon>
       <SubType>Form</SubType>
@@ -85,6 +83,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemKhachHang.Designer.vb">
+      <DependentUpon>frmThemKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemKhachHang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemKhachHang.resx">
+      <DependentUpon>frmThemKhachHang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

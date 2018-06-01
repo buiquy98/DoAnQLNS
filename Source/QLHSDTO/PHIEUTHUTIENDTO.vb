@@ -1,39 +1,51 @@
 ﻿Public Class PHIEUTHUTIENDTO
-    Private maphieuthu As Integer
-    Private makhachhang As Integer
-    Private sotienthu As Integer
+    Private maPhieuThu As Integer
+    Private maKH As Integer
+    Private ngayThuTien As DateTime
+    Private soTienThu As Integer
     Public Sub New()
+
     End Sub
-    Public Sub New(maphieuthu As Integer, makhachhang As Integer, sotienthu As Integer)
-        Me.Maphieuthu1 = maphieuthu
-        Me.Makhachhang1 = makhachhang
-        Me.Sotienthu1 = sotienthu
+    Public Sub New(maPhieuThu As Integer, maKH As Integer, ngayThuTien As DateTime, soTienThu As Integer)
+        Me.MaPhieuThu1 = maPhieuThu
+        Me.MaKH1 = maKH
+        Me.NgayThuTien1 = ngayThuTien
+        Me.SoTienThu1 = soTienThu
     End Sub
 
-    Public Property Maphieuthu1 As Integer
+    Public Property MaPhieuThu1 As Integer
         Get
-            Return maphieuthu
+            Return maPhieuThu
         End Get
         Set(value As Integer)
-            maphieuthu = value
+            maPhieuThu = value
         End Set
     End Property
 
-    Public Property Makhachhang1 As Integer
+    Public Property MaKH1 As Integer
         Get
-            Return makhachhang
+            Return maKH
         End Get
         Set(value As Integer)
-            makhachhang = value
+            maKH = value
         End Set
     End Property
 
-    Public Property Sotienthu1 As Integer
+    Public Property NgayThuTien1 As Date
         Get
-            Return sotienthu
+            Return ngayThuTien
+        End Get
+        Set(value As Date)
+            ngayThuTien = value
+        End Set
+    End Property
+
+    Public Property SoTienThu1 As Integer
+        Get
+            Return soTienThu
         End Get
         Set(value As Integer)
-            sotienthu = value
+            soTienThu = value
         End Set
     End Property
 End Class

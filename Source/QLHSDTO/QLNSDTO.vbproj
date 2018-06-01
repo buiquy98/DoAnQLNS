@@ -65,11 +65,12 @@
   <ItemGroup>
     <Compile Include="BAOCAONOCONGDTO.vb" />
     <Compile Include="BAOCAOTONDTO.vb" />
-    <Compile Include="CHITIETPHIEUHOADONDTO.vb" />
+    <Compile Include="CHITIETBAOCAOCONGNODTO.vb" />
+    <Compile Include="CHITIETBAOCAOTONDTO.vb" />
+    <Compile Include="CHITIETPHIEUNHAPDTO.vb" />
+    <Compile Include="CHITIETHOADON.vb" />
     <Compile Include="KHACHHANGDTO.vb" />
-    <Compile Include="MACHITIETPHIEUNHAPDTO.vb" />
-    <Compile Include="PHIEUHOADONDTO.vb" />
-    <Compile Include="PHIEUNHAPDTO.vb" />
+    <Compile Include="LOAISACHDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -85,9 +86,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PHIEUNHAPDTO.vb" />
     <Compile Include="PHIEUTHUTIENDTO.vb" />
+    <Compile Include="QUYDINHDTO.vb" />
     <Compile Include="SACHDTO.vb" />
-    <Compile Include="THAMSODTO.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

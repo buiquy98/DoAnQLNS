@@ -1,54 +1,55 @@
 ﻿Public Class KHACHHANGDTO
-    Private makhachhang As Integer
-    Private hotenkhachhang As String
-    Private diachi As String
-    Private dienthoai As String
+    Private maKH As Integer
+    Private hoTenKH As String
+    Private tienNoKH As String
+    Private diaChi As String
     Private email As String
-    Private sotienno As Integer
+    Private sdt As Integer
     Public Sub New()
     End Sub
-    Public Sub New(makhachhang As Integer, hotenkhachhang As String, diachi As String, dienthoai As String, email As String, sotienno As Integer)
-        Me.Makhachhang1 = makhachhang
-        Me.Hotenkhachhang1 = hotenkhachhang
-        Me.Diachi1 = diachi
-        Me.Dienthoai1 = dienthoai
+    Public Sub New(maKH As Integer, hoTenKH As String, tienNOKH As String, diaChi As String, email As String, sdt As Integer)
+        Me.MaKH1 = maKH
+        Me.HoTenKH1 = hoTenKH
+        Me.TienNoKH1 = tienNOKH
+        Me.DiaChi1 = diaChi
         Me.Email1 = email
-        Me.Sotienno1 = sotienno
+        Me.Sdt1 = sdt
+
     End Sub
 
-    Public Property Makhachhang1 As Integer
+    Public Property MaKH1 As Integer
         Get
-            Return makhachhang
+            Return maKH
         End Get
         Set(value As Integer)
-            makhachhang = value
+            maKH = value
         End Set
     End Property
 
-    Public Property Hotenkhachhang1 As String
+    Public Property HoTenKH1 As String
         Get
-            Return hotenkhachhang
+            Return hoTenKH
         End Get
         Set(value As String)
-            hotenkhachhang = value
+            hoTenKH = value
         End Set
     End Property
 
-    Public Property Diachi1 As String
+    Public Property TienNoKH1 As String
         Get
-            Return diachi
+            Return tienNoKH
         End Get
         Set(value As String)
-            diachi = value
+            tienNoKH = value
         End Set
     End Property
 
-    Public Property Dienthoai1 As String
+    Public Property DiaChi1 As String
         Get
-            Return dienthoai
+            Return diaChi
         End Get
         Set(value As String)
-            dienthoai = value
+            diaChi = value
         End Set
     End Property
 
@@ -61,12 +62,12 @@
         End Set
     End Property
 
-    Public Property Sotienno1 As Integer
+    Public Property Sdt1 As Integer
         Get
-            Return sotienno
+            Return sdt
         End Get
         Set(value As Integer)
-            sotienno = value
+            sdt = value
         End Set
     End Property
 End Class

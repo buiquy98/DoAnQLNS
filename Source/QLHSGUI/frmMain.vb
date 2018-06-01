@@ -18,4 +18,10 @@ Public Class frmMain
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub ThêmToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmToolStripMenuItem.Click
+        Dim frmdg As frmThemKhachHang = New frmThemKhachHang()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

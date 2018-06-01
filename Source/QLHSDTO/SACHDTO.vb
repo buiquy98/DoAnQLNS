@@ -1,72 +1,62 @@
 ﻿Public Class SACHDTO
-    Private masach As Integer
-    Private tensach As String
-    Private theloai As String
-    Private tacgia As String
-    Private dongia As Integer
-    Private soluongton As Integer
+    Private maSach As Integer
+    Private tenSach As String
+    Private maLoaiSach As Integer
+    Private tacGia As String
+    Private soLuongTon As Integer
     Public Sub New()
+
     End Sub
-    Public Sub New(masach As Integer, tensach As String, theloai As String, tacgia As String, dongia As Integer, soluongton As Integer)
-        Me.Masach1 = masach
-        Me.Tensach1 = tensach
-        Me.Theloai1 = theloai
-        Me.Tacgia1 = tacgia
-        Me.Dongia1 = dongia
-        Me.Soluongton1 = soluongton
+    Public Sub New(maSach As Integer, tenSach As String, maLoaiSach As Integer, tacGia As String, soLuongTon As Integer)
+        Me.MaLoaiSach1 = maLoaiSach
+        Me.TenSach1 = tenSach
+        Me.MaLoaiSach1 = maLoaiSach
+        Me.TacGia1 = tacGia
+        Me.SoLuongTon1 = soLuongTon
     End Sub
 
-    Public Property Masach1 As Integer
+    Public Property MaSach1 As Integer
         Get
-            Return masach
+            Return maSach
         End Get
         Set(value As Integer)
-            masach = value
+            maSach = value
         End Set
     End Property
 
-    Public Property Tensach1 As String
+    Public Property TenSach1 As String
         Get
-            Return tensach
+            Return tenSach
         End Get
         Set(value As String)
-            tensach = value
+            tenSach = value
         End Set
     End Property
 
-    Public Property Theloai1 As String
+    Public Property MaLoaiSach1 As Integer
         Get
-            Return theloai
-        End Get
-        Set(value As String)
-            theloai = value
-        End Set
-    End Property
-
-    Public Property Tacgia1 As String
-        Get
-            Return tacgia
-        End Get
-        Set(value As String)
-            tacgia = value
-        End Set
-    End Property
-
-    Public Property Dongia1 As Integer
-        Get
-            Return dongia
+            Return maLoaiSach
         End Get
         Set(value As Integer)
-            dongia = value
+            maLoaiSach = value
         End Set
     End Property
 
-    Public Property Soluongton1 As Integer
+    Public Property TacGia1 As String
         Get
-            Return soluongton
+            Return tacGia
+        End Get
+        Set(value As String)
+            tacGia = value
+        End Set
+    End Property
+
+    Public Property SoLuongTon1 As Integer
+        Get
+            Return soLuongTon
         End Get
         Set(value As Integer)
-            soluongton = value
+            soLuongTon = value
         End Set
     End Property
 End Class
