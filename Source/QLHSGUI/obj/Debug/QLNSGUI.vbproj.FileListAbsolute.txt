@@ -42,7 +42,6 @@ C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\QLHSD
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.pdb
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.xml
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLNSGUI.vbprojAssemblyReference.cache
-C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapPhieuNhapSach.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmMain.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThemKhachHang.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.Resources.resources
@@ -80,3 +79,5 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.pdb
 D:\Git\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.xml
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.exe
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.pdb
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmSach.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTheLoai.resources

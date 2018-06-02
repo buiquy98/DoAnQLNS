@@ -311,27 +311,16 @@ Public Class frmQuanLiKhachHang
         End Try
     End Sub
 
-    Private Sub btTimKiemTheHoTen_Click_1(sender As Object, e As EventArgs)
 
-    End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
 
-    End Sub
 
-    Private Sub txtHoTenKHTimKiem_TextChanged(sender As Object, e As EventArgs) Handles txtHoTenKHTimKiem.TextChanged
 
-    End Sub
 
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
 
-    End Sub
 
-    Private Sub btTimKiemTheoMAKH_Click_1(sender As Object, e As EventArgs)
 
-    End Sub
 
-    Private Sub txtMaKHTimKiem_TextChanged(sender As Object, e As EventArgs) Handles txtMaKHTimKiem.TextChanged
 
-    End Sub
+
 End Class
