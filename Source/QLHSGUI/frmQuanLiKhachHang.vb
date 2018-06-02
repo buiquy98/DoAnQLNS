@@ -7,6 +7,7 @@ Public Class frmQuanLiKhachHang
     Private Sub frmQuanLiKhachHang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         khBus = New KHACHHANGBUS()
         Dim listkh = New List(Of KHACHHANGDTO)
+        loadListKH()
     End Sub
     Private Sub loadListKH()
         Dim listKH = New List(Of KHACHHANGDTO)
@@ -29,13 +30,13 @@ Public Class frmQuanLiKhachHang
         Dim clMa = New DataGridViewTextBoxColumn()
         clMa.Name = "maKH"
         clMa.HeaderText = "Mã Khách Hàng"
-        clMa.DataPropertyName = "maKH"
+        clMa.DataPropertyName = "maKH1"
         dgvListKhachHang.Columns.Add(clMa)
 
         Dim clTenKH = New DataGridViewTextBoxColumn()
         clTenKH.Name = "hoTenKH"
         clTenKH.HeaderText = "Họ Tên Khách Hàng"
-        clTenKH.DataPropertyName = "hoTenKH"
+        clTenKH.DataPropertyName = "hoTenKH1"
         dgvListKhachHang.Columns.Add(clTenKH)
 
 
@@ -43,26 +44,26 @@ Public Class frmQuanLiKhachHang
         Dim clTienNo = New DataGridViewTextBoxColumn()
         clTienNo.Name = "tienNoKH"
         clTienNo.HeaderText = "Tiền Nợ Khách Hàng"
-        clTienNo.DataPropertyName = "tienNoKH"
+        clTienNo.DataPropertyName = "tienNoKH1"
         dgvListKhachHang.Columns.Add(clTienNo)
 
 
         Dim clDiaChi = New DataGridViewTextBoxColumn()
         clDiaChi.Name = "diaChi"
         clDiaChi.HeaderText = "Địa Chỉ"
-        clDiaChi.DataPropertyName = "diaChi"
+        clDiaChi.DataPropertyName = "diaChi1"
         dgvListKhachHang.Columns.Add(clDiaChi)
 
         Dim clEmail = New DataGridViewTextBoxColumn()
         clEmail.Name = "email"
         clEmail.HeaderText = "Email"
-        clEmail.DataPropertyName = "email"
+        clEmail.DataPropertyName = "email1"
         dgvListKhachHang.Columns.Add(clEmail)
 
         Dim clSDT = New DataGridViewTextBoxColumn()
         clSDT.Name = "sdt"
         clSDT.HeaderText = "SDT"
-        clSDT.DataPropertyName = "sdt"
+        clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
 
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
@@ -90,13 +91,13 @@ Public Class frmQuanLiKhachHang
         Dim clMa = New DataGridViewTextBoxColumn()
         clMa.Name = "maKH"
         clMa.HeaderText = "Mã Khách Hàng"
-        clMa.DataPropertyName = "maKH"
+        clMa.DataPropertyName = "maKH1"
         dgvListKhachHang.Columns.Add(clMa)
 
         Dim clTenKH = New DataGridViewTextBoxColumn()
         clTenKH.Name = "hoTenKH"
         clTenKH.HeaderText = "Họ Tên Khách Hàng"
-        clTenKH.DataPropertyName = "hoTenKH"
+        clTenKH.DataPropertyName = "hoTenKH1"
         dgvListKhachHang.Columns.Add(clTenKH)
 
         'Dim clLoaikh= New DataGridView()
@@ -104,26 +105,26 @@ Public Class frmQuanLiKhachHang
         Dim clTienNo = New DataGridViewTextBoxColumn()
         clTienNo.Name = "tienNoKH"
         clTienNo.HeaderText = "Tiền Nợ Khách Hàng"
-        clTienNo.DataPropertyName = "tienNoKH"
+        clTienNo.DataPropertyName = "tienNoKH1"
         dgvListKhachHang.Columns.Add(clTienNo)
         'dgvListKhachHang.ResumeLayout()
 
         Dim clDiaChi = New DataGridViewTextBoxColumn()
         clDiaChi.Name = "diaChi"
         clDiaChi.HeaderText = "Địa Chỉ"
-        clDiaChi.DataPropertyName = "diaChi"
+        clDiaChi.DataPropertyName = "diaChi1"
         dgvListKhachHang.Columns.Add(clDiaChi)
 
         Dim clEmail = New DataGridViewTextBoxColumn()
         clEmail.Name = "email"
         clEmail.HeaderText = "Email"
-        clEmail.DataPropertyName = "email"
+        clEmail.DataPropertyName = "email1"
         dgvListKhachHang.Columns.Add(clEmail)
 
         Dim clSDT = New DataGridViewTextBoxColumn()
         clSDT.Name = "sdt"
         clSDT.HeaderText = "SDT"
-        clSDT.DataPropertyName = "sdt"
+        clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
 
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
@@ -150,13 +151,13 @@ Public Class frmQuanLiKhachHang
         Dim clMa = New DataGridViewTextBoxColumn()
         clMa.Name = "maKH"
         clMa.HeaderText = "Mã Khách Hàng"
-        clMa.DataPropertyName = "maKH"
+        clMa.DataPropertyName = "maKH1"
         dgvListKhachHang.Columns.Add(clMa)
 
         Dim clTenKH = New DataGridViewTextBoxColumn()
         clTenKH.Name = "hoTenKH"
         clTenKH.HeaderText = "Họ Tên Khách Hàng"
-        clTenKH.DataPropertyName = "hoTenKH"
+        clTenKH.DataPropertyName = "hoTenKH1"
         dgvListKhachHang.Columns.Add(clTenKH)
 
         'Dim clLoaikh= New DataGridView()
@@ -164,26 +165,26 @@ Public Class frmQuanLiKhachHang
         Dim clTienNo = New DataGridViewTextBoxColumn()
         clTienNo.Name = "tienNoKH"
         clTienNo.HeaderText = "Tiền Nợ Khách Hàng"
-        clTienNo.DataPropertyName = "tienNoKH"
+        clTienNo.DataPropertyName = "tienNoKH1"
         dgvListKhachHang.Columns.Add(clTienNo)
         'dgvListKhachHang.ResumeLayout()
 
         Dim clDiaChi = New DataGridViewTextBoxColumn()
         clDiaChi.Name = "diaChi"
         clDiaChi.HeaderText = "Địa Chỉ"
-        clDiaChi.DataPropertyName = "diaChi"
+        clDiaChi.DataPropertyName = "diaChi1"
         dgvListKhachHang.Columns.Add(clDiaChi)
 
         Dim clEmail = New DataGridViewTextBoxColumn()
         clEmail.Name = "email"
         clEmail.HeaderText = "Email"
-        clEmail.DataPropertyName = "email"
+        clEmail.DataPropertyName = "email1"
         dgvListKhachHang.Columns.Add(clEmail)
 
         Dim clSDT = New DataGridViewTextBoxColumn()
         clSDT.Name = "sdt"
         clSDT.HeaderText = "SDT"
-        clSDT.DataPropertyName = "sdt"
+        clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
 
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
@@ -216,41 +217,8 @@ Public Class frmQuanLiKhachHang
 
 
     Private Sub btCapNhatKhachHang_Click(sender As Object, e As EventArgs) Handles btCapNhatKhachHang.Click
-        ' Get the current cell location.
-        Dim currentRowIndex As Integer = dgvListKhachHang.CurrentCellAddress.Y 'current row selected
-        'Verify that indexing OK
-        If (-1 < currentRowIndex And currentRowIndex < dgvListKhachHang.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa khách hàng có mã số là " + txtMaKH.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
-                    Try
-                        '1. Delete from DB
-                        Dim result As Result
-                        result = khBus.delete(txtMaKH.Text)
-                        If (result.FlagResult = True) Then
-                            ' Re-Load LoaiHocSinh list
-                            loadListKH()
-                            ' Hightlight the next row on table
-                            If (currentRowIndex >= dgvListKhachHang.Rows.Count) Then
-                                currentRowIndex = currentRowIndex - 1
-                            End If
-                            If (currentRowIndex >= 0) Then
-                                dgvListKhachHang.Rows(currentRowIndex).Selected = True
-                            End If
-                            MessageBox.Show("Xóa khách hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Xóa khách hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            System.Console.WriteLine(result.SystemMessage)
-                        End If
-                    Catch ex As Exception
-                        Console.WriteLine(ex.StackTrace)
-                    End Try
-                Case MsgBoxResult.No
-                    Return
-            End Select
-        End If
-    End Sub
 
-    Private Sub btXoaKhachHang_Click(sender As Object, e As EventArgs) Handles btXoaKhachHang.Click
+
         ' Get the current cell location.
         Dim currentRowIndex As Integer = dgvListKhachHang.CurrentCellAddress.Y 'current row selected
         'Verify that indexing OK
@@ -292,6 +260,41 @@ Public Class frmQuanLiKhachHang
         End If
     End Sub
 
+    Private Sub btXoaKhachHang_Click(sender As Object, e As EventArgs) Handles btXoaKhachHang.Click
+        ' Get the current cell location.
+        Dim currentRowIndex As Integer = dgvListKhachHang.CurrentCellAddress.Y 'current row selected
+        'Verify that indexing OK
+        If (-1 < currentRowIndex And currentRowIndex < dgvListKhachHang.RowCount) Then
+            Select Case MsgBox("Bạn có thực sự muốn xóa khách hàng có mã số là " + txtMaKH.Text, MsgBoxStyle.YesNo, "Information")
+                Case MsgBoxResult.Yes
+                    Try
+                        '1. Delete from DB
+                        Dim result As Result
+                        result = khBus.delete(txtMaKH.Text)
+                        If (result.FlagResult = True) Then
+                            ' Re-Load LoaiHocSinh list
+                            loadListKH()
+                            ' Hightlight the next row on table
+                            If (currentRowIndex >= dgvListKhachHang.Rows.Count) Then
+                                currentRowIndex = currentRowIndex - 1
+                            End If
+                            If (currentRowIndex >= 0) Then
+                                dgvListKhachHang.Rows(currentRowIndex).Selected = True
+                            End If
+                            MessageBox.Show("Xóa khách hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Xóa khách hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            System.Console.WriteLine(result.SystemMessage)
+                        End If
+                    Catch ex As Exception
+                        Console.WriteLine(ex.StackTrace)
+                    End Try
+                Case MsgBoxResult.No
+                    Return
+            End Select
+        End If
+    End Sub
+
     Private Sub btTimKiemTheoMAKH_Click(sender As Object, e As EventArgs) Handles btTimKiemTheoMAKH.Click
         Try
             Dim makh = txtMaKHTimKiem.Text
@@ -306,5 +309,29 @@ Public Class frmQuanLiKhachHang
             loadListKH_ByName(name)
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub btTimKiemTheHoTen_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub txtHoTenKHTimKiem_TextChanged(sender As Object, e As EventArgs) Handles txtHoTenKHTimKiem.TextChanged
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub btTimKiemTheoMAKH_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtMaKHTimKiem_TextChanged(sender As Object, e As EventArgs) Handles txtMaKHTimKiem.TextChanged
+
     End Sub
 End Class

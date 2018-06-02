@@ -130,7 +130,7 @@ Public Class KHACHHANGDAL
     Public Function selectALL(ByRef listKH As List(Of KHACHHANGDTO)) As Result
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [dbo].[tblKhachHang]"
+        query &= " FROM [tblKhachHang]"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -146,7 +146,7 @@ Public Class KHACHHANGDAL
                     If reader.HasRows = True Then
                         listKH.Clear()
                         While reader.Read()
-                            listKH.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("Email1"), reader("Sdt1")))
+                            listKH.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("Email"), reader("Sdt")))
                         End While
                     End If
                 Catch ex As Exception
