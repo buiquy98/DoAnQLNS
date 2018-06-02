@@ -74,11 +74,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLapPhieuNhapSach.vb" />
-    <Compile Include="frmLapPhieuNhapSach.Designer.vb">
-      <DependentUpon>frmLapPhieuNhapSach.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
@@ -89,6 +84,18 @@
       <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLiKhachHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSach.designer.vb">
+      <DependentUpon>frmSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTheLoai.designer.vb">
+      <DependentUpon>frmTheLoai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTheLoai.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemKhachHang.Designer.vb">
@@ -114,14 +121,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmLapPhieuNhapSach.resx">
-      <DependentUpon>frmLapPhieuNhapSach.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSach.resx">
+      <DependentUpon>frmSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTheLoai.resx">
+      <DependentUpon>frmTheLoai.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemKhachHang.resx">
       <DependentUpon>frmThemKhachHang.vb</DependentUpon>

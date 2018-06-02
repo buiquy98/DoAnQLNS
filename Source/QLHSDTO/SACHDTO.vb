@@ -1,62 +1,75 @@
 ﻿Public Class SACHDTO
-    Private maSach As Integer
-    Private tenSach As String
-    Private maLoaiSach As Integer
-    Private tacGia As String
-    Private soLuongTon As Integer
+    Private _imasach As Integer
+    Private _strtensach As String
+    Private _imaloaisach As Integer
+    Private _strtacgia As String
+    Private _idongia As Integer
+    Private _isoluongton As Integer
+
+    Public Property Imasach As Integer
+        Get
+            Return _imasach
+        End Get
+        Set(value As Integer)
+            _imasach = value
+        End Set
+    End Property
+
+    Public Property Strtensach As String
+        Get
+            Return _strtensach
+        End Get
+        Set(value As String)
+            _strtensach = value
+        End Set
+    End Property
+
+    Public Property Imaloaisach As Integer
+        Get
+            Return _imaloaisach
+        End Get
+        Set(value As Integer)
+            _imaloaisach = value
+        End Set
+    End Property
+
+    Public Property Strtacgia As String
+        Get
+            Return _strtacgia
+        End Get
+        Set(value As String)
+            _strtacgia = value
+        End Set
+    End Property
+
+    Public Property Idongia As Integer
+        Get
+            Return _idongia
+        End Get
+        Set(value As Integer)
+            _idongia = value
+        End Set
+    End Property
+
+    Public Property Isoluongton As Integer
+        Get
+            Return _isoluongton
+        End Get
+        Set(value As Integer)
+            _isoluongton = value
+        End Set
+    End Property
+
     Public Sub New()
-
     End Sub
-    Public Sub New(maSach As Integer, tenSach As String, maLoaiSach As Integer, tacGia As String, soLuongTon As Integer)
-        Me.maLoaiSach = maLoaiSach
-        Me.tenSach = tenSach
-        Me.maLoaiSach = maLoaiSach
-        Me.tacGia = tacGia
-        Me.soLuongTon = soLuongTon
+    Public Sub New(masach As Integer, tensach As String, maloaisach As Integer, tacgia As String, dongia As Integer, soluongton As Integer)
+        Me.Imasach = masach
+        Me._strtensach = tensach
+        Me._imaloaisach = maloaisach
+        Me.Strtacgia = tacgia
+        Me.Idongia = dongia
+        Me.Isoluongton = soluongton
     End Sub
 
-    Public Property MaSach1 As Integer
-        Get
-            Return maSach
-        End Get
-        Set(value As Integer)
-            maSach = value
-        End Set
-    End Property
 
-    Public Property TenSach1 As String
-        Get
-            Return tenSach
-        End Get
-        Set(value As String)
-            tenSach = value
-        End Set
-    End Property
-
-    Public Property MaLoaiSach1 As Integer
-        Get
-            Return maLoaiSach
-        End Get
-        Set(value As Integer)
-            maLoaiSach = value
-        End Set
-    End Property
-
-    Public Property TacGia1 As String
-        Get
-            Return tacGia
-        End Get
-        Set(value As String)
-            tacGia = value
-        End Set
-    End Property
-
-    Public Property SoLuongTon1 As Integer
-        Get
-            Return soLuongTon
-        End Get
-        Set(value As Integer)
-            soLuongTon = value
-        End Set
-    End Property
 End Class
