@@ -1,52 +1,52 @@
 ﻿Public Class CHITIETPHIEUNHAPDTO
-    Private maChiTietPhieuNhap As Integer
-    Private maPhieuNhap As Integer
-    Private maSach As Integer
-    Private soLuongNhap As Integer
+    Private _imachitietphieunhap As Integer
+    Private _imaphieunhap As Integer
+    Private _imasach As Integer
+    Private _isoluongnhap As Integer
 
     Public Sub New()
 
     End Sub
     Public Sub New(maChiTietPhieuNhap As Integer, maPhieuNhap As Integer, maSach As Integer, soLuongNhap As Integer)
-        Me.maChiTietPhieuNhap = maChiTietPhieuNhap
-        Me.maPhieuNhap = maPhieuNhap
-        Me.maSach = maSach
-        Me.soLuongNhap = soLuongNhap
+        Me.Imachitietphieunhap = maChiTietPhieuNhap
+        Me.Imaphieunhap = maPhieuNhap
+        Me.Imasach = maSach
+        Me.Isoluongnhap = soLuongNhap
     End Sub
 
-    Public Property MaChiTietPhieuNhap1 As Integer
+    Public Property Imachitietphieunhap As Integer
         Get
-            Return maChiTietPhieuNhap
+            Return _imachitietphieunhap
         End Get
         Set(value As Integer)
-            maChiTietPhieuNhap = value
+            _imachitietphieunhap = value
         End Set
     End Property
 
-    Public Property MaPhieuNhap1 As Integer
+    Public Property Imaphieunhap As Integer
         Get
-            Return maPhieuNhap
+            Return _imaphieunhap
         End Get
         Set(value As Integer)
-            maPhieuNhap = value
+            _imaphieunhap = value
         End Set
     End Property
 
-    Public Property MaSach1 As Integer
+    Public Property Imasach As Integer
         Get
-            Return maSach
+            Return _imasach
         End Get
         Set(value As Integer)
-            maSach = value
+            _imasach = value
         End Set
     End Property
 
-    Public Property SoLuongNhap1 As Integer
+    Public Property Isoluongnhap As Integer
         Get
-            Return soLuongNhap
+            Return _isoluongnhap
         End Get
         Set(value As Integer)
-            soLuongNhap = value
+            _isoluongnhap = value
         End Set
     End Property
 End Class

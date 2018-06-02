@@ -79,8 +79,4 @@ Public Class frmSach
         End If
 
     End Sub
-
-    Private Sub btnnhapdong_Click(sender As Object, e As EventArgs) Handles btnnhapdong.Click
-
-    End Sub
 End Class

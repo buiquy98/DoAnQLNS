@@ -74,34 +74,70 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.Designer.vb">
+    <Compile Include="BaoCao\frmLapBaoCaoTon.Designer.vb">
+      <DependentUpon>frmLapBaoCaoTon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\frmLapBaoCaoTon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmLapBaoCaoCongNo.Designer.vb">
+      <DependentUpon>frmLapBaoCaoCongNo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\frmLapBaoCaoCongNo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\frmTraCuuKhachHang.Designer.vb">
+      <DependentUpon>frmTraCuuKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\frmTraCuuKhachHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLSACH\frmTraCuuSach.Designer.vb">
+      <DependentUpon>frmTraCuuSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLSACH\frmTraCuuSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmDangNhap.Designer.vb">
+      <DependentUpon>frmDangNhap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\frmDangNhap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.vb">
+    <Compile Include="System\frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLiKhachHang.Designer.vb">
+    <Compile Include="QLNhapXuat\FrmPhieuNhapSach.Designer.vb">
+      <DependentUpon>FrmPhieuNhapSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhapXuat\FrmPhieuNhapSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\frmQuanLiKhachHang.Designer.vb">
       <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLiKhachHang.vb">
+    <Compile Include="KhachHang\frmQuanLiKhachHang.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSach.designer.vb">
+    <Compile Include="QLSACH\frmSach.designer.vb">
       <DependentUpon>frmSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSach.vb">
+    <Compile Include="QLSACH\frmSach.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTheLoai.designer.vb">
+    <Compile Include="QLSACH\frmTheLoai.designer.vb">
       <DependentUpon>frmTheLoai.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmTheLoai.vb">
+    <Compile Include="QLSACH\frmTheLoai.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemKhachHang.Designer.vb">
+    <Compile Include="KhachHang\frmThemKhachHang.Designer.vb">
       <DependentUpon>frmThemKhachHang.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmThemKhachHang.vb">
+    <Compile Include="KhachHang\frmThemKhachHang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,21 +155,45 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="System\frmQLNguoiDung.Designer.vb">
+      <DependentUpon>frmQLNguoiDung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\frmQLNguoiDung.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmThemNguoiDung.Designer.vb">
+      <DependentUpon>frmThemNguoiDung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\frmThemNguoiDung.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="KhachHang\frmTraCuuKhachHang.resx">
+      <DependentUpon>frmTraCuuKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLSACH\frmTraCuuSach.resx">
+      <DependentUpon>frmTraCuuSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLiKhachHang.resx">
+    <EmbeddedResource Include="QLNhapXuat\FrmPhieuNhapSach.resx">
+      <DependentUpon>FrmPhieuNhapSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSach.resx">
+    <EmbeddedResource Include="QLSACH\frmSach.resx">
       <DependentUpon>frmSach.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTheLoai.resx">
+    <EmbeddedResource Include="QLSACH\frmTheLoai.resx">
       <DependentUpon>frmTheLoai.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemKhachHang.resx">
+    <EmbeddedResource Include="KhachHang\frmThemKhachHang.resx">
       <DependentUpon>frmThemKhachHang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -141,6 +201,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmQLNguoiDung.resx">
+      <DependentUpon>frmQLNguoiDung.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +237,9 @@
       <Project>{e9fb985a-c515-4820-9037-fe8f3112ad42}</Project>
       <Name>Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thu-vien.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -157,6 +157,8 @@ Public Class SACHDAL
 
 
 #End Region
+
+#Region "Lọc danh sách sách theo MS, tên sách , thể loại,tác giả, số lượng tồn,tổng số lượng bán, tổng tiền bán,đơn giá"
     Public Function getallsach(ByRef listSach As List(Of SACHDTO)) As Result
 
         Dim query As String = String.Empty
@@ -192,5 +194,8 @@ Public Class SACHDAL
         Return New Result(True) ' thanh cong
     End Function
 
+    Public Function getAllSachbyMS(ByRef iMaSach As Integer)
 
+    End Function
+#End Region
 End Class

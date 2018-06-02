@@ -5,7 +5,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub LậpThẻĐọcGiảToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpThẻĐọcGiảToolStripMenuItem.Click
+    Private Sub LậpThẻĐọcGiảToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Dim frmdg As frmLapPhieuNhapSach = New frmLapPhieuNhapSach()
         'frmdg.MdiParent = Me
         'frmdg.Show()
@@ -16,7 +16,7 @@ Public Class frmMain
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-
+        Me.Close()
     End Sub
 
     Private Sub ThêmToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmToolStripMenuItem.Click

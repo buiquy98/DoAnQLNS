@@ -1,5 +1,5 @@
 ﻿Public Class THELOAIDTO
-    Private _imaloaisach As Integer
+    Private _imatheloai As Integer
     Private _strtenloaisach As String
     Public Sub New()
         Imaloaisach = 0
@@ -11,10 +11,10 @@
     End Sub
     Public Property Imaloaisach As Integer
         Get
-            Return _imaloaisach
+            Return _imatheloai
         End Get
         Set(value As Integer)
-            _imaloaisach = value
+            _imatheloai = value
         End Set
     End Property
 

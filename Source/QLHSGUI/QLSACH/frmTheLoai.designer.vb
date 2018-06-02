@@ -69,7 +69,7 @@ Partial Class frmTheLoai
         '
         'btnthem
         '
-        Me.btnthem.Location = New System.Drawing.Point(57, 113)
+        Me.btnthem.Location = New System.Drawing.Point(105, 113)
         Me.btnthem.Name = "btnthem"
         Me.btnthem.Size = New System.Drawing.Size(75, 23)
         Me.btnthem.TabIndex = 4
