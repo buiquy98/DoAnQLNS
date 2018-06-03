@@ -42,4 +42,16 @@ Public Class frmMain
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
+
+    Private Sub BáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoCôngNợToolStripMenuItem.Click
+        Dim frmdg As frmLapBaoCaoCongNo = New frmLapBaoCaoCongNo()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
+
+    Private Sub QuànLíBáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuànLíBáoCáoCôngNợToolStripMenuItem.Click
+        Dim frmdg As frmQuanLiBaoCaoCongNo = New frmQuanLiBaoCaoCongNo()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

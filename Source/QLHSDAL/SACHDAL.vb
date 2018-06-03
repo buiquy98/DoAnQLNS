@@ -194,8 +194,6 @@ Public Class SACHDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function getAllSachbyMS(ByRef iMaSach As Integer)
-
-    End Function
 #End Region
+
 End Class

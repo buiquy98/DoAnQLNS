@@ -1,4 +1,4 @@
-﻿Public Class BAOCAONOCONGDTO
+﻿Public Class BAOCAOCONGNODTO
     Private maBaoCaoCongNo As Integer
     Private thang As DateTime
 

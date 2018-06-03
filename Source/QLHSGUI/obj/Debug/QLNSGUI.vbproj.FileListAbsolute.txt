@@ -42,7 +42,6 @@ C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\QLHSD
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.pdb
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.xml
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLNSGUI.vbprojAssemblyReference.cache
-C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapPhieuNhapSach.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmMain.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThemKhachHang.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.Resources.resources
@@ -85,3 +84,11 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.FrmPhieuNhapSach.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuKhachHang.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmDangNhap.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLNguoiDung.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuKhachHang.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuSach.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmDangNhap.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.FrmPhieuNhapSach.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmSach.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTheLoai.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLNguoiDung.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoCongNo.resources
