@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAOCAOCONGNODAL.vb" />
+    <Compile Include="BAOCAOTONDAL.vb" />
     <Compile Include="KHACHHANGDAL.vb" />
     <Compile Include="PHIEUNHAPDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

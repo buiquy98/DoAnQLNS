@@ -35,11 +35,11 @@ Partial Class frmQuanLiBaoCaoCongNo
         Me.dgvListBaoCaoCongNo = New System.Windows.Forms.DataGridView()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dtpThangBaoCaoCongNoTimKiem = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnTimKiem = New System.Windows.Forms.Button()
         Me.txtMaBaoCaoTK = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnTimKiem = New System.Windows.Forms.Button()
+        Me.dtpThangBaoCaoCongNoTimKiem = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabControl3.SuspendLayout()
@@ -194,6 +194,34 @@ Partial Class frmQuanLiBaoCaoCongNo
         Me.TabPage2.Text = "Tìm Kiếm"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnTimKiem
+        '
+        Me.btnTimKiem.Location = New System.Drawing.Point(253, 10)
+        Me.btnTimKiem.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTimKiem.Name = "btnTimKiem"
+        Me.btnTimKiem.Size = New System.Drawing.Size(75, 29)
+        Me.btnTimKiem.TabIndex = 23
+        Me.btnTimKiem.Text = "Tìm Kiếm"
+        Me.btnTimKiem.UseVisualStyleBackColor = True
+        '
+        'txtMaBaoCaoTK
+        '
+        Me.txtMaBaoCaoTK.Location = New System.Drawing.Point(189, 13)
+        Me.txtMaBaoCaoTK.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtMaBaoCaoTK.Name = "txtMaBaoCaoTK"
+        Me.txtMaBaoCaoTK.Size = New System.Drawing.Size(54, 22)
+        Me.txtMaBaoCaoTK.TabIndex = 22
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(8, 13)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 17)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Mã Báo Cáo Công Nợ"
+        '
         'dtpThangBaoCaoCongNoTimKiem
         '
         Me.dtpThangBaoCaoCongNoTimKiem.CustomFormat = "MM/yyyy"
@@ -214,34 +242,6 @@ Partial Class frmQuanLiBaoCaoCongNo
         Me.Label3.Size = New System.Drawing.Size(166, 17)
         Me.Label3.TabIndex = 19
         Me.Label3.Text = "Tháng Báo Cáo Công Nợ"
-        '
-        'txtMaBaoCaoTK
-        '
-        Me.txtMaBaoCaoTK.Location = New System.Drawing.Point(189, 13)
-        Me.txtMaBaoCaoTK.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtMaBaoCaoTK.Name = "txtMaBaoCaoTK"
-        Me.txtMaBaoCaoTK.Size = New System.Drawing.Size(54, 22)
-        Me.txtMaBaoCaoTK.TabIndex = 22
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 13)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 17)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Mã Báo Cáo Công Nợ"
-        '
-        'btnTimKiem
-        '
-        Me.btnTimKiem.Location = New System.Drawing.Point(253, 10)
-        Me.btnTimKiem.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnTimKiem.Name = "btnTimKiem"
-        Me.btnTimKiem.Size = New System.Drawing.Size(75, 29)
-        Me.btnTimKiem.TabIndex = 23
-        Me.btnTimKiem.Text = "Tìm Kiếm"
-        Me.btnTimKiem.UseVisualStyleBackColor = True
         '
         'frmQuanLiBaoCaoCongNo
         '

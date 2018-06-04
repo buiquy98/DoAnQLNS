@@ -208,4 +208,8 @@ Public Class frmQuanLiBaoCaoCongNo
 
         End Try
     End Sub
+
+    Private Sub dgvListBaoCaoCongNo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListBaoCaoCongNo.CellContentClick
+
+    End Sub
 End Class
