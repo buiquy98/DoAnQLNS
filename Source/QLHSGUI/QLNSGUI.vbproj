@@ -181,6 +181,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BaoCao\frmLapBaoCaoCongNo.resx">
+      <DependentUpon>frmLapBaoCaoCongNo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmLapBaoCaoTon.resx">
       <DependentUpon>frmLapBaoCaoTon.vb</DependentUpon>
     </EmbeddedResource>

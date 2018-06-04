@@ -252,7 +252,7 @@ Partial Class frmQuanLiBaoCaoCongNo
         Me.Controls.Add(Me.TabControl3)
         Me.Controls.Add(Me.TabControl2)
         Me.Name = "frmQuanLiBaoCaoCongNo"
-        Me.Text = "frmQuanLiBaoCaoCongNo"
+        Me.Text = "Quản Lí Báo Cáo Công Nợ"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

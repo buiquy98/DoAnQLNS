@@ -118,7 +118,7 @@ Partial Class frmLapBaoCaoTon
         Me.ClientSize = New System.Drawing.Size(430, 170)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmLapBaoCaoTon"
-        Me.Text = "frmLapBaoCaoTon"
+        Me.Text = "Lập Báo Cáo Tồn"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

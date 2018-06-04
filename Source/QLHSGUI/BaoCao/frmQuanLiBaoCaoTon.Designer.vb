@@ -252,7 +252,7 @@ Partial Class frmQuanLiBaoCaoTon
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmQuanLiBaoCaoTon"
-        Me.Text = "frmQuanLiBaoCaoTon"
+        Me.Text = "Quản Lí Báo Cáo Tồn"
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.dgvListBaoCaoTon, System.ComponentModel.ISupportInitialize).EndInit()
