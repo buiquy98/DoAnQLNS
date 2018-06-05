@@ -98,6 +98,12 @@
     <Compile Include="BaoCao\frmQuanLiBaoCaoTon.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.Designer.vb">
+      <DependentUpon>frmQuanLiChiTietBaoCaoCongNo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KhachHang\frmTraCuuKhachHang.Designer.vb">
       <DependentUpon>frmTraCuuKhachHang.vb</DependentUpon>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmQuanLiBaoCaoTon.resx">
       <DependentUpon>frmQuanLiBaoCaoTon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.resx">
+      <DependentUpon>frmQuanLiChiTietBaoCaoCongNo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\frmTraCuuKhachHang.resx">
       <DependentUpon>frmTraCuuKhachHang.vb</DependentUpon>

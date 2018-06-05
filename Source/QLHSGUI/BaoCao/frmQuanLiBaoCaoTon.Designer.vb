@@ -170,9 +170,9 @@ Partial Class frmQuanLiBaoCaoTon
         Me.Label2.Location = New System.Drawing.Point(4, 43)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(166, 17)
+        Me.Label2.Size = New System.Drawing.Size(136, 17)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Tháng Báo Cáo Công Nợ"
+        Me.Label2.Text = "Tháng Báo Cáo Tồn"
         '
         'Label1
         '
@@ -180,9 +180,9 @@ Partial Class frmQuanLiBaoCaoTon
         Me.Label1.Location = New System.Drawing.Point(4, 11)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 17)
+        Me.Label1.Size = New System.Drawing.Size(114, 17)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Mã Báo Cáo Công Nợ"
+        Me.Label1.Text = "Mã Báo Cáo Tồn"
         '
         'TabPage1
         '

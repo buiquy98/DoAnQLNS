@@ -94,3 +94,5 @@ C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSG
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoCongNo.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTon.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoTon.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNo.resources
+C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoCongNo.resources
