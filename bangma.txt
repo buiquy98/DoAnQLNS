@@ -1,0 +1,83 @@
+bangma
+https://app.quickdatabasediagrams.com/#/schema/8Cxy_PuPZEW_Dg4xuyxGxw
+
+
+
+PHIEUNHAP
+-
+MaPhieuNhap PK
+NgayNhapPhieu DateTime
+
+
+CHITIETPHIEUNHAP
+-
+MaChiTietPhieuNhap PK
+MaPhieuNhap int FK -< PHIEUNHAP.MaPhieuNhap
+SoLuongNhap 
+MaSach int FK -< SACH.MaSach
+
+SACH
+-
+MaSach PK int
+MaLoaiSach int FK -< LOAISACH.MaLoaiSach
+TenSach string
+TacGia string
+SoLuongTon string
+DonGia money
+
+LOAISACH
+-
+MaLoaiSach PK
+TenLoaiSach string
+
+
+
+THAMSO
+-
+SoLuongNhapItNhat int
+SoLuongTonToiDaTruocNhap int
+SoTienNoToiDa
+SoLuongTonSauNhoNhat
+SuDungQuyDinh4 true/false
+
+PHIEUHOADON
+-
+MaPhieuHoaDon
+NgayLapHoaDon DateTime
+MaKhachHang FK -< KHACHHANG.MaKhachHang
+
+CHITIETHOADON
+-
+MaChiTietHoaDon PK
+MaSach int FK -< SACH.MaSach
+MaPhieuHoaDon int FK -< PHIEUHOADON.MaPhieuHoaDon
+SoLuongBan int
+
+KHACHHANG
+-
+MaKhachHang PK 
+HoTenKhachHang string
+SoTienNo int 
+DiaChi string
+DienThoai int
+Email String
+
+PHIEUTHUTIEN
+-
+MaPhieuThuTien PK
+MaKhachHang FK -< KHACHHANG.MaKhachHang
+NgayThuTien datetime
+SoTienThu int
+
+BAOCAOCONGNO
+-
+MaBaoCaoCongNo PK
+MaKhachHang fk -< KHACHHANG.MaKhachHang
+NoDau
+NoPhatSinh
+NoCuoi
+
+
+
+
+
