@@ -110,6 +110,30 @@
     <Compile Include="KhachHang\frmTraCuuKhachHang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="QLNhapXuat\frmHoaDonBanSach.Designer.vb">
+      <DependentUpon>frmHoaDonBanSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhapXuat\frmHoaDonBanSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNhapXuat\frmPhieuThuTien.Designer.vb">
+      <DependentUpon>frmPhieuThuTien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhapXuat\frmPhieuThuTien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLSACH\frmQLSach.Designer.vb">
+      <DependentUpon>frmQLSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLSACH\frmQLSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLSACH\frmQLTheLoai.Designer.vb">
+      <DependentUpon>frmQLTheLoai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QLSACH\frmQLTheLoai.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QLSACH\frmTraCuuSach.Designer.vb">
       <DependentUpon>frmTraCuuSach.vb</DependentUpon>
     </Compile>
@@ -179,6 +203,12 @@
     <Compile Include="System\frmQLNguoiDung.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\frmThayDoiQuyDinh.Designer.vb">
+      <DependentUpon>frmThayDoiQuyDinh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\frmThayDoiQuyDinh.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\frmThemNguoiDung.Designer.vb">
       <DependentUpon>frmThemNguoiDung.vb</DependentUpon>
     </Compile>
@@ -204,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\frmTraCuuKhachHang.resx">
       <DependentUpon>frmTraCuuKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLSACH\frmQLSach.resx">
+      <DependentUpon>frmQLSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLSACH\frmQLTheLoai.resx">
+      <DependentUpon>frmQLTheLoai.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLSACH\frmTraCuuSach.resx">
       <DependentUpon>frmTraCuuSach.vb</DependentUpon>

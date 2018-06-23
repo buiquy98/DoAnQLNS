@@ -84,7 +84,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SACHBUS.vb" />
-    <Compile Include="THELOAIBUS.vb" />
+    <Compile Include="LOAISACHBUS.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

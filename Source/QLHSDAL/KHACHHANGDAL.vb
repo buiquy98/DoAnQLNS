@@ -193,6 +193,44 @@ Public Class KHACHHANGDAL
         Return New Result(True)
     End Function
 
+
+    Public Function SelectAll_BySdt(sdt As String, ByRef listkh As List(Of KHACHHANGDTO))
+        Dim query As String = String.Empty
+        query &= " SELECT *"
+        query &= " FROM [dbo].[tblKhachHang]"
+        query &= " WHERE "
+        query &= " [sdt] = @sdt"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@sdt", sdt)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listkh.Clear()
+                        While reader.Read()
+                            listkh.Add(New KHACHHANGDTO(reader("maKH"), reader("hoTenKH"), reader("tienNoKH"), reader("diaChi"), reader("email"), reader("sdt")))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lấy tất cả khách hàng không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
+
+    End Function
+
     Public Function selectALL_ByName(name As String, ByRef listkh As List(Of KHACHHANGDTO)) As Result
 
         Dim query As String = String.Empty

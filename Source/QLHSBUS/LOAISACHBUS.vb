@@ -1,14 +1,14 @@
 ﻿Imports QLHSDAL
 Imports QLHSDTO
 Imports Utility
-Public Class THELOAIBUS
-    Private theloaidal As THELOAIDAL
+Public Class LOAISACHBUS
+    Private theloaidal As LOAISACHDAL
     Public Sub New()
-        theloaidal = New THELOAIDAL()
+        theloaidal = New LOAISACHDAL()
     End Sub
 
     Public Sub New(connectionString As String)
-        theloaidal = New THELOAIDAL(connectionString)
+        theloaidal = New LOAISACHDAL(connectionString)
     End Sub
 
     Public Function isValidName(theloai As THELOAIDTO) As Boolean
@@ -46,6 +46,6 @@ Public Class THELOAIBUS
     End Function
 
     Public Function selectall(ByRef listtheloai As List(Of THELOAIDTO)) As Result
-        Return theloaidal.selectALL(listtheloai)
+        Return theloaidal.selectall(listtheloai)
     End Function
 End Class

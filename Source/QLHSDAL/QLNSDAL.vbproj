@@ -85,7 +85,7 @@
     </Compile>
     <Compile Include="CHITIETBAOCAOCONGNODAL.vb" />
     <Compile Include="SACHDAL.vb" />
-    <Compile Include="THELOAIDAL.vb" />
+    <Compile Include="LOAISACHDAL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

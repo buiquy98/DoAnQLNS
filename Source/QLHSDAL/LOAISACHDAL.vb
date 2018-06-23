@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Imports QLHSDTO
 Imports Utility
-Public Class THELOAIDAL
+Public Class LOAISACHDAL
     Private connectionString As String
 
     Public Sub New()
@@ -15,9 +15,9 @@ Public Class THELOAIDAL
 
     Public Function nextmtl(ByRef inextmtl As Integer)
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [matheloai] "
-        query &= "FROM [tblTheLoai] "
-        query &= "ORDER BY [matheloai] DESC "
+        query &= "SELECT TOP 1 [maloaisach] "
+        query &= "FROM [tblLoaiSach] "
+        query &= "ORDER BY [maloaisach] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -34,7 +34,7 @@ Public Class THELOAIDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("matheloai")
+                            idOnDB = reader("maloaisach")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -53,8 +53,8 @@ Public Class THELOAIDAL
 #Region "them xoa sua"
     Public Function insert(theloai As THELOAIDTO)
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblTheLoai] ([matheloai], [tentheloai])"
-        query &= "VALUES (@matheloai,@tentheloai)"
+        query &= "INSERT INTO [tblLoaiSach] ([maloaisach], [tenloaisach])"
+        query &= "VALUES (@maloaisach,@tenloaisach)"
 
         Dim inextID = 0
         Dim result As Result
@@ -70,8 +70,8 @@ Public Class THELOAIDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@matheloai", theloai.Imaloaisach)
-                    .Parameters.AddWithValue("@tentheloai", theloai.Strtenloaisach)
+                    .Parameters.AddWithValue("@maloaisach", theloai.Imaloaisach)
+                    .Parameters.AddWithValue("@tenloaisach", theloai.Strtenloaisach)
                 End With
                 Try
                     conn.Open()
@@ -116,12 +116,12 @@ Public Class THELOAIDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function delete(imatheloai As Integer) As Result
+    Public Function delete(imaloaisach As Integer) As Result
 
         Dim query As String = String.Empty
         query &= " DELETE FROM [tblLoaiSach] "
         query &= " WHERE "
-        query &= " [matheloai] = @matheloai "
+        query &= " [maloaisach] = @maloaisach "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -129,7 +129,7 @@ Public Class THELOAIDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@matheloai", imatheloai)
+                    .Parameters.AddWithValue("@maloaisach", imaloaisach)
                 End With
                 Try
                     conn.Open()
@@ -148,7 +148,7 @@ Public Class THELOAIDAL
 
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [tblTheLoai]"
+        query &= " FROM [tblLoaiSach]"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -165,7 +165,7 @@ Public Class THELOAIDAL
                     If reader.HasRows = True Then
                         listtheloai.Clear()
                         While reader.Read()
-                            listtheloai.Add(New THELOAIDTO(reader("matheloai"), reader("tentheloai")))
+                            listtheloai.Add(New THELOAIDTO(reader("maloaisach"), reader("tenloaisach")))
                         End While
                     End If
                 Catch ex As Exception

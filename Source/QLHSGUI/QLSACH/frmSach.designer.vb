@@ -34,11 +34,11 @@ Partial Class frmSach
         Me.tbxdongia = New System.Windows.Forms.TextBox()
         Me.tbxsoluong = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.cbxtheloai = New System.Windows.Forms.ComboBox()
         Me.btnnhapdong = New System.Windows.Forms.Button()
         Me.btnnhap = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -163,6 +163,15 @@ Partial Class frmSach
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sách"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(418, 186)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "VNĐ"
+        '
         'cbxtheloai
         '
         Me.cbxtheloai.FormattingEnabled = True
@@ -199,15 +208,6 @@ Partial Class frmSach
         Me.Label1.Size = New System.Drawing.Size(168, 31)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "THÊM SÁCH"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(418, 186)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "VNĐ"
         '
         'frmSach
         '
