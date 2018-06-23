@@ -72,4 +72,16 @@ Public Class frmMain
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
+
+    Private Sub QuảnLýThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýThểLoạiToolStripMenuItem.Click
+        Dim frmdg As frmQLTheLoai = New frmQLTheLoai()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
+
+    Private Sub QuảnLýSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýSáchToolStripMenuItem.Click
+        Dim frmdg As frmQLSach = New frmQLSach()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

@@ -2,9 +2,9 @@
 Imports Utility
 Imports QLHSDTO
 Public Class frmTheLoai
-    Private tlbus As THELOAIBUS
+    Private tlbus As LOAISACHBUS
     Private Sub frmTheLoai_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tlbus = New THELOAIBUS()
+        tlbus = New LOAISACHBUS()
         Dim nextID As Integer
         Dim result As Result
         result = tlbus.getNextID(nextID)

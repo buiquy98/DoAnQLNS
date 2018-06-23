@@ -82,6 +82,7 @@ Partial Class FrmPhieuNhapSach
         '
         'TextBox1
         '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.TextBox1.Location = New System.Drawing.Point(117, 32)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(224, 20)
@@ -130,6 +131,7 @@ Partial Class FrmPhieuNhapSach
         '
         'TextBox3
         '
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.TextBox3.Location = New System.Drawing.Point(167, 63)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(224, 20)
@@ -137,6 +139,7 @@ Partial Class FrmPhieuNhapSach
         '
         'TextBox2
         '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.TextBox2.Location = New System.Drawing.Point(167, 32)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(224, 20)

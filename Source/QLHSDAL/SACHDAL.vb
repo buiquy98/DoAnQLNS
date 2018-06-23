@@ -180,7 +180,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("dongia"), reader("TACGIA"), reader("SOLUONGTON")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
                         End While
                     End If
                 Catch ex As Exception

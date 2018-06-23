@@ -4,10 +4,10 @@ Imports QLHSDTO
 Imports Utility
 Public Class frmSach
     Private sachbus As SACHBUS
-    Private theloaibus As THELOAIBUS
+    Private theloaibus As LOAISACHBUS
     Private Sub frmSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sachbus = New SACHBUS()
-        theloaibus = New THELOAIBUS()
+        theloaibus = New LOAISACHBUS()
         'load the loai 
         Dim listtheloai = New List(Of THELOAIDTO)
         Dim result As Result
@@ -77,6 +77,10 @@ Public Class frmSach
             MessageBox.Show("Thêm sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+
+    End Sub
+
+    Private Sub cbxtheloai_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxtheloai.SelectedIndexChanged
 
     End Sub
 End Class
