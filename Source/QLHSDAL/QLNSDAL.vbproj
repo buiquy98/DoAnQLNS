@@ -66,6 +66,10 @@
   <ItemGroup>
     <Compile Include="BAOCAOCONGNODAL.vb" />
     <Compile Include="BAOCAOTONDAL.vb" />
+    <Compile Include="CHITIETBAOCAOTONDAL.vb" />
+    <Compile Include="CHITIETHOADONDAL.vb" />
+    <Compile Include="CHITIETPHIEUNHAPDAL.vb" />
+    <Compile Include="HOADONDAL.vb" />
     <Compile Include="KHACHHANGDAL.vb" />
     <Compile Include="PHIEUNHAPDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -84,6 +88,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="CHITIETBAOCAOCONGNODAL.vb" />
+    <Compile Include="PHIEUTHUTIENDAL.vb" />
+    <Compile Include="QUIDINHDAL.vb" />
     <Compile Include="SACHDAL.vb" />
     <Compile Include="LOAISACHDAL.vb" />
   </ItemGroup>

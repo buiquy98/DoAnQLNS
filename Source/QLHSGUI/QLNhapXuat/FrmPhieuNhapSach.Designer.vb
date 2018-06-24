@@ -25,13 +25,13 @@ Partial Class FrmPhieuNhapSach
         Me.lblMain = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxmaphieunhap = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tbxquidinh2 = New System.Windows.Forms.TextBox()
+        Me.tbxquidinh1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
@@ -54,7 +54,7 @@ Partial Class FrmPhieuNhapSach
         Me.lblMain.BackColor = System.Drawing.Color.Transparent
         Me.lblMain.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMain.ForeColor = System.Drawing.Color.Blue
-        Me.lblMain.Location = New System.Drawing.Point(260, 44)
+        Me.lblMain.Location = New System.Drawing.Point(300, 44)
         Me.lblMain.Name = "lblMain"
         Me.lblMain.Size = New System.Drawing.Size(325, 31)
         Me.lblMain.TabIndex = 58
@@ -63,7 +63,7 @@ Partial Class FrmPhieuNhapSach
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.tbxmaphieunhap)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(58, 91)
@@ -80,13 +80,13 @@ Partial Class FrmPhieuNhapSach
         Me.DateTimePicker1.Size = New System.Drawing.Size(224, 20)
         Me.DateTimePicker1.TabIndex = 3
         '
-        'TextBox1
+        'tbxmaphieunhap
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.TextBox1.Location = New System.Drawing.Point(117, 32)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(224, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.tbxmaphieunhap.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxmaphieunhap.Location = New System.Drawing.Point(117, 32)
+        Me.tbxmaphieunhap.Name = "tbxmaphieunhap"
+        Me.tbxmaphieunhap.Size = New System.Drawing.Size(224, 20)
+        Me.tbxmaphieunhap.TabIndex = 2
         '
         'Label2
         '
@@ -109,8 +109,8 @@ Partial Class FrmPhieuNhapSach
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.tbxquidinh2)
+        Me.GroupBox2.Controls.Add(Me.tbxquidinh1)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(58, 197)
@@ -129,21 +129,21 @@ Partial Class FrmPhieuNhapSach
         Me.Button1.Text = "Thay đổi qui định"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'tbxquidinh2
         '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.TextBox3.Location = New System.Drawing.Point(167, 63)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(224, 20)
-        Me.TextBox3.TabIndex = 3
+        Me.tbxquidinh2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxquidinh2.Location = New System.Drawing.Point(167, 63)
+        Me.tbxquidinh2.Name = "tbxquidinh2"
+        Me.tbxquidinh2.Size = New System.Drawing.Size(224, 20)
+        Me.tbxquidinh2.TabIndex = 3
         '
-        'TextBox2
+        'tbxquidinh1
         '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.TextBox2.Location = New System.Drawing.Point(167, 32)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(224, 20)
-        Me.TextBox2.TabIndex = 2
+        Me.tbxquidinh1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxquidinh1.Location = New System.Drawing.Point(167, 32)
+        Me.tbxquidinh1.Name = "tbxquidinh1"
+        Me.tbxquidinh1.Size = New System.Drawing.Size(224, 20)
+        Me.tbxquidinh1.TabIndex = 2
         '
         'Label3
         '
@@ -203,7 +203,7 @@ Partial Class FrmPhieuNhapSach
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(400, 532)
+        Me.Button2.Location = New System.Drawing.Point(374, 555)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 63
@@ -212,7 +212,7 @@ Partial Class FrmPhieuNhapSach
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(481, 532)
+        Me.Button3.Location = New System.Drawing.Point(455, 555)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 64
@@ -224,7 +224,7 @@ Partial Class FrmPhieuNhapSach
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(877, 602)
+        Me.ClientSize = New System.Drawing.Size(956, 728)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CheckBox1)
@@ -249,13 +249,13 @@ Partial Class FrmPhieuNhapSach
     Friend WithEvents lblMain As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbxmaphieunhap As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents tbxquidinh2 As TextBox
+    Friend WithEvents tbxquidinh1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TabControl2 As TabControl

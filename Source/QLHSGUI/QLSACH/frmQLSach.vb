@@ -2,15 +2,29 @@
 Imports QLHSDTO
 Imports Utility
 Public Class frmQLSach
-
     Private sbus As SACHBUS
+
     Private Sub frmQLSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sbus = New SACHBUS()
+
+        sbus = New SACHBUS
         LoadContent()
     End Sub
 
 
 
+
+
+    Private Sub btnhuy_Click(sender As Object, e As EventArgs) Handles btnhuy.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgvsach_SelectionChanged(sender As Object, e As EventArgs) Handles dgvsach.SelectionChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
 
     Public Function LoadContent()
         Dim listsach = New List(Of SACHDTO)
@@ -68,28 +82,4 @@ Public Class frmQLSach
 
 
     End Function
-
-    Private Sub btnhuy_Click(sender As Object, e As EventArgs) Handles btnhuy.Click
-        Me.Close()
-    End Sub
-
-    Private Sub dgvsach_SelectionChanged(sender As Object, e As EventArgs) Handles dgvsach.SelectionChanged
-        Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y 'current row selected
-        'Dim x As Integer = dgvListKhachHang.CurrentCellAddress.X 'curent column selected
-        ' Write coordinates to console for debugging
-        'Console.WriteLine(y.ToString + " " + x.ToString)
-        'Verify that indexing OK
-        If (-1 < currentRowIndex And currentRowIndex < dgvsach.RowCount) Then
-            Try
-                Dim sach = CType(dgvsach.Rows(currentRowIndex).DataBoundItem, SACHDTO)
-                tbxmasach.Text = sach.Imasach
-                tbxsoluong.Text = sach.Isoluongton
-                tbxtacgia.Text = sach.Strtacgia
-                tbxtensach.Text = sach.Strtensach
-                tbxdongia.Text = sach.Idongia
-            Catch ex As Exception
-                Console.WriteLine(ex.StackTrace)
-            End Try
-        End If
-    End Sub
 End Class

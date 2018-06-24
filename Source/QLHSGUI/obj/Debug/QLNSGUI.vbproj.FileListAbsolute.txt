@@ -81,7 +81,6 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.exe
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.pdb
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuSach.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.FrmPhieuNhapSach.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuKhachHang.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmDangNhap.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLNguoiDung.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmTraCuuKhachHang.resources

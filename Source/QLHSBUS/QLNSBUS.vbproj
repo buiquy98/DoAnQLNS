@@ -66,6 +66,10 @@
     <Compile Include="BAOCAOCONGNOBUS.vb" />
     <Compile Include="BAOCAOTONBUS.vb" />
     <Compile Include="CHITIETBAOCAOCONGNOBUS.vb" />
+    <Compile Include="CHITIETBAOCAOTONBUS.vb" />
+    <Compile Include="CHITIETHOADONBUS.vb" />
+    <Compile Include="CHITIETPHIEUNHAPBUS.vb" />
+    <Compile Include="HOADONBUS.vb" />
     <Compile Include="KHACHHANGBUS.vb" />
     <Compile Include="PHIEUNHAPBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

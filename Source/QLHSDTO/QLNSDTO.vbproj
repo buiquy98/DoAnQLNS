@@ -68,7 +68,8 @@
     <Compile Include="CHITIETBAOCAOCONGNODTO.vb" />
     <Compile Include="CHITIETBAOCAOTONDTO.vb" />
     <Compile Include="CHITIETPHIEUNHAPDTO.vb" />
-    <Compile Include="CHITIETHOADON.vb" />
+    <Compile Include="CHITIETHOADONDTO.vb" />
+    <Compile Include="HOADONDTO.vb" />
     <Compile Include="KHACHHANGDTO.vb" />
     <Compile Include="LOAISACHDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

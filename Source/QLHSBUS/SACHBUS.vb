@@ -36,4 +36,8 @@ Public Class SACHBUS
         Return sachDAL.NextMS(inextid)
     End Function
 
+    'Public Shared Function LaySachDTO(strMaSach As String) As SACHDTO
+    '    Return SACHDAL.LaySachDTO(strMaSach)
+    'End Function
+
 End Class

@@ -23,14 +23,13 @@ Partial Class frmQLSach
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
-        Me.dgvsach = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnhuy = New System.Windows.Forms.Button()
+        Me.btnxoa = New System.Windows.Forms.Button()
+        Me.btncapnhat = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbxtheloai = New System.Windows.Forms.ComboBox()
         Me.lbmasach = New System.Windows.Forms.Label()
@@ -44,69 +43,29 @@ Partial Class frmQLSach
         Me.tbxdongia = New System.Windows.Forms.TextBox()
         Me.tbxsoluong = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnhuy = New System.Windows.Forms.Button()
-        Me.btnxoa = New System.Windows.Forms.Button()
-        Me.btncapnhat = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.dgvsach = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 84)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(726, 88)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Tìm kiếm"
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 178)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(735, 220)
-        Me.TabControl1.TabIndex = 1
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.dgvsach)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TabPage1.Size = New System.Drawing.Size(727, 194)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Danh sách đầu sách"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'dgvsach
-        '
-        Me.dgvsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvsach.Location = New System.Drawing.Point(0, 0)
-        Me.dgvsach.Name = "dgvsach"
-        Me.dgvsach.Size = New System.Drawing.Size(727, 194)
-        Me.dgvsach.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label3.Location = New System.Drawing.Point(275, 23)
+        Me.Label3.Location = New System.Drawing.Point(375, 20)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(210, 31)
         Me.Label3.TabIndex = 8
@@ -118,6 +77,7 @@ Partial Class frmQLSach
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.btnhuy)
         Me.GroupBox2.Controls.Add(Me.btnxoa)
         Me.GroupBox2.Controls.Add(Me.btncapnhat)
@@ -134,12 +94,39 @@ Partial Class frmQLSach
         Me.GroupBox2.Controls.Add(Me.tbxdongia)
         Me.GroupBox2.Controls.Add(Me.tbxsoluong)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 404)
+        Me.GroupBox2.Location = New System.Drawing.Point(108, 412)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(726, 197)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Tìm kiếm"
+        '
+        'btnhuy
+        '
+        Me.btnhuy.Location = New System.Drawing.Point(440, 154)
+        Me.btnhuy.Name = "btnhuy"
+        Me.btnhuy.Size = New System.Drawing.Size(75, 23)
+        Me.btnhuy.TabIndex = 31
+        Me.btnhuy.Text = "Hủy"
+        Me.btnhuy.UseVisualStyleBackColor = True
+        '
+        'btnxoa
+        '
+        Me.btnxoa.Location = New System.Drawing.Point(348, 154)
+        Me.btnxoa.Name = "btnxoa"
+        Me.btnxoa.Size = New System.Drawing.Size(75, 23)
+        Me.btnxoa.TabIndex = 30
+        Me.btnxoa.Text = "Xóa"
+        Me.btnxoa.UseVisualStyleBackColor = True
+        '
+        'btncapnhat
+        '
+        Me.btncapnhat.Location = New System.Drawing.Point(247, 154)
+        Me.btncapnhat.Name = "btncapnhat"
+        Me.btncapnhat.Size = New System.Drawing.Size(75, 23)
+        Me.btncapnhat.TabIndex = 29
+        Me.btncapnhat.Text = "Cập nhật"
+        Me.btncapnhat.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -256,32 +243,56 @@ Partial Class frmQLSach
         Me.Label6.Text = "Số Lượng"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnhuy
+        'Button1
         '
-        Me.btnhuy.Location = New System.Drawing.Point(440, 154)
-        Me.btnhuy.Name = "btnhuy"
-        Me.btnhuy.Size = New System.Drawing.Size(75, 23)
-        Me.btnhuy.TabIndex = 31
-        Me.btnhuy.Text = "Hủy"
-        Me.btnhuy.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(515, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 32
+        Me.Button1.Text = "Chọn sách"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'btnxoa
+        'TabControl1
         '
-        Me.btnxoa.Location = New System.Drawing.Point(348, 154)
-        Me.btnxoa.Name = "btnxoa"
-        Me.btnxoa.Size = New System.Drawing.Size(75, 23)
-        Me.btnxoa.TabIndex = 30
-        Me.btnxoa.Text = "Xóa"
-        Me.btnxoa.UseVisualStyleBackColor = True
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Location = New System.Drawing.Point(108, 168)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(735, 220)
+        Me.TabControl1.TabIndex = 11
         '
-        'btncapnhat
+        'TabPage1
         '
-        Me.btncapnhat.Location = New System.Drawing.Point(247, 154)
-        Me.btncapnhat.Name = "btncapnhat"
-        Me.btncapnhat.Size = New System.Drawing.Size(75, 23)
-        Me.btncapnhat.TabIndex = 29
-        Me.btncapnhat.Text = "Cập nhật"
-        Me.btncapnhat.UseVisualStyleBackColor = True
+        Me.TabPage1.Controls.Add(Me.dgvsach)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.TabPage1.Size = New System.Drawing.Size(727, 194)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Danh sách đầu sách"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'dgvsach
+        '
+        Me.dgvsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvsach.Location = New System.Drawing.Point(0, 0)
+        Me.dgvsach.Name = "dgvsach"
+        Me.dgvsach.Size = New System.Drawing.Size(727, 194)
+        Me.dgvsach.TabIndex = 0
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Location = New System.Drawing.Point(108, 74)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(726, 88)
+        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Tìm kiếm"
         '
         'ComboBox1
         '
@@ -290,13 +301,6 @@ Partial Class frmQLSach
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(212, 21)
         Me.ComboBox1.TabIndex = 35
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(115, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(212, 20)
-        Me.TextBox1.TabIndex = 34
         '
         'Label8
         '
@@ -307,6 +311,13 @@ Partial Class frmQLSach
         Me.Label8.TabIndex = 32
         Me.Label8.Text = "Tên Sách"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(115, 21)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(212, 20)
+        Me.TextBox1.TabIndex = 34
         '
         'Label9
         '
@@ -323,30 +334,25 @@ Partial Class frmQLSach
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(760, 643)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(956, 694)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label3)
         Me.Name = "frmQLSach"
         Me.Text = "frmQLSach"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents dgvsach As DataGridView
     Friend WithEvents PageSetupDialog1 As PageSetupDialog
     Friend WithEvents Label3 As Label
     Friend WithEvents ErrorProvider1 As ErrorProvider
@@ -364,11 +370,16 @@ Partial Class frmQLSach
     Friend WithEvents tbxdongia As TextBox
     Friend WithEvents tbxsoluong As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnhuy As Button
+    Friend WithEvents btnxoa As Button
+    Friend WithEvents btncapnhat As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents dgvsach As DataGridView
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents btnhuy As Button
-    Friend WithEvents btnxoa As Button
-    Friend WithEvents btncapnhat As Button
 End Class

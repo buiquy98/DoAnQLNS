@@ -1,4 +1,4 @@
-﻿Public Class CHITIETHOADON
+﻿Public Class CHITIETHOADONDTO
     Private maChiTietPhieuNhap As Integer
     Private maPhieuNhap As Integer
     Private maSach As Integer
