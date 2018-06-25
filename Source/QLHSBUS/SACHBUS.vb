@@ -36,6 +36,12 @@ Public Class SACHBUS
         Return sachDAL.NextMS(inextid)
     End Function
 
+    Public Function selectALL_ByMaSach(maSach As Integer, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.selectALL_ByMaSach(maSach, listSach)
+    End Function
     'Public Shared Function LaySachDTO(strMaSach As String) As SACHDTO
     '    Return SACHDAL.LaySachDTO(strMaSach)
     'End Function

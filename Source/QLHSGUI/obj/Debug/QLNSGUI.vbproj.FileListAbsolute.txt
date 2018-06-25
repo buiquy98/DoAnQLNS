@@ -102,3 +102,4 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoTon.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoCongNo.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLTheLoai.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLSach.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONSACH.resources

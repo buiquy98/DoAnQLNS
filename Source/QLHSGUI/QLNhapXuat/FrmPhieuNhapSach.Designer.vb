@@ -37,9 +37,10 @@ Partial Class FrmPhieuNhapSach
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvlistsach = New System.Windows.Forms.DataGridView()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnthem = New System.Windows.Forms.Button()
+        Me.btnxoa = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -191,16 +192,6 @@ Partial Class FrmPhieuNhapSach
         Me.dgvlistsach.Size = New System.Drawing.Size(724, 153)
         Me.dgvlistsach.TabIndex = 19
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(0, 0)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 62
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(374, 555)
@@ -219,15 +210,34 @@ Partial Class FrmPhieuNhapSach
         Me.Button3.Text = "In"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'btnthem
+        '
+        Me.btnthem.Location = New System.Drawing.Point(58, 510)
+        Me.btnthem.Name = "btnthem"
+        Me.btnthem.Size = New System.Drawing.Size(75, 23)
+        Me.btnthem.TabIndex = 65
+        Me.btnthem.Text = "Thêm sách"
+        Me.btnthem.UseVisualStyleBackColor = True
+        '
+        'btnxoa
+        '
+        Me.btnxoa.Location = New System.Drawing.Point(139, 510)
+        Me.btnxoa.Name = "btnxoa"
+        Me.btnxoa.Size = New System.Drawing.Size(142, 23)
+        Me.btnxoa.TabIndex = 66
+        Me.btnxoa.Text = "Xóa dòng đã chọn"
+        Me.btnxoa.UseVisualStyleBackColor = True
+        '
         'FrmPhieuNhapSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(956, 728)
+        Me.Controls.Add(Me.btnxoa)
+        Me.Controls.Add(Me.btnthem)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -261,7 +271,8 @@ Partial Class FrmPhieuNhapSach
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgvlistsach As DataGridView
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents btnthem As Button
+    Friend WithEvents btnxoa As Button
 End Class
