@@ -14,13 +14,11 @@ Public Class CHITIETBAOCAOTONDAL
     Public Sub New(ConnectionString As String)
         Me.connectionString = ConnectionString
     End Sub
-
     Public Function getNextID(ByRef nextID As Integer) As Result
-
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MACTBAOCAOTON] "
-        query &= "FROM [tblCTBaoCaoTon] "
-        query &= "ORDER BY [MACTBAOCAOTON] DESC "
+        query &= "SELECT TOP 1 [maChiTietBaoCaoTon]"
+        query &= " FROM [QLNS].[dbo].[tblChiTietBaoCaoTon]"
+        query &= "ORDER BY [maChiTietBaoCaoTon] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -37,27 +35,26 @@ Public Class CHITIETBAOCAOTONDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MACTBAOCAOTON")
+                            idOnDB = reader("maChiTietBaoCaoTon")
                         End While
                     End If
-                    ' new ID = current ID + 1
+                    'new ID = current ID + 1
                     nextID = idOnDB + 1
                 Catch ex As Exception
                     conn.Close()
-                    ' them that bai!!!
+
                     nextID = 1
-                    Return New Result(False, "Lấy ID kế tiếp của chi tiết báo cáo tồn không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy ID kế tiếp của chi tiết báo cáo không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
-        Return New Result(True) ' thanh cong
+        Return New Result(True)
     End Function
-
-    Public Function insert(ctBCT As CHITIETBAOCAOTONDTO) As Result
+    Public Function insert(ctbct As CHITIETBAOCAOTONDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblCTBaoCaoTon] ([MACTBAOCAOTON], [MASACH],[MABAOCAOTON],[SoLuongTonDau],[PhatSinh],[SoLuongTonCuoi])"
-        query &= "VALUES (@machitiet,@masach,@mabaocao,@tondau,@phatsinh,@toncuoi)"
+        query &= "INSERT INTO [dbo].[tblChiTietBaoCaoTon]([maChiTietBaoCaoTon],[maSach],[maBaoCaoTon],[tonDau],[tonPhatSinh],[tonCuoi])"
+        query &= "VALUES (@maChiTietBaoCaoTon,@maSach,@maBaoCaoTon,@tonDau,@tonPhatSinh,@tonCuoi)"
 
         Dim nextID = 0
         Dim result As Result
@@ -65,7 +62,7 @@ Public Class CHITIETBAOCAOTONDAL
         If (result.FlagResult = False) Then
             Return result
         End If
-        ctBCT.Imachitietphieubaocaoton = nextID
+        ctbct.MaChiTietBaoCaoTon1 = nextID
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -73,12 +70,12 @@ Public Class CHITIETBAOCAOTONDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@machitiet", ctBCT.Imachitietphieubaocaoton)
-                    .Parameters.AddWithValue("@masach", ctBCT.Imasach)
-                    .Parameters.AddWithValue("@mabaocao", ctBCT.Strmabaocaoton)
-                    .Parameters.AddWithValue("@tondau", ctBCT.Itoncuoi)
-                    .Parameters.AddWithValue("@phatsinh", ctBCT.Itonphatsinh)
-                    .Parameters.AddWithValue("@toncuoi", ctBCT.Itoncuoi)
+                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", ctbct.MaChiTietBaoCaoTon1)
+                    .Parameters.AddWithValue("@maSach", ctbct.MaSach1)
+                    .Parameters.AddWithValue("@maBaoCaoTon", ctbct.MaBaoCaoTon1)
+                    .Parameters.AddWithValue("@tonDau", ctbct.TonDau1)
+                    .Parameters.AddWithValue("@tonPhatSinh", ctbct.TonPhatSinh1)
+                    .Parameters.AddWithValue("@tonCuoi", ctbct.TonCuoi1)
                 End With
                 Try
                     conn.Open()
@@ -86,23 +83,23 @@ Public Class CHITIETBAOCAOTONDAL
                 Catch ex As Exception
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Thêm báo cáo không thành công", ex.StackTrace)
+                    Return New Result(False, "Thêm chi tiết báo cáo không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
 
-
     Public Function update(mact As Integer, tonDau As Integer, phatSinh As Integer, tonCuoi As Integer, listCTBCT As List(Of CHITIETBAOCAOTONDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [tblCTBaoCaoTon] SET"
-        query &= "[SoLuongTonDau] = @tondau"
-        query &= ",[PhatSinh] = @phatsinh"
-        query &= ",[SoLuongTonCuoi] = @toncuoi"
+
+        query &= " UPDATE [dbo].[tblChiTietBaoCaoTon] SET "
+        query &= " ,[tonDau] = @tonDau"
+        query &= " ,[tonPhatSinh] = @tonPhatSinh"
+        query &= " ,[tonCuoi] = @tonCuoi"
         query &= " WHERE "
-        query &= " [MACTBAOCAOTON] = @machitietbaocao "
+        query &= " [maChiTietBaoCaoTon] = @maChiTietBaoCaoTon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -110,10 +107,10 @@ Public Class CHITIETBAOCAOTONDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@tondau", tonDau)
-                    .Parameters.AddWithValue("@phatsinh", phatSinh)
-                    .Parameters.AddWithValue("@toncuoi", tonCuoi)
-                    .Parameters.AddWithValue("@machitietbaocao", mact)
+                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", mact)
+                    .Parameters.AddWithValue("@tonDau", tonDau)
+                    .Parameters.AddWithValue("@tonPhatSinh", phatSinh)
+                    .Parameters.AddWithValue("@tonCuoi", tonCuoi)
                 End With
                 Try
                     conn.Open()
@@ -122,18 +119,18 @@ Public Class CHITIETBAOCAOTONDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Cập nhật báo cáo không thành công", ex.StackTrace)
+                    Return New Result(False, "Cập nhật báo chi tiết cáo không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL(ByRef listCTBCT As List(Of CHITIETBAOCAOTONDTO)) As Result
+    Public Function selectALL(ByRef listBaoCaoTon As List(Of CHITIETBAOCAOTONDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [tblCTBaoCaoTon]"
+        query &= " FROM [QLNS].[dbo].[tblChiTietBaoCaoTon]"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -148,28 +145,27 @@ Public Class CHITIETBAOCAOTONDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listCTBCT.Clear()
+                        listBaoCaoTon.Clear()
                         While reader.Read()
-                            listCTBCT.Add(New CHITIETBAOCAOTONDTO(reader("MACTBAOCAOTON"), reader("MASACH"), reader("MABAOCAOTON"), reader("SoLuongTonDau"), reader("PhatSinh"), reader("SoLuongTonCuoi")))
+                            listBaoCaoTon.Add(New CHITIETBAOCAOTONDTO(reader("maChiTietBaoCaoTon"), reader("maSach"), reader("maBaoCaoTon"), reader("tonDau"), reader("tonPhatSinh"), reader("tonCuoi")))
                         End While
                     End If
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Lấy tất cả báo cáo không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy tất danh sách báo cáo không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
     Public Function selectALL_ByMaBaoCaoTon(maBaoCao As Integer, ByRef listCTPhieuNhap As List(Of CHITIETBAOCAOTONDTO)) As Result
 
         Dim query As String = String.Empty
         query &= "SELECT *"
-        query &= "FROM [tblCTBaoCaoTon] "
-        query &= "WHERE [MABAOCAOTON] = @mabaocao "
+        query &= "FROM [dbo].[tblChiTietBaoCaoTon] "
+        query &= "WHERE [maChiTietBaoCaoTon] = @maChiTietBaoCaoTon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -177,7 +173,7 @@ Public Class CHITIETBAOCAOTONDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@mabaocao", maBaoCao)
+                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", maBaoCao)
                 End With
                 Try
                     conn.Open()
@@ -186,7 +182,7 @@ Public Class CHITIETBAOCAOTONDAL
                     If reader.HasRows = True Then
                         listCTPhieuNhap.Clear()
                         While reader.Read()
-                            listCTPhieuNhap.Add(New CHITIETBAOCAOTONDTO(reader("MACTBAOCAOTON"), reader("MASACH"), reader("MABAOCAOTON"), reader("SoLuongTonDau"), reader("PhatSinh"), reader("SoLuongTonCuoi")))
+                            listCTPhieuNhap.Add(New CHITIETBAOCAOTONDTO(reader("maChiTietBaoCaoTon"), reader("maSach"), reader("maBaoCaoTon"), reader("tonDau"), reader("tonPhatSinh"), reader("tonCuoi")))
                         End While
                     End If
 
@@ -203,9 +199,9 @@ Public Class CHITIETBAOCAOTONDAL
     Public Function delete(maCTBCT As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= " DELETE FROM [tblCTBaoCaoTon] "
+        query &= " DELETE FROM [dbo].[tblChiTietBaoCaoTon] "
         query &= " WHERE "
-        query &= " [MACTBAOCAOTON] = @MACTBAOCAOTON "
+        query &= " [maChiTietBaoCaoTon] = @maChiTietBaoCaoTon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -213,7 +209,7 @@ Public Class CHITIETBAOCAOTONDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MACTBAOCAOTON", maCTBCT)
+                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", maCTBCT)
                 End With
                 Try
                     conn.Open()

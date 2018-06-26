@@ -17,8 +17,8 @@ Public Class frmTheLoai
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnthem.Click
-        Dim ls As THELOAIDTO
-        ls = New THELOAIDTO()
+        Dim ls As LOAISACHDTO
+        ls = New LOAISACHDTO()
 
         '1. Mapping data from GUI control
         ls.Imaloaisach = Convert.ToInt32(tbxmatheloai.Text)

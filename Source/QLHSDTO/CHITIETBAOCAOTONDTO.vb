@@ -1,75 +1,71 @@
 ﻿Public Class CHITIETBAOCAOTONDTO
-    Private _imachitietphieubaocaoton As Integer
-    Private _imasach As Integer
-    Private _strmabaocaoton As Integer
-    Private _itondau As Integer
-    Private _itonphatsinh As Integer
-    Private _itoncuoi As Integer
+    Private maChiTietBaoCaoTon As Integer
+    Private maSach As Integer
+    Private maBaoCaoTon As Integer
+    Private tonDau As Integer
+    Private tonPhatSinh As Integer
+    Private tonCuoi As Integer
 
     Public Sub New(maChiTietBaoCaoTon As Integer, maSach As Integer, maBaoCaoTon As Integer, tonDau As Integer, tonPhatSinh As Integer, tonCuoi As Integer)
-        Me.Imachitietphieubaocaoton = maChiTietBaoCaoTon
-        Me.Imasach = maSach
-        Me.Strmabaocaoton = maBaoCaoTon
-        Me.Itondau = tonDau
-        Me.Itonphatsinh = tonPhatSinh
-        Me.Itoncuoi = tonCuoi
+        Me.maChiTietBaoCaoTon = maChiTietBaoCaoTon
+        Me.maSach = maSach
+        Me.maBaoCaoTon = maBaoCaoTon
+        Me.tonDau = tonDau
+        Me.tonPhatSinh = tonPhatSinh
+        Me.tonCuoi = tonCuoi
     End Sub
-    Public Property Imachitietphieubaocaoton As Integer
+
+    Public Property MaChiTietBaoCaoTon1 As Integer
         Get
-            Return _imachitietphieubaocaoton
+            Return maChiTietBaoCaoTon
         End Get
         Set(value As Integer)
-            _imachitietphieubaocaoton = value
+            maChiTietBaoCaoTon = value
         End Set
     End Property
 
-    Public Property Imasach As Integer
+    Public Property MaSach1 As Integer
         Get
-            Return _imasach
+            Return maSach
         End Get
         Set(value As Integer)
-            _imasach = value
+            maSach = value
         End Set
     End Property
 
-    Public Property Strmabaocaoton As Integer
+    Public Property MaBaoCaoTon1 As Integer
         Get
-            Return _strmabaocaoton
+            Return maBaoCaoTon
         End Get
         Set(value As Integer)
-            _strmabaocaoton = value
+            maBaoCaoTon = value
         End Set
     End Property
 
-    Public Property Itondau As Integer
+    Public Property TonDau1 As Integer
         Get
-            Return _itondau
+            Return tonDau
         End Get
         Set(value As Integer)
-            _itondau = value
+            tonDau = value
         End Set
     End Property
 
-    Public Property Itonphatsinh As Integer
+    Public Property TonPhatSinh1 As Integer
         Get
-            Return _itonphatsinh
+            Return tonPhatSinh
         End Get
         Set(value As Integer)
-            _itonphatsinh = value
+            tonPhatSinh = value
         End Set
     End Property
 
-    Public Property Itoncuoi As Integer
+    Public Property TonCuoi1 As Integer
         Get
-            Return _itoncuoi
+            Return tonCuoi
         End Get
         Set(value As Integer)
-            _itoncuoi = value
+            tonCuoi = value
         End Set
     End Property
-
-
-
-
-
 End Class

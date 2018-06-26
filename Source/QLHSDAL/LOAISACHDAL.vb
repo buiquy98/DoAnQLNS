@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Imports QLHSDTO
 Imports Utility
+
 Public Class LOAISACHDAL
     Private connectionString As String
 
@@ -13,11 +14,12 @@ Public Class LOAISACHDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function nextmtl(ByRef inextmtl As Integer)
+    Public Function getNextID(ByRef nextID As Integer) As Result
+
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [maloaisach] "
-        query &= "FROM [tblLoaiSach] "
-        query &= "ORDER BY [maloaisach] DESC "
+        query &= "SELECT TOP 1 [maLoaiSach] "
+        query &= "FROM [QLNS].[dbo].[tblLoaiSach] "
+        query &= "ORDER BY [maLoaiSach] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -34,35 +36,34 @@ Public Class LOAISACHDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("maloaisach")
+                            idOnDB = reader("maLoaiSach")
                         End While
                     End If
                     ' new ID = current ID + 1
-                    inextmtl = idOnDB + 1
+                    nextID = idOnDB + 1
                 Catch ex As Exception
                     conn.Close()
                     ' them that bai!!!
-                    inextmtl = 1
+                    nextID = 1
                     Return New Result(False, "Lấy ID kế tiếp của loại sách không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
+    Public Function insert(ls As LOAISACHDTO) As Result
 
-#Region "them xoa sua"
-    Public Function insert(theloai As THELOAIDTO)
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblLoaiSach] ([maloaisach], [tenloaisach])"
-        query &= "VALUES (@maloaisach,@tenloaisach)"
+        query &= "INSERT INTO [dbo].[tblLoaiSach] ([maLoaiSach], [tenLoaiSach])"
+        query &= "VALUES (@maLoaiSach,@tenLoaiSach)"
 
-        Dim inextID = 0
+        Dim nextID = 0
         Dim result As Result
-        result = nextmtl(inextID)
+        result = getNextID(nextID)
         If (result.FlagResult = False) Then
             Return result
         End If
-        theloai.Imaloaisach = inextID
+        ls.Imaloaisach = nextID
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -70,8 +71,8 @@ Public Class LOAISACHDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@maloaisach", theloai.Imaloaisach)
-                    .Parameters.AddWithValue("@tenloaisach", theloai.Strtenloaisach)
+                    .Parameters.AddWithValue("@maLoaiSach", ls.Imaloaisach)
+                    .Parameters.AddWithValue("@tenLoaiSach", ls.Strtenloaisach)
                 End With
                 Try
                     conn.Open()
@@ -85,13 +86,14 @@ Public Class LOAISACHDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function update(theloai As THELOAIDTO) As Result
+
+    Public Function update(ls As LOAISACHDTO) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [tblLoaiSach] SET"
-        query &= " [TENLOAISACH] = @tenloaisach "
+        query &= " UPDATE [dbo].[tblLoaiSach] SET"
+        query &= " [tenLoaiSach] = @tenLoaiSach "
         query &= "WHERE "
-        query &= " [MALOAISACH] = @maloaisach "
+        query &= " [maLoaiSach] = @maLoaiSach "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -99,8 +101,8 @@ Public Class LOAISACHDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@maloaisach", theloai.Imaloaisach)
-                    .Parameters.AddWithValue("@tenloaisach", theloai.Strtenloaisach)
+                    .Parameters.AddWithValue("@maLoaiSach", ls.Imaloaisach)
+                    .Parameters.AddWithValue("@tenLoaiSach", ls.Strtenloaisach)
                 End With
                 Try
                     conn.Open()
@@ -116,39 +118,11 @@ Public Class LOAISACHDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function delete(imaloaisach As Integer) As Result
-
-        Dim query As String = String.Empty
-        query &= " DELETE FROM [tblLoaiSach] "
-        query &= " WHERE "
-        query &= " [maloaisach] = @maloaisach "
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@maloaisach", imaloaisach)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
-                    Console.WriteLine(ex.StackTrace)
-                    conn.Close()
-                    ' them that bai!!!
-                    Return New Result(False, "Xóa loại sách không thành công", ex.StackTrace)
-                End Try
-            End Using
-        End Using
-        Return New Result(True) ' thanh cong
-    End Function
-    Public Function selectALL(ByRef listtheloai As List(Of THELOAIDTO)) As Result
+    Public Function selectALL(ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [tblLoaiSach]"
+        query &= " FROM [dbo].[tblLoaiSach]"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -163,9 +137,9 @@ Public Class LOAISACHDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listtheloai.Clear()
+                        listLoaiSach.Clear()
                         While reader.Read()
-                            listtheloai.Add(New THELOAIDTO(reader("maloaisach"), reader("tenloaisach")))
+                            listLoaiSach.Add(New LOAISACHDTO(reader("maLoaiSach"), reader("tenLoaiSach")))
                         End While
                     End If
                 Catch ex As Exception
@@ -178,5 +152,108 @@ Public Class LOAISACHDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-#End Region
+
+
+    Public Function selectALL_ByName(name As String, ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT *"
+        query &= " FROM [dbo].[tblLoaiSach]"
+        query &= " WHERE "
+        query &= " [tenLoaiSach] = @tenLoaiSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@tenLoaiSach", name)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listLoaiSach.Clear()
+                        While reader.Read()
+                            listLoaiSach.Add(New LOAISACHDTO(reader("maLoaiSach"), reader("tenLoaiSach")))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lấy tất cả loại sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function selectALL_ByMaLoaiSach(maLoai As Integer, ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT *"
+        query &= " FROM [dbo].[tblLoaiSach]"
+        query &= " WHERE "
+        query &= " [maLoaiSach] = @maLoaiSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@maLoaiSach", maLoai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listLoaiSach.Clear()
+                        While reader.Read()
+                            listLoaiSach.Add(New LOAISACHDTO(reader("maLoaiSach"), reader("tenLoaiSach")))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lấy tất cả loại sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function delete(maLoaiSach As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= " DELETE FROM [dbo].[tblLoaiSach] "
+        query &= " WHERE "
+        query &= " [maLoaiSach] = @maLoaiSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@maLoaiSach", maLoaiSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Xóa loại sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
 End Class

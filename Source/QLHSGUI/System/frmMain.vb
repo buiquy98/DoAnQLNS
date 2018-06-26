@@ -94,4 +94,10 @@ Public Class frmMain
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
+
+    Private Sub QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem.Click
+        Dim frmdg As frmQuanLiChiTietBaoCaoTon = New frmQuanLiChiTietBaoCaoTon()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

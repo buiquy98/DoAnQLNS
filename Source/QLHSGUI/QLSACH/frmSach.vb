@@ -9,7 +9,7 @@ Public Class frmSach
         sachbus = New SACHBUS()
         theloaibus = New LOAISACHBUS()
         'load the loai 
-        Dim listtheloai = New List(Of THELOAIDTO)
+        Dim listtheloai = New List(Of LOAISACHDTO)
         Dim result As Result
         result = theloaibus.selectall(listtheloai)
         If (result.FlagResult = False) Then

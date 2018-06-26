@@ -104,6 +104,12 @@
     <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoTon.Designer.vb">
+      <DependentUpon>frmQuanLiChiTietBaoCaoTon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoTon.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QLNhapXuat\frmHoaDonBanSach.Designer.vb">
       <DependentUpon>frmHoaDonBanSach.vb</DependentUpon>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.resx">
       <DependentUpon>frmQuanLiChiTietBaoCaoCongNo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoTon.resx">
+      <DependentUpon>frmQuanLiChiTietBaoCaoTon.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLSACH\frmCHONSACH.resx">
       <DependentUpon>frmCHONSACH.vb</DependentUpon>

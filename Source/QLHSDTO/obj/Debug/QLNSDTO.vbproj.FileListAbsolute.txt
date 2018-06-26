@@ -26,3 +26,13 @@ D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbproj.GenerateResource.Cache
 D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.dll
 D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.xml
 D:\Git\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.pdb
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.dll
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.pdb
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\bin\Debug\QLHSDTO.xml
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbprojAssemblyReference.cache
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.Resources.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbproj.GenerateResource.cache
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLNSDTO.vbproj.CoreCompileInputs.cache
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.dll
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.xml
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSDTO\obj\Debug\QLHSDTO.pdb

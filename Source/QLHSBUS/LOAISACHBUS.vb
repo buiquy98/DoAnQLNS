@@ -1,51 +1,71 @@
 ﻿Imports QLHSDAL
 Imports QLHSDTO
 Imports Utility
+
 Public Class LOAISACHBUS
-    Private theloaidal As LOAISACHDAL
+    Private lsDAL As LOAISACHDAL
+
     Public Sub New()
-        theloaidal = New LOAISACHDAL()
+        lsDAL = New LOAISACHDAL()
     End Sub
 
     Public Sub New(connectionString As String)
-        theloaidal = New LOAISACHDAL(connectionString)
+        lsDAL = New LOAISACHDAL(connectionString)
     End Sub
 
-    Public Function isValidName(theloai As THELOAIDTO) As Boolean
+    Public Function isValidName(ls As LOAISACHDTO) As Boolean
 
-        If (theloai.Strtenloaisach.Length < 1) Then
+        If (ls.Strtenloaisach.Length < 1) Then
             Return False
         End If
+
         Return True
 
     End Function
 
-    Public Function insert(ls As THELOAIDTO) As Result
+    Public Function insert(ls As LOAISACHDTO) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return theloaidal.insert(ls)
+        Return lsDAL.insert(ls)
     End Function
 
-    Public Function update(ls As THELOAIDTO) As Result
+    Public Function update(ls As LOAISACHDTO) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return theloaidal.update(ls)
+        Return lsDAL.update(ls)
     End Function
 
     Public Function delete(maLoai As Integer) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return theloaidal.delete(maLoai)
+        Return lsDAL.delete(maLoai)
     End Function
 
-    Public Function getNextID(ByRef inextID As Integer) As Result
-        Return theloaidal.nextmtl(inextID)
+    Public Function selectAll(ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return lsDAL.selectALL(listLoaiSach)
     End Function
 
-    Public Function selectall(ByRef listtheloai As List(Of THELOAIDTO)) As Result
-        Return theloaidal.selectall(listtheloai)
+    Public Function getNextID(ByRef nextID As Integer) As Result
+        Return lsDAL.getNextID(nextID)
+    End Function
+
+    Public Function selectAll_ByName(name As String, ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return lsDAL.selectALL_ByName(name, listLoaiSach)
+    End Function
+
+    Public Function selectAll_ByMaLoaiSach(maLoai As Integer, ByRef listLoaiSach As List(Of LOAISACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return lsDAL.selectALL_ByMaLoaiSach(maLoai, listLoaiSach)
     End Function
 End Class

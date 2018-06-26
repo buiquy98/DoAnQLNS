@@ -2,7 +2,7 @@
 Imports QLHSDTO
 Imports Utility
 
-Public Class CTBaoCaoTonBUS
+Public Class CHITIETBAOCAOTONBUS
     Private ctbctDAL As CHITIETBAOCAOTONDAL
 
     Public Sub New()
@@ -20,12 +20,6 @@ Public Class CTBaoCaoTonBUS
         Return ctbctDAL.insert(ct)
     End Function
 
-    'Public Function update(ctBCT As CTBaoCaoTonDTO) As Result
-    '    '1. verify data here!!
-
-    '    '2. insert to DB
-    '    Return ctbctDAL.update(ctBCT)
-    'End Function
 
     Public Function update(mact As Integer, tonDau As Integer, phatSinh As Integer, tonCuoi As Integer, listCTBCT As List(Of CHITIETBAOCAOTONDTO)) As Result
         '1. verify data here!!

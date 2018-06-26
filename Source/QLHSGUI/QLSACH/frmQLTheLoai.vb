@@ -21,9 +21,9 @@ Public Class frmQLTheLoai
 
 
     Public Function LoadContent()
-        Dim listtheloai = New List(Of THELOAIDTO)
+        Dim listtheloai = New List(Of LOAISACHDTO)
         Dim result As Result
-        result = lsbus.selectall(listtheloai)
+        result = lsbus.selectAll(listtheloai)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách thể loại không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -56,7 +56,7 @@ Public Class frmQLTheLoai
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvTheLoai.RowCount) Then
             Try
-                Dim tl = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, THELOAIDTO)
+                Dim tl = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, LOAISACHDTO)
                 tbxmatheloai.Text = tl.Imaloaisach
                 tbxtentheloai.Text = tl.Strtenloaisach
             Catch ex As Exception
@@ -91,7 +91,7 @@ Public Class frmQLTheLoai
                             If (currentRowIndex >= 0) Then
                                 dgvTheLoai.Rows(currentRowIndex).Selected = True
                                 Try
-                                    Dim nh = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, THELOAIDTO)
+                                    Dim nh = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, LOAISACHDTO)
                                     tbxmatheloai.Text = nh.Imaloaisach
                                     'tbxtentheloai.Text = nh.Strtenloaisach
                                 Catch ex As Exception
@@ -125,8 +125,8 @@ Public Class frmQLTheLoai
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvTheLoai.RowCount) Then
             Try
-                Dim nh As THELOAIDTO
-                nh = New THELOAIDTO()
+                Dim nh As LOAISACHDTO
+                nh = New LOAISACHDTO()
 
                 '1. Mapping data from GUI control
                 nh.Imaloaisach = Convert.ToInt32(tbxmatheloai.Text)
@@ -149,7 +149,7 @@ Public Class frmQLTheLoai
                     ' Hightlight the row has been updated on table
                     dgvTheLoai.Rows(currentRowIndex).Selected = True
                     Try
-                        nh = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, THELOAIDTO)
+                        nh = CType(dgvTheLoai.Rows(currentRowIndex).DataBoundItem, LOAISACHDTO)
                         tbxmatheloai.Text = nh.Imaloaisach.ToString()
                         tbxtentheloai.Text = nh.Strtenloaisach
                     Catch ex As Exception

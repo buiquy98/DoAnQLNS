@@ -1,4 +1,4 @@
-﻿Public Class THELOAIDTO
+﻿Public Class LOAISACHDTO
     Private _imatheloai As Integer
     Private _strtenloaisach As String
     Public Sub New()

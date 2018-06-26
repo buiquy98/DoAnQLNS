@@ -22,7 +22,7 @@ Public Class frmQLSach
         ' cbxtheloai.Enabled = False
         tbxtensach.Enabled = False
         'Load loai sach
-        Dim listLoaiSach = New List(Of THELOAIDTO)
+        Dim listLoaiSach = New List(Of LOAISACHDTO)
 
         Dim result As Result
         result = lsbus.selectall(listLoaiSach)
