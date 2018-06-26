@@ -16,16 +16,10 @@ Public Class PHIEUNHAPDAL
 
 
     Public Function getNextID(ByRef StrMaphieu As String) As Result 'ex: 18222229
-
-        StrMaphieu = String.Empty
-        Dim y = DateTime.Now.Year
-        Dim x = y.ToString().Substring(2)
-        StrMaphieu = x + "000000"
-
         Dim query As String = String.Empty
-        query &= "Select TOP 1 [MaPhieuNhap] "
-        query &= "From [tblPhieuNhapSach] "
-        query &= "Order By [MaPhieuNhap] DESC "
+        query &= "SELECT TOP 1 [MAPHIEUNHAP] "
+        query &= "FROM [tblPhieuNhap] "
+        query &= "ORDER BY [MAPHIEUNHAP] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -38,36 +32,20 @@ Public Class PHIEUNHAPDAL
                     conn.Open()
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
-                    Dim msOnDB As String
-                    msOnDB = Nothing
+                    Dim idOnDB As Integer
+                    idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            msOnDB = reader("MaPhieuNhap")
+                            idOnDB = reader("MAPHIEUNHAP")
                         End While
                     End If
-                    If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim currentYear = DateTime.Now.Year.ToString().Substring(2)
-                        Dim iCurrentYear = Integer.Parse(currentYear)
-                        Dim currentYearOnDB = msOnDB.Substring(0, 2)
-                        Dim icurrentYearOnDB = Integer.Parse(currentYearOnDB)
-                        Dim year = iCurrentYear
-                        If (year < icurrentYearOnDB) Then
-                            year = icurrentYearOnDB
-                        End If
-                        StrMaphieu = year.ToString()
-                        Dim v = msOnDB.Substring(2)
-                        Dim convertDecimal = Convert.ToDecimal(v)
-                        convertDecimal = convertDecimal + 1
-                        Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
-                        StrMaphieu = StrMaphieu + tmp
-                        System.Console.WriteLine(StrMaphieu)
-                    End If
-
+                    ' new ID = current ID + 1
+                    StrMaphieu = idOnDB + 1
                 Catch ex As Exception
-                    conn.Close() ' that bai!!!
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy tự động Mã phiếu nhập kế tiếp không thành công", ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    StrMaphieu = 1
+                    Return New Result(False, "Lấy ID kế tiếp của Loại học sinh không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using

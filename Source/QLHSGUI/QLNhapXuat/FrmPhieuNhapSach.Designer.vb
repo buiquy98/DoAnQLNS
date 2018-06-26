@@ -36,16 +36,22 @@ Partial Class FrmPhieuNhapSach
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvlistsach = New System.Windows.Forms.DataGridView()
+        Me.dgvsach = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnthem = New System.Windows.Forms.Button()
         Me.btnxoa = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.tbxmasach = New System.Windows.Forms.TextBox()
+        Me.tbxsoluongnhap = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.dgvlistsach, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblMain
@@ -84,10 +90,12 @@ Partial Class FrmPhieuNhapSach
         'tbxmaphieunhap
         '
         Me.tbxmaphieunhap.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxmaphieunhap.Enabled = False
         Me.tbxmaphieunhap.Location = New System.Drawing.Point(117, 32)
         Me.tbxmaphieunhap.Name = "tbxmaphieunhap"
         Me.tbxmaphieunhap.Size = New System.Drawing.Size(224, 20)
         Me.tbxmaphieunhap.TabIndex = 2
+        Me.tbxmaphieunhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -175,7 +183,7 @@ Partial Class FrmPhieuNhapSach
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.dgvlistsach)
+        Me.TabPage2.Controls.Add(Me.dgvsach)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -184,17 +192,18 @@ Partial Class FrmPhieuNhapSach
         Me.TabPage2.Text = "Chi tiết phiếu nhập"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'dgvlistsach
+        'dgvsach
         '
-        Me.dgvlistsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvlistsach.Location = New System.Drawing.Point(6, 6)
-        Me.dgvlistsach.Name = "dgvlistsach"
-        Me.dgvlistsach.Size = New System.Drawing.Size(724, 153)
-        Me.dgvlistsach.TabIndex = 19
+        Me.dgvsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvsach.Location = New System.Drawing.Point(6, 6)
+        Me.dgvsach.MultiSelect = False
+        Me.dgvsach.Name = "dgvsach"
+        Me.dgvsach.Size = New System.Drawing.Size(724, 153)
+        Me.dgvsach.TabIndex = 19
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(374, 555)
+        Me.Button2.Location = New System.Drawing.Point(306, 645)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 63
@@ -203,7 +212,7 @@ Partial Class FrmPhieuNhapSach
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(455, 555)
+        Me.Button3.Location = New System.Drawing.Point(426, 645)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 64
@@ -228,20 +237,67 @@ Partial Class FrmPhieuNhapSach
         Me.btnxoa.Text = "Xóa dòng đã chọn"
         Me.btnxoa.UseVisualStyleBackColor = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.tbxsoluongnhap)
+        Me.GroupBox3.Controls.Add(Me.tbxmasach)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Location = New System.Drawing.Point(58, 562)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(740, 77)
+        Me.GroupBox3.TabIndex = 67
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Thông tin nhập"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(92, 20)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Mã sách"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(92, 46)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Số lượng nhập"
+        '
+        'tbxmasach
+        '
+        Me.tbxmasach.Enabled = False
+        Me.tbxmasach.Location = New System.Drawing.Point(205, 17)
+        Me.tbxmasach.Name = "tbxmasach"
+        Me.tbxmasach.Size = New System.Drawing.Size(267, 20)
+        Me.tbxmasach.TabIndex = 2
+        '
+        'tbxsoluongnhap
+        '
+        Me.tbxsoluongnhap.Location = New System.Drawing.Point(205, 44)
+        Me.tbxsoluongnhap.Name = "tbxsoluongnhap"
+        Me.tbxsoluongnhap.Size = New System.Drawing.Size(267, 20)
+        Me.tbxsoluongnhap.TabIndex = 3
+        '
         'FrmPhieuNhapSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(956, 728)
-        Me.Controls.Add(Me.btnxoa)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnthem)
+        Me.Controls.Add(Me.btnxoa)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblMain)
+        Me.Controls.Add(Me.TabControl2)
         Me.Name = "FrmPhieuNhapSach"
         Me.Text = "FrmPhieuNhapSach"
         Me.GroupBox1.ResumeLayout(False)
@@ -250,7 +306,9 @@ Partial Class FrmPhieuNhapSach
         Me.GroupBox2.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgvlistsach, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -270,9 +328,14 @@ Partial Class FrmPhieuNhapSach
     Friend WithEvents Label4 As Label
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents dgvlistsach As DataGridView
+    Friend WithEvents dgvsach As DataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnthem As Button
     Friend WithEvents btnxoa As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents tbxsoluongnhap As TextBox
+    Friend WithEvents tbxmasach As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
 End Class

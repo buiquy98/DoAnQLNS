@@ -4,7 +4,7 @@ Imports Utility
 Public Class frmCHONSACH
 
     Private sbus As SACHBUS
-
+    Public isMulti As Boolean
     Public listSachDuocChon As List(Of Integer)
     Public Function LoadContent()
         listSachDuocChon = New List(Of Integer)
