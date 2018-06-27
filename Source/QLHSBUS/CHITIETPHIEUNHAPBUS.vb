@@ -2,15 +2,15 @@
 Imports QLHSDTO
 Imports Utility
 
-Public Class CTPhieuNhapBUS
-    Private ctDAL As CTPhieuNhapDAL
+Public Class CHITIETPHIEUNHAPBUS
+    Private ctDAL As CHITIETPHIEUNHAPDAL
 
     Public Sub New()
-        ctDAL = New CTPhieuNhapDAL()
+        ctDAL = New CHITIETPHIEUNHAPDAL()
     End Sub
 
     Public Sub New(connectionString As String)
-        ctDAL = New CTPhieuNhapDAL(connectionString)
+        ctDAL = New CHITIETPHIEUNHAPDAL(connectionString)
     End Sub
 
     Public Function isValidMaPhieuNhap(phieuNhap As CHITIETPHIEUNHAPDTO) As Boolean
@@ -52,7 +52,7 @@ Public Class CTPhieuNhapBUS
         '1. verify data here!!
 
         '2. insert to DB
-        Return ctDAL.selectALL(listCt)
+        Return ctDAL.selectAll(listCt)
     End Function
 
     Public Function getNextID(ByRef nextID As Integer) As Result

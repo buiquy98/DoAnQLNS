@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports QLHSDTO
 Imports Utility
 
-Public Class QuyDinhDAL
+Public Class QUYDINHDAL
     Private connectionString As String
 
     Public Sub New()
@@ -55,7 +55,7 @@ Public Class QuyDinhDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL(ByRef quydinh As List(Of QuyDinhDTO)) As Result
+    Public Function selectALL(ByRef quydinh As List(Of QUYDINHDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
@@ -76,7 +76,7 @@ Public Class QuyDinhDAL
                     If reader.HasRows = True Then
                         quydinh.Clear()
                         While reader.Read()
-                            quydinh.Add(New QuyDinhDTO(reader("ID"), reader("LuongNhapToithieu"), reader("LuongTonToiDa"), reader("TienNoToiDa"), reader("LuongTonToiThieu"), reader("ApDung")))
+                            quydinh.Add(New QUYDINHDTO(reader("ID"), reader("LuongNhapToithieu"), reader("LuongTonToiDa"), reader("TienNoToiDa"), reader("LuongTonToiThieu"), reader("ApDung")))
                         End While
                     End If
                 Catch ex As Exception

@@ -55,8 +55,8 @@ Public Class PHIEUNHAPDAL
     Public Function insert(pn As PHIEUNHAPDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblPhieuNhapSach] ([MaPhieuNhap], [NgayNhapSach], [SoLuongNhap], [TenSach], [TheLoai], [TacGia])"
-        query &= "VALUES (@MaPhieuNhap,@NgayNhapSach,@SoLuongNhap,@TenSach,@TheLoai,@TacGia)"
+        query &= "INSERT INTO [tblPhieuNhap] ([MaPhieuNhap], [NgayNhap])"
+        query &= "VALUES (@MaPhieuNhap,@NgayNhapSach)"
 
         'get madocgia
         Dim nextmadocgia = "1"

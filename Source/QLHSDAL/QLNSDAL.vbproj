@@ -89,7 +89,7 @@
     </Compile>
     <Compile Include="CHITIETBAOCAOCONGNODAL.vb" />
     <Compile Include="PHIEUTHUTIENDAL.vb" />
-    <Compile Include="QUIDINHDAL.vb" />
+    <Compile Include="QUYDINHDAL.vb" />
     <Compile Include="SACHDAL.vb" />
     <Compile Include="LOAISACHDAL.vb" />
   </ItemGroup>

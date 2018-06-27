@@ -1,0 +1,4 @@
+sua loi k load len dc qui dinh
+
+insert into QLNS.dbo.tblQuyDinh(ID,luongNhapToiThieu,luongTonToiDa,tienNoToiDa,luongTonToiThieu,apDung)
+values(1,150,300,20000,20,1);

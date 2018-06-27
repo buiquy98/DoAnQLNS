@@ -62,13 +62,14 @@
 
     Public Sub New()
     End Sub
-    Public Sub New(masach As Integer, tensach As String, maloaisach As Integer, tacgia As String, dongia As Integer, soluongton As Integer)
+    Public Sub New(masach As Integer, tensach As String, maloaisach As Integer, tacgia As String, soluongton As Integer, dongia As Integer)
         Me.Imasach = masach
         Me._strtensach = tensach
         Me._imaloaisach = maloaisach
         Me.Strtacgia = tacgia
-        Me.Idongia = dongia
         Me.Isoluongton = soluongton
+        Me.Idongia = dongia
+
     End Sub
 
 

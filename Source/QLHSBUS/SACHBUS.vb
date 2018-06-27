@@ -42,8 +42,14 @@ Public Class SACHBUS
         '2. insert to DB
         Return sachDAL.selectALL_ByMaSach(maSach, listSach)
     End Function
-    'Public Shared Function LaySachDTO(strMaSach As String) As SACHDTO
-    '    Return SACHDAL.LaySachDTO(strMaSach)
-    'End Function
+
+
+
+    Public Function update_SoLuongTon(sach As SACHDTO) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.update_SoLuongTon(sach)
+    End Function
 
 End Class

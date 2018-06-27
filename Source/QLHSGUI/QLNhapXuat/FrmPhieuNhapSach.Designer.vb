@@ -24,7 +24,7 @@ Partial Class FrmPhieuNhapSach
     Private Sub InitializeComponent()
         Me.lblMain = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpngaynhap = New System.Windows.Forms.DateTimePicker()
         Me.tbxmaphieunhap = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,10 +42,10 @@ Partial Class FrmPhieuNhapSach
         Me.btnthem = New System.Windows.Forms.Button()
         Me.btnxoa = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.tbxmasach = New System.Windows.Forms.TextBox()
         Me.tbxsoluongnhap = New System.Windows.Forms.TextBox()
+        Me.tbxmasach = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -69,7 +69,7 @@ Partial Class FrmPhieuNhapSach
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.dtpngaynhap)
         Me.GroupBox1.Controls.Add(Me.tbxmaphieunhap)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -80,12 +80,12 @@ Partial Class FrmPhieuNhapSach
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Thông tin phiếu nhập"
         '
-        'DateTimePicker1
+        'dtpngaynhap
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(117, 66)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(224, 20)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.dtpngaynhap.Location = New System.Drawing.Point(117, 66)
+        Me.dtpngaynhap.Name = "dtpngaynhap"
+        Me.dtpngaynhap.Size = New System.Drawing.Size(224, 20)
+        Me.dtpngaynhap.TabIndex = 3
         '
         'tbxmaphieunhap
         '
@@ -141,6 +141,7 @@ Partial Class FrmPhieuNhapSach
         'tbxquidinh2
         '
         Me.tbxquidinh2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxquidinh2.Enabled = False
         Me.tbxquidinh2.Location = New System.Drawing.Point(167, 63)
         Me.tbxquidinh2.Name = "tbxquidinh2"
         Me.tbxquidinh2.Size = New System.Drawing.Size(224, 20)
@@ -250,14 +251,20 @@ Partial Class FrmPhieuNhapSach
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Thông tin nhập"
         '
-        'Label5
+        'tbxsoluongnhap
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(92, 20)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Mã sách"
+        Me.tbxsoluongnhap.Location = New System.Drawing.Point(205, 44)
+        Me.tbxsoluongnhap.Name = "tbxsoluongnhap"
+        Me.tbxsoluongnhap.Size = New System.Drawing.Size(267, 20)
+        Me.tbxsoluongnhap.TabIndex = 3
+        '
+        'tbxmasach
+        '
+        Me.tbxmasach.Enabled = False
+        Me.tbxmasach.Location = New System.Drawing.Point(205, 17)
+        Me.tbxmasach.Name = "tbxmasach"
+        Me.tbxmasach.Size = New System.Drawing.Size(267, 20)
+        Me.tbxmasach.TabIndex = 2
         '
         'Label6
         '
@@ -268,20 +275,14 @@ Partial Class FrmPhieuNhapSach
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Số lượng nhập"
         '
-        'tbxmasach
+        'Label5
         '
-        Me.tbxmasach.Enabled = False
-        Me.tbxmasach.Location = New System.Drawing.Point(205, 17)
-        Me.tbxmasach.Name = "tbxmasach"
-        Me.tbxmasach.Size = New System.Drawing.Size(267, 20)
-        Me.tbxmasach.TabIndex = 2
-        '
-        'tbxsoluongnhap
-        '
-        Me.tbxsoluongnhap.Location = New System.Drawing.Point(205, 44)
-        Me.tbxsoluongnhap.Name = "tbxsoluongnhap"
-        Me.tbxsoluongnhap.Size = New System.Drawing.Size(267, 20)
-        Me.tbxsoluongnhap.TabIndex = 3
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(92, 20)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Mã sách"
         '
         'FrmPhieuNhapSach
         '
@@ -316,7 +317,7 @@ Partial Class FrmPhieuNhapSach
 
     Friend WithEvents lblMain As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtpngaynhap As DateTimePicker
     Friend WithEvents tbxmaphieunhap As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

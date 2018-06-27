@@ -25,11 +25,11 @@ Partial Class frmDangNhap
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,28 +70,14 @@ Partial Class frmDangNhap
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "User"
         '
-        'TextBox1
+        'Button2
         '
-        Me.TextBox1.Location = New System.Drawing.Point(99, 50)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox1.TabIndex = 2
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 88)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Mật Khẩu"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(99, 88)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.Button2.Location = New System.Drawing.Point(232, 115)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(80, 38)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "THOÁT"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -102,14 +88,28 @@ Partial Class frmDangNhap
         Me.Button1.Text = "ĐĂNG NHẬP"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'TextBox2
         '
-        Me.Button2.Location = New System.Drawing.Point(232, 115)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 38)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "THOÁT"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(99, 88)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox2.TabIndex = 4
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 88)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Mật Khẩu"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(99, 50)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox1.TabIndex = 2
         '
         'frmDangNhap
         '

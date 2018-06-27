@@ -56,8 +56,8 @@ Public Class SACHDAL
     Public Function insert(sach As SACHDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblSach] ([maSach], [tenSach], [maLoaiSach], [tacGia], [donGia],[soLuongTon])"
-        query &= "VALUES (@masach,@tensach,@maloaisach,@tacgia,@dongia,@soluongton)"
+        query &= "INSERT INTO [tblSach] ([maSach], [tenSach], [maLoaiSach], [tacGia], [soLuongTon],[dongia])"
+        query &= "VALUES (@masach,@tensach,@maloaisach,@tacgia,@soluongton,@dongia)"
 
         'get nextms
         Dim inextMS = 0
@@ -77,8 +77,9 @@ Public Class SACHDAL
                     .Parameters.AddWithValue("@tensach", sach.Strtensach)
                     .Parameters.AddWithValue("@maloaisach", sach.Imaloaisach)
                     .Parameters.AddWithValue("@tacgia", sach.Strtacgia)
-                    .Parameters.AddWithValue("@dongia", sach.Idongia)
                     .Parameters.AddWithValue("@soluongton", sach.Isoluongton)
+                    .Parameters.AddWithValue("@dongia", sach.Idongia)
+
                 End With
                 Try
                     conn.Open()
@@ -100,6 +101,7 @@ Public Class SACHDAL
         query &= " ,[maloaisach] = @maloaisach "
         query &= " ,[tacgia] = @tacgia "
         query &= " ,[soluongton] = @soluongton "
+        query &= " ,[dongia] = @dongia "
         query &= "WHERE "
         query &= " [masach] = @masach "
 
@@ -114,6 +116,7 @@ Public Class SACHDAL
                     .Parameters.AddWithValue("@maloaisach", sach.Imaloaisach)
                     .Parameters.AddWithValue("@tacgia", sach.Strtacgia)
                     .Parameters.AddWithValue("@soluongton", sach.Isoluongton)
+                    .Parameters.AddWithValue("@dongia", sach.Idongia)
                 End With
                 Try
                     conn.Open()
@@ -230,5 +233,37 @@ Public Class SACHDAL
         Return New Result(True) ' thanh cong
     End Function
 #End Region
+
+    Public Function update_SoLuongTon(sach As SACHDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblSach] SET"
+        query &= "[SOLUONGTON] = @soluongton "
+        query &= "WHERE "
+        query &= " [MASACH] = @masach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", sach.Imasach)
+                    .Parameters.AddWithValue("@soluongton", sach.Isoluongton)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Cập nhật sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
 
 End Class

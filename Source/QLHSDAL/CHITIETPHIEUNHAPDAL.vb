@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports QLHSDTO
 Imports Utility
 
-Public Class CTPhieuNhapDAL
+Public Class CHITIETPHIEUNHAPDAL
     Private connectionString As String
 
     Public Sub New()
@@ -17,9 +17,9 @@ Public Class CTPhieuNhapDAL
     Public Function getNextID(ByRef nextID As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MACTPHIEUNHAP] "
-        query &= "FROM [tblCTPhieuNhap] "
-        query &= "ORDER BY [MACTPHIEUNHAP] DESC "
+        query &= "SELECT TOP 1 [MaChiTietPhieuNhap] "
+        query &= "FROM [tblCHITIETPhieuNhap] "
+        query &= "ORDER BY [MACHITIETPHIEUNHAP] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -36,7 +36,7 @@ Public Class CTPhieuNhapDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MACTPHIEUNHAP")
+                            idOnDB = reader("MACHITIETPHIEUNHAP")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -55,7 +55,7 @@ Public Class CTPhieuNhapDAL
     Public Function insert(ct As CHITIETPHIEUNHAPDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblCTPhieuNhap] ([MACTPHIEUNHAP], [MAPHIEUNHAP],[MASACH],[SoLuongNhap])"
+        query &= "INSERT INTO [tblChiTietPhieuNhap] ([MACHITIETPHIEUNHAP], [MAPHIEUNHAP],[MASACH],[SoLuongNhap])"
         query &= "VALUES (@mactpn,@mapn,@masach,@soluongnhap)"
 
         Dim nextID = 0

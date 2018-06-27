@@ -4,14 +4,18 @@ Imports Utility
 Public Class FrmPhieuNhapSach
 
     Dim pnbus As PHIEUNHAPBUS
-    Dim ctpnbus As CHITIETPHIEUNHAPDTO
+    Dim ctpnbus As CHITIETPHIEUNHAPBUS
     Private sbus As SACHBUS
     Private listsach As List(Of SACHDTO)
+    Private qdbus As QUIDINHBUS
     Private Sub FrmPhieuNhapSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadContent()
         listsach = New List(Of SACHDTO)
         sbus = New SACHBUS()
-
+        Dim listqd As List(Of QUYDINHDTO)
+        listqd = New List(Of QUYDINHDTO)
+        qdbus.selectAll(listqd)
+        ctpnbus = New CHITIETPHIEUNHAPBUS()
 
     End Sub
 
@@ -20,8 +24,8 @@ Public Class FrmPhieuNhapSach
 
         Dim result As Result
         pnbus = New PHIEUNHAPBUS
-        Dim quidinh As QUYDINHDTO
-        quidinh = New QUYDINHDTO()
+        ctpnbus = New CHITIETPHIEUNHAPBUS
+        LoadQuiDinh()
         Dim nextID As Integer
 
         result = pnbus.buildmaPN(nextID)
@@ -31,13 +35,35 @@ Public Class FrmPhieuNhapSach
             MessageBox.Show("Lấy ID kế tiếp của mã phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
-        tbxquidinh2.Enabled = tbxquidinh1.Enabled = False
-        tbxquidinh1.Text = quidinh.LuongNhapToiThieu1.ToString()
-        tbxquidinh2.Text = quidinh.LuongTonToiDa1
+
+
+
+
+
+
+
         Dim listsach = New List(Of SACHDTO)
 
     End Function
 
+
+    Private Function CapNhatLaiSachTon()
+        Try
+            Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y 'current row selected
+            Dim sach As SACHDTO
+            sach = New SACHDTO()
+
+            '1. Mapping data from GUI control
+            sach.Imaloaisach = tbxmasach.Text
+            sach.Isoluongton = dgvsach.Rows(currentRowIndex).Cells(6).Value
+            '2. Business .....
+            '3. Insert to DB
+            Dim result As Result
+            result = sbus.update_SoLuongTon(sach)
+        Catch ex As Exception
+            Console.WriteLine(ex.StackTrace)
+        End Try
+    End Function
     Private Sub btnthem_Click(sender As Object, e As EventArgs) Handles btnthem.Click
         Dim frmdg As frmCHONSACH = New frmCHONSACH()
         '   frmdg.MdiParent = Me
@@ -122,6 +148,23 @@ Public Class FrmPhieuNhapSach
 
 
     End Sub
+    Dim quydinh As QUYDINHDTO
+    Private Function LoadQuiDinh()
+        qdbus = New QUIDINHBUS()
+        ' Dim quydinh = New QUYDINHDTO
+        Dim listQuyDinh = New List(Of QUYDINHDTO)
+        Dim result = qdbus.selectAll(listQuyDinh)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy thông tin Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+        End If
+        quydinh = listQuyDinh(0)
+
+        tbxquidinh1.Text = quydinh.LuongNhapToiThieu1
+        tbxquidinh2.Text = quydinh.LuongTonToiDa1
+        tbxquidinh1.Enabled = False
+        tbxquidinh2.Enabled = False
+    End Function
 
     Private Sub dgvsach_SelectionChanged(sender As Object, e As EventArgs) Handles dgvsach.SelectionChanged
         Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y 'current row selected
@@ -153,11 +196,60 @@ Public Class FrmPhieuNhapSach
     End Sub
 
     Private Sub btnxoa_Click(sender As Object, e As EventArgs) Handles btnxoa.Click
-        dgvsach.AllowUserToDeleteRows = True
-
         Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y 'current row selected
-        dgvsach.Rows.RemoveAt(dgvsach.SelectedRows(0).Index)
-        'dgvsach.Rows.Remove(dgvsach.Rows(currentRowIndex))
+
+        dgvsach.Rows.RemoveAt(currentRowIndex)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim soluongnhaptoithieu = quydinh.LuongNhapToiThieu1
+        Dim soluongnhaptoida = quydinh.LuongTonToiDa1
+
+        Dim soluongnhap = Integer.Parse(tbxsoluongnhap.Text)
+        If soluongnhap > soluongnhaptoithieu Then
+            If soluongnhap < soluongnhaptoida Then
+
+                Dim pndto = New PHIEUNHAPDTO()
+                pndto.Imaphieunhap = tbxmaphieunhap.Text
+                'Thêm chi tiết phiếu nhập và cập nhật lượng tồn mới trong sách
+                Dim chiTietPhieuNhapDTO As New CHITIETPHIEUNHAPDTO
+                pndto.Datengaynhap = dtpngaynhap.Text
+                pnbus.insert(pndto)
+
+
+                If dgvsach.RowCount <> 0 Then
+                    For index = 0 To dgvsach.RowCount - 1
+                        chiTietPhieuNhapDTO = New CHITIETPHIEUNHAPDTO()
+                        Dim nextID As Integer
+                        Dim result As Result
+                        result = ctpnbus.getNextID(nextID)
+                        If (result.FlagResult = True) Then
+                        Else
+                            MessageBox.Show("Lấy ID kế tiếp của mã phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            System.Console.WriteLine(result.SystemMessage)
+                        End If
+                        Dim sachDTO As New SACHDTO()
+
+                        'chiTietPhieuNhapDTO.Imachitietphieunhap =
+                        sachDTO.Imasach = dgvsach.Rows(index).Cells(1).Value
+                        sachDTO.Isoluongton = dgvsach.Rows(index).Cells(5).Value + dgvsach.Rows(index).Cells(6).Value
+                        sbus.update_SoLuongTon(sachDTO)
+
+
+                        ' cập nhật chi tiết phiếu nhập cho mỗi đầu sách thêm vào phiếu nhập
+
+                        chiTietPhieuNhapDTO.Imachitietphieunhap = nextID
+                        chiTietPhieuNhapDTO.Imaphieunhap = Int32.Parse(tbxmaphieunhap.Text)
+                        chiTietPhieuNhapDTO.Imasach = sachDTO.Imasach
+                        chiTietPhieuNhapDTO.Isoluongnhap = Int32.Parse(tbxsoluongnhap.Text)
+                        ctpnbus.insert(chiTietPhieuNhapDTO)
+
+
+                    Next
+                End If
+            End If
+        End If
+
 
     End Sub
 End Class
