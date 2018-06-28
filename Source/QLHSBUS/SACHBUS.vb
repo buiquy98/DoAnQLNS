@@ -19,8 +19,8 @@ Public Class SACHBUS
     Public Function insert(sach As SACHDTO) As Result
         Return sachDAL.insert(sach)
     End Function
-    Public Function delete(sach As SACHDTO) As Result
-        Return sachDAL.delete(sach.Imasach)
+    Public Function delete(imasach As Integer) As Result
+        Return sachDAL.delete(imasach)
     End Function
     Public Function update(sach As SACHDTO) As Result
         Return sachDAL.update(sach)

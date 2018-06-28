@@ -38,6 +38,7 @@ Partial Class frmCHONKHACHHANG
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btnthoat = New System.Windows.Forms.Button()
+        Me.btnall = New System.Windows.Forms.Button()
         Me.TabControl2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvListKhachHang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +77,7 @@ Partial Class frmCHONKHACHHANG
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnall)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -196,10 +198,20 @@ Partial Class frmCHONKHACHHANG
         Me.btnthoat.Text = "Hủy"
         Me.btnthoat.UseVisualStyleBackColor = True
         '
+        'btnall
+        '
+        Me.btnall.Location = New System.Drawing.Point(282, 82)
+        Me.btnall.Name = "btnall"
+        Me.btnall.Size = New System.Drawing.Size(148, 23)
+        Me.btnall.TabIndex = 43
+        Me.btnall.Text = "Lấy danh sách khách hàng"
+        Me.btnall.UseVisualStyleBackColor = True
+        '
         'frmCHONKHACHHANG
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(802, 489)
         Me.Controls.Add(Me.btnthoat)
         Me.Controls.Add(Me.btnchon)
@@ -234,4 +246,5 @@ Partial Class frmCHONKHACHHANG
     Friend WithEvents Label3 As Label
     Friend WithEvents btnchon As Button
     Friend WithEvents btnthoat As Button
+    Friend WithEvents btnall As Button
 End Class

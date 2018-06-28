@@ -224,4 +224,8 @@ Public Class frmCHONKHACHHANG
     Private Sub btnthoat_Click(sender As Object, e As EventArgs) Handles btnthoat.Click
         Me.Close()
     End Sub
+
+    Private Sub btnall_Click(sender As Object, e As EventArgs) Handles btnall.Click
+        loadListKH()
+    End Sub
 End Class

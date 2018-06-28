@@ -204,4 +204,8 @@ Public Class frmCHONSACH
     Private Sub btndong_Click(sender As Object, e As EventArgs) Handles btndong.Click
         Me.Close()
     End Sub
+
+    Private Sub btnall_Click(sender As Object, e As EventArgs) Handles btnall.Click
+        LoadContent()
+    End Sub
 End Class

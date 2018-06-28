@@ -110,7 +110,7 @@ Public Class frmPhieuThuTien
                 Dim result As Result
                 result = ptbus.insert(phieuThu)
                 MessageBox.Show("Thêm sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                btnphieumoi.Enabled = True
                 btnlapphieu.Enabled = False
             Else
                 MessageBox.Show("Thêm không thành công vì số tiền thu lớn hơn số tiền nợ.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -122,7 +122,7 @@ Public Class frmPhieuThuTien
             result = ptbus.insert(phieuThu)
             MessageBox.Show("Thêm thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             btnlapphieu.Enabled = False
-
+            btnphieumoi.Enabled = True
         End If
     End Sub
 
@@ -137,12 +137,23 @@ Public Class frmPhieuThuTien
             txtHoTenKH.Text = ""
             txtHoTenKH.Text = ""
             txtSDT.Clear()
+            txtMaKH.Clear()
             tbxsotienno.Clear()
             tbxsotienthu.Clear()
-            btnlapphieu.Enabled = True
         Else
             MessageBox.Show("Lấy ID kế tiếp của phiếu thu không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(Result.SystemMessage)
+        End If
+        btnphieumoi.Enabled = False
+    End Sub
+
+    Private Sub GroupBox4_Enter(sender As Object, e As EventArgs) Handles GroupBox4.Enter
+
+    End Sub
+
+    Private Sub dtpngaylap_ValueChanged(sender As Object, e As EventArgs) Handles dtpngaylap.ValueChanged
+        If dtpngaylap.Value < DateTime.Now Then
+            dtpngaylap.Value = DateTime.Now
         End If
     End Sub
 End Class

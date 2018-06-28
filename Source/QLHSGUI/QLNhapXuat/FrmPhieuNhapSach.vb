@@ -64,10 +64,13 @@ Public Class FrmPhieuNhapSach
             Console.WriteLine(ex.StackTrace)
         End Try
     End Function
+
+    Private istrung As Boolean
     Private Sub btnthem_Click(sender As Object, e As EventArgs) Handles btnthem.Click
         Dim frmdg As frmCHONSACH = New frmCHONSACH()
         '   frmdg.MdiParent = Me
         frmdg.ShowDialog()
+        istrung = False
         Dim listtemp = New List(Of SACHDTO)
 
         If (frmdg.listSachDuocChon.Count <> 0) Then
@@ -78,70 +81,83 @@ Public Class FrmPhieuNhapSach
             listsach.AddRange(listtemp)
 
             'check trùng
-
-
-
-
-            '  dgvsach.DataSource = Nothing
-            dgvsach.Columns.Clear()
-            dgvsach.AutoGenerateColumns = False
-            dgvsach.AllowUserToAddRows = False
-            dgvsach.DataSource = listsach
-
-            btnluu.Enabled = True
-            Dim clSTT = New DataGridViewTextBoxColumn()
-            clSTT.Name = ""
-            clSTT.HeaderText = "STT"
-            clSTT.DataPropertyName = ""
-            dgvsach.Columns.Add(clSTT)
-
-            Dim clMaSach = New DataGridViewTextBoxColumn()
-            clMaSach.Name = "Imasach"
-            clMaSach.HeaderText = "Mã Sách"
-            clMaSach.DataPropertyName = "Imasach"
-            dgvsach.Columns.Add(clMaSach)
-
-            Dim clTenSach = New DataGridViewTextBoxColumn()
-            clTenSach.Name = "Strtensach"
-            clTenSach.HeaderText = "Tên sách"
-            clTenSach.DataPropertyName = "Strtensach"
-            dgvsach.Columns.Add(clTenSach)
-
-            Dim clMaLoaiSach = New DataGridViewTextBoxColumn()
-            clMaLoaiSach.Name = "Imaloaisach"
-            clMaLoaiSach.HeaderText = "Thể loại"
-            clMaLoaiSach.DataPropertyName = "Imaloaisach"
-            dgvsach.Columns.Add(clMaLoaiSach)
-
-
-            Dim clTacGia = New DataGridViewTextBoxColumn()
-            clTacGia.Name = "Strtacgia"
-            clTacGia.HeaderText = "tác giả"
-            clTacGia.DataPropertyName = "Strtacgia"
-            dgvsach.Columns.Add(clTacGia)
-
-
-            Dim clSoLuongTon = New DataGridViewTextBoxColumn()
-            clSoLuongTon.Name = "Isoluongton"
-            clSoLuongTon.HeaderText = "Số lượng tồn"
-            clSoLuongTon.DataPropertyName = "Isoluongton"
-            dgvsach.Columns.Add(clSoLuongTon)
-
-
-            Dim clSoLuongNhap = New DataGridViewTextBoxColumn()
-            clSoLuongNhap.HeaderText = "Số lượng nhập"
-            dgvsach.Columns.Add(clSoLuongNhap)
-
-
-            For index = 0 To dgvsach.RowCount - 1
-                dgvsach.Rows(index).Cells(0).Value = index + 1
+            'check trùng
+            For i = 0 To listsach.Count - 2
+                For j = i + 1 To listsach.Count - 1
+                    If listsach(i).Imasach = listsach(j).Imasach Then
+                        istrung = True
+                        listsach.RemoveAt(j)
+                    End If
+                Next
             Next
+            If istrung = False Then
 
 
-            For index = 0 To 5
-                dgvsach.Columns(index).ReadOnly = True
+                '  dgvsach.DataSource = Nothing
+                dgvsach.Columns.Clear()
+                dgvsach.AutoGenerateColumns = False
+                dgvsach.AllowUserToAddRows = False
+                dgvsach.DataSource = listsach
 
-            Next
+                btnluu.Enabled = True
+                Dim clSTT = New DataGridViewTextBoxColumn()
+                clSTT.Name = ""
+                clSTT.HeaderText = "STT"
+                clSTT.DataPropertyName = ""
+                dgvsach.Columns.Add(clSTT)
+
+                Dim clMaSach = New DataGridViewTextBoxColumn()
+                clMaSach.Name = "Imasach"
+                clMaSach.HeaderText = "Mã Sách"
+                clMaSach.DataPropertyName = "Imasach"
+                dgvsach.Columns.Add(clMaSach)
+
+                Dim clTenSach = New DataGridViewTextBoxColumn()
+                clTenSach.Name = "Strtensach"
+                clTenSach.HeaderText = "Tên sách"
+                clTenSach.DataPropertyName = "Strtensach"
+                dgvsach.Columns.Add(clTenSach)
+
+                Dim clMaLoaiSach = New DataGridViewTextBoxColumn()
+                clMaLoaiSach.Name = "Imaloaisach"
+                clMaLoaiSach.HeaderText = "Thể loại"
+                clMaLoaiSach.DataPropertyName = "Imaloaisach"
+                dgvsach.Columns.Add(clMaLoaiSach)
+
+
+                Dim clTacGia = New DataGridViewTextBoxColumn()
+                clTacGia.Name = "Strtacgia"
+                clTacGia.HeaderText = "tác giả"
+                clTacGia.DataPropertyName = "Strtacgia"
+                dgvsach.Columns.Add(clTacGia)
+
+
+                Dim clSoLuongTon = New DataGridViewTextBoxColumn()
+                clSoLuongTon.Name = "Isoluongton"
+                clSoLuongTon.HeaderText = "Số lượng tồn"
+                clSoLuongTon.DataPropertyName = "Isoluongton"
+                dgvsach.Columns.Add(clSoLuongTon)
+
+
+                Dim clSoLuongNhap = New DataGridViewTextBoxColumn()
+                clSoLuongNhap.HeaderText = "Số lượng nhập"
+                dgvsach.Columns.Add(clSoLuongNhap)
+
+
+                For index = 0 To dgvsach.RowCount - 1
+                    dgvsach.Rows(index).Cells(0).Value = index + 1
+                Next
+
+
+                For index = 0 To 5
+                    dgvsach.Columns(index).ReadOnly = True
+
+                Next
+            Else
+                MessageBox.Show("Chưa chọn sách hoặc bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+
 
         Else
             MessageBox.Show("Chưa chọn sách")
@@ -209,6 +225,12 @@ Public Class FrmPhieuNhapSach
         Dim soluongnhaptoida = quydinh.LuongTonToiDa1
 
         Dim soluongnhap = Integer.Parse(tbxsoluongnhap.Text)
+        If soluongnhap < soluongnhaptoithieu Or soluongnhap > soluongnhaptoida Then
+            MessageBox.Show("Số lượng nhập vào không thỏa Quy định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+
         If soluongnhap > soluongnhaptoithieu Then
             If soluongnhap < soluongnhaptoida Then
 
@@ -265,5 +287,11 @@ Public Class FrmPhieuNhapSach
         tbxquidinh1.Text = frmdg.txtLuongNhapToiThieu.Text
         tbxquidinh2.Text = frmdg.txtLuongTonToiDa.Text
 
+    End Sub
+
+    Private Sub dtpngaynhap_ValueChanged(sender As Object, e As EventArgs) Handles dtpngaynhap.ValueChanged
+        If dtpngaynhap.Value < DateTime.Now Then
+            dtpngaynhap.Value = DateTime.Now
+        End If
     End Sub
 End Class

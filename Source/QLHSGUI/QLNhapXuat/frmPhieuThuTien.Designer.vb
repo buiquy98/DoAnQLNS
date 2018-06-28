@@ -22,7 +22,6 @@ Partial Class frmPhieuThuTien
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,8 +39,6 @@ Partial Class frmPhieuThuTien
         Me.txtMaKH = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtHoTenKH = New System.Windows.Forms.TextBox()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.lblMain = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -55,7 +52,6 @@ Partial Class frmPhieuThuTien
         Me.btnphieumoi = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
@@ -227,10 +223,6 @@ Partial Class frmPhieuThuTien
         Me.txtHoTenKH.Size = New System.Drawing.Size(294, 20)
         Me.txtHoTenKH.TabIndex = 48
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
         'lblMain
         '
         Me.lblMain.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -335,6 +327,7 @@ Partial Class frmPhieuThuTien
         '
         'btnphieumoi
         '
+        Me.btnphieumoi.Enabled = False
         Me.btnphieumoi.Location = New System.Drawing.Point(381, 568)
         Me.btnphieumoi.Name = "btnphieumoi"
         Me.btnphieumoi.Size = New System.Drawing.Size(101, 23)
@@ -346,7 +339,8 @@ Partial Class frmPhieuThuTien
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(923, 676)
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ClientSize = New System.Drawing.Size(923, 614)
         Me.Controls.Add(Me.btnphieumoi)
         Me.Controls.Add(Me.btnhuy)
         Me.Controls.Add(Me.btnlapphieu)
@@ -361,7 +355,6 @@ Partial Class frmPhieuThuTien
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -388,8 +381,6 @@ Partial Class frmPhieuThuTien
     Friend WithEvents txtMaKH As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtHoTenKH As TextBox
-    Friend WithEvents ErrorProvider1 As ErrorProvider
-    Friend WithEvents FontDialog1 As FontDialog
     Friend WithEvents btnlapphieu As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label9 As Label

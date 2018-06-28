@@ -16,9 +16,9 @@ Public Class HoaDonDAL
     Public Function getNextID(ByRef nextID As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MAHD] "
+        query &= "SELECT TOP 1 [maHoaDon] "
         query &= "FROM [tblHoaDon] "
-        query &= "ORDER BY [MAHD] DESC "
+        query &= "ORDER BY [maHoaDon] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -35,7 +35,7 @@ Public Class HoaDonDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MAHD")
+                            idOnDB = reader("maHoaDon")
                         End While
                     End If
                     ' new ID = current ID + 1

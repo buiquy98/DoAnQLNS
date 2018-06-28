@@ -24,6 +24,7 @@ Partial Class frmQuanLiKhachHang
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnChon = New System.Windows.Forms.Button()
         Me.btXoaKhachHang = New System.Windows.Forms.Button()
         Me.btCapNhatKhachHang = New System.Windows.Forms.Button()
         Me.txtDiaChi = New System.Windows.Forms.TextBox()
@@ -39,7 +40,6 @@ Partial Class frmQuanLiKhachHang
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMaKH = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.btnChon = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -77,6 +77,15 @@ Partial Class frmQuanLiKhachHang
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Thông Tin Khách Hàng"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnChon
+        '
+        Me.btnChon.Location = New System.Drawing.Point(499, 7)
+        Me.btnChon.Name = "btnChon"
+        Me.btnChon.Size = New System.Drawing.Size(104, 23)
+        Me.btnChon.TabIndex = 35
+        Me.btnChon.Text = "Chọn khách hàng"
+        Me.btnChon.UseVisualStyleBackColor = True
         '
         'btXoaKhachHang
         '
@@ -206,15 +215,6 @@ Partial Class frmQuanLiKhachHang
         Me.Label10.Size = New System.Drawing.Size(316, 31)
         Me.Label10.TabIndex = 41
         Me.Label10.Text = "QUẢN LÝ KHÁCH HÀNG"
-        '
-        'btnChon
-        '
-        Me.btnChon.Location = New System.Drawing.Point(499, 7)
-        Me.btnChon.Name = "btnChon"
-        Me.btnChon.Size = New System.Drawing.Size(104, 23)
-        Me.btnChon.TabIndex = 35
-        Me.btnChon.Text = "Chọn khách hàng"
-        Me.btnChon.UseVisualStyleBackColor = True
         '
         'frmQuanLiKhachHang
         '

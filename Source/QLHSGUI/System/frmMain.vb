@@ -116,4 +116,10 @@ Public Class frmMain
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
+
+    Private Sub LậpHóaĐơnBánSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpHóaĐơnBánSáchToolStripMenuItem.Click
+        Dim frmdg As frmHoaDonBanSach = New frmHoaDonBanSach()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

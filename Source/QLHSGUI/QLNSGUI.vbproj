@@ -250,6 +250,9 @@
     <EmbeddedResource Include="KhachHang\frmCHONKHACHHANG.resx">
       <DependentUpon>frmCHONKHACHHANG.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLNhapXuat\frmHoaDonBanSach.resx">
+      <DependentUpon>frmHoaDonBanSach.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLNhapXuat\frmPhieuThuTien.resx">
       <DependentUpon>frmPhieuThuTien.vb</DependentUpon>
     </EmbeddedResource>

@@ -34,6 +34,7 @@ Partial Class frmCHONSACH
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btndong = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnall = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +75,7 @@ Partial Class frmCHONSACH
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnall)
         Me.GroupBox1.Controls.Add(Me.btntim)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label8)
@@ -88,7 +90,7 @@ Partial Class frmCHONSACH
         '
         'btntim
         '
-        Me.btntim.Location = New System.Drawing.Point(393, 20)
+        Me.btntim.Location = New System.Drawing.Point(372, 28)
         Me.btntim.Name = "btntim"
         Me.btntim.Size = New System.Drawing.Size(75, 23)
         Me.btntim.TabIndex = 36
@@ -159,10 +161,20 @@ Partial Class frmCHONSACH
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "CHỌN SÁCH"
         '
+        'btnall
+        '
+        Me.btnall.Location = New System.Drawing.Point(372, 57)
+        Me.btnall.Name = "btnall"
+        Me.btnall.Size = New System.Drawing.Size(122, 23)
+        Me.btnall.TabIndex = 37
+        Me.btnall.Text = "Lấy tất cả đầu sách"
+        Me.btnall.UseVisualStyleBackColor = True
+        '
         'frmCHONSACH
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(963, 527)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btndong)
@@ -193,4 +205,5 @@ Partial Class frmCHONSACH
     Friend WithEvents btndong As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents btntim As Button
+    Friend WithEvents btnall As Button
 End Class

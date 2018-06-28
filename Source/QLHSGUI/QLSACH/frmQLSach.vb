@@ -107,4 +107,25 @@ Public Class frmQLSach
     Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
     End Sub
+
+    Private Sub btnxoa_Click(sender As Object, e As EventArgs) Handles btnxoa.Click
+        Select Case MsgBox("Bạn có thực sự muốn xóa sách có mã số là " + tbxmasach.Text, MsgBoxStyle.YesNo, "Information")
+            Case MsgBoxResult.Yes
+                Try
+                    '1. Delete from DB
+                    Dim result As Result
+                    result = sbus.delete(tbxmasach.Text)
+                    If (result.FlagResult = True) Then
+                        MessageBox.Show("Xóa sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Xóa sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        System.Console.WriteLine(result.SystemMessage)
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                End Try
+            Case MsgBoxResult.No
+                Return
+        End Select
+    End Sub
 End Class

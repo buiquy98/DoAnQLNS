@@ -149,3 +149,4 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resou
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONKHACHHANG.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmPhieuThuTien.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThayDoiQuyDinh.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmHoaDonBanSach.resources
