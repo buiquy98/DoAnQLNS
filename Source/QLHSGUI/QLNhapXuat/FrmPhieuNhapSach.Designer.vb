@@ -37,7 +37,7 @@ Partial Class FrmPhieuNhapSach
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvsach = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnluu = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnthem = New System.Windows.Forms.Button()
         Me.btnxoa = New System.Windows.Forms.Button()
@@ -89,7 +89,7 @@ Partial Class FrmPhieuNhapSach
         '
         'tbxmaphieunhap
         '
-        Me.tbxmaphieunhap.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxmaphieunhap.BackColor = System.Drawing.SystemColors.ControlLight
         Me.tbxmaphieunhap.Enabled = False
         Me.tbxmaphieunhap.Location = New System.Drawing.Point(117, 32)
         Me.tbxmaphieunhap.Name = "tbxmaphieunhap"
@@ -140,19 +140,21 @@ Partial Class FrmPhieuNhapSach
         '
         'tbxquidinh2
         '
-        Me.tbxquidinh2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxquidinh2.BackColor = System.Drawing.SystemColors.ControlLight
         Me.tbxquidinh2.Enabled = False
+        Me.tbxquidinh2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxquidinh2.Location = New System.Drawing.Point(167, 63)
         Me.tbxquidinh2.Name = "tbxquidinh2"
-        Me.tbxquidinh2.Size = New System.Drawing.Size(224, 20)
+        Me.tbxquidinh2.Size = New System.Drawing.Size(224, 22)
         Me.tbxquidinh2.TabIndex = 3
         '
         'tbxquidinh1
         '
-        Me.tbxquidinh1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.tbxquidinh1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.tbxquidinh1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxquidinh1.Location = New System.Drawing.Point(167, 32)
         Me.tbxquidinh1.Name = "tbxquidinh1"
-        Me.tbxquidinh1.Size = New System.Drawing.Size(224, 20)
+        Me.tbxquidinh1.Size = New System.Drawing.Size(224, 22)
         Me.tbxquidinh1.TabIndex = 2
         '
         'Label3
@@ -160,9 +162,9 @@ Partial Class FrmPhieuNhapSach
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(26, 66)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 13)
+        Me.Label3.Size = New System.Drawing.Size(97, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Số lượng nhập tối đa"
+        Me.Label3.Text = "Số lượng tồn tối đa"
         '
         'Label4
         '
@@ -202,14 +204,14 @@ Partial Class FrmPhieuNhapSach
         Me.dgvsach.Size = New System.Drawing.Size(724, 153)
         Me.dgvsach.TabIndex = 19
         '
-        'Button2
+        'btnluu
         '
-        Me.Button2.Location = New System.Drawing.Point(306, 645)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 63
-        Me.Button2.Text = "Lưu"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnluu.Location = New System.Drawing.Point(306, 645)
+        Me.btnluu.Name = "btnluu"
+        Me.btnluu.Size = New System.Drawing.Size(75, 23)
+        Me.btnluu.TabIndex = 63
+        Me.btnluu.Text = "Lưu"
+        Me.btnluu.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -294,7 +296,7 @@ Partial Class FrmPhieuNhapSach
         Me.Controls.Add(Me.btnthem)
         Me.Controls.Add(Me.btnxoa)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnluu)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblMain)
@@ -330,7 +332,7 @@ Partial Class FrmPhieuNhapSach
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgvsach As DataGridView
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnluu As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnthem As Button
     Friend WithEvents btnxoa As Button

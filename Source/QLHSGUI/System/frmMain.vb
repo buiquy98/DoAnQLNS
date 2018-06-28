@@ -100,4 +100,20 @@ Public Class frmMain
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
+
+    Private Sub LậpPhiếuThuTiềnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpPhiếuThuTiềnToolStripMenuItem.Click
+        Dim frmdg As frmPhieuThuTien = New frmPhieuThuTien()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
+
+    Private Sub HệThốngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HệThốngToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ThayĐổiQuyĐịnhToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThayĐổiQuyĐịnhToolStripMenuItem.Click
+        Dim frmdg As frmThayDoiQuyDinh = New frmThayDoiQuyDinh()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
 End Class

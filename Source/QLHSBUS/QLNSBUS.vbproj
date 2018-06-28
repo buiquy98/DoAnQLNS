@@ -87,7 +87,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="QUIDINHBUS.vb" />
+    <Compile Include="PHIEUTHUTIENBUS.vb" />
+    <Compile Include="QUYDINHBUS.vb" />
     <Compile Include="SACHBUS.vb" />
     <Compile Include="LOAISACHBUS.vb" />
   </ItemGroup>

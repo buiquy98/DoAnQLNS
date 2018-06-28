@@ -43,7 +43,12 @@ Public Class SACHBUS
         Return sachDAL.selectALL_ByMaSach(maSach, listSach)
     End Function
 
+    Public Function selectALL_ByName(tensach As String, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
 
+        '2. insert to DB
+        Return sachDAL.selectALL_ByName(tensach, listSach)
+    End Function
 
     Public Function update_SoLuongTon(sach As SACHDTO) As Result
         '1. verify data here!!

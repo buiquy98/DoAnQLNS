@@ -1,7 +1,7 @@
 ﻿Imports QLHSDAL
 Imports QLHSDTO
 Imports Utility
-Public Class QUIDINHBUS
+Public Class QUYDINHBUS
 
     Private qddal As QUYDINHDAL
     Public Sub New()

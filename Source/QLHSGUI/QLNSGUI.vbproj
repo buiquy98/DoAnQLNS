@@ -110,6 +110,12 @@
     <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoTon.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KhachHang\frmCHONKHACHHANG.Designer.vb">
+      <DependentUpon>frmCHONKHACHHANG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\frmCHONKHACHHANG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QLNhapXuat\frmHoaDonBanSach.Designer.vb">
       <DependentUpon>frmHoaDonBanSach.vb</DependentUpon>
     </Compile>
@@ -241,6 +247,12 @@
     <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoTon.resx">
       <DependentUpon>frmQuanLiChiTietBaoCaoTon.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\frmCHONKHACHHANG.resx">
+      <DependentUpon>frmCHONKHACHHANG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNhapXuat\frmPhieuThuTien.resx">
+      <DependentUpon>frmPhieuThuTien.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLSACH\frmCHONSACH.resx">
       <DependentUpon>frmCHONSACH.vb</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\frmQLNguoiDung.resx">
       <DependentUpon>frmQLNguoiDung.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmThayDoiQuyDinh.resx">
+      <DependentUpon>frmThayDoiQuyDinh.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

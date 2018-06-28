@@ -26,14 +26,14 @@ Partial Class frmCHONSACH
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvsach = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btntim = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxtensach = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btndong = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btntim = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +77,7 @@ Partial Class frmCHONSACH
         Me.GroupBox1.Controls.Add(Me.btntim)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.tbxtensach)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(87, 128)
         Me.GroupBox1.Name = "GroupBox1"
@@ -85,6 +85,15 @@ Partial Class frmCHONSACH
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tìm kiếm"
+        '
+        'btntim
+        '
+        Me.btntim.Location = New System.Drawing.Point(393, 20)
+        Me.btntim.Name = "btntim"
+        Me.btntim.Size = New System.Drawing.Size(75, 23)
+        Me.btntim.TabIndex = 36
+        Me.btntim.Text = "Tìm"
+        Me.btntim.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
@@ -104,12 +113,12 @@ Partial Class frmCHONSACH
         Me.Label8.Text = "Tên Sách"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TextBox1
+        'tbxtensach
         '
-        Me.TextBox1.Location = New System.Drawing.Point(115, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(212, 20)
-        Me.TextBox1.TabIndex = 34
+        Me.tbxtensach.Location = New System.Drawing.Point(115, 21)
+        Me.tbxtensach.Name = "tbxtensach"
+        Me.tbxtensach.Size = New System.Drawing.Size(212, 20)
+        Me.tbxtensach.TabIndex = 34
         '
         'Label9
         '
@@ -150,15 +159,6 @@ Partial Class frmCHONSACH
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "CHỌN SÁCH"
         '
-        'btntim
-        '
-        Me.btntim.Location = New System.Drawing.Point(393, 20)
-        Me.btntim.Name = "btntim"
-        Me.btntim.Size = New System.Drawing.Size(75, 23)
-        Me.btntim.TabIndex = 36
-        Me.btntim.Text = "Tìm"
-        Me.btntim.UseVisualStyleBackColor = True
-        '
         'frmCHONSACH
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,7 +187,7 @@ Partial Class frmCHONSACH
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbxtensach As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents btnchon As Button
     Friend WithEvents btndong As Button

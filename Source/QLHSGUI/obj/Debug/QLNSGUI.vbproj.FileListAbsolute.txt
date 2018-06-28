@@ -146,3 +146,6 @@ C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.x
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.pdb
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONKHACHHANG.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmPhieuThuTien.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThayDoiQuyDinh.resources

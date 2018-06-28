@@ -70,5 +70,41 @@ Public Class frmQLSach
         End If
     End Sub
 
+    Private Sub btncapnhat_Click(sender As Object, e As EventArgs) Handles btncapnhat.Click
+        Try
+            Dim sach As SACHDTO
+            sach = New SACHDTO()
 
+            '1. Mapping data from GUI control
+            sach.Imasach = tbxmasach.Text
+            sach.Strtensach = tbxtensach.Text
+            sach.Strtacgia = tbxtacgia.Text
+            sach.Isoluongton = tbxsoluong.Text
+            sach.Idongia = tbxdongia.Text
+            sach.Imaloaisach = Convert.ToInt32(cbxtheloai.SelectedValue)
+            If (sbus.isValicdname(sach) = False) Then
+                MessageBox.Show("Tên sách không đúng.")
+                tbxtensach.Focus()
+                Return
+            End If
+
+
+            Dim result As Result
+            result = sbus.update(sach)
+            If (result.FlagResult = True) Then
+
+                MessageBox.Show("Cập nhật sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Cập nhật sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                System.Console.WriteLine(result.SystemMessage)
+            End If
+        Catch ex As Exception
+            Console.WriteLine(ex.StackTrace)
+        End Try
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
+    End Sub
 End Class

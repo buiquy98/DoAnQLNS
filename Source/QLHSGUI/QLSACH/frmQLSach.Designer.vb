@@ -44,6 +44,7 @@ Partial Class frmQLSach
         Me.tbxdongia = New System.Windows.Forms.TextBox()
         Me.tbxsoluong = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class frmQLSach
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.btnhuy)
         Me.GroupBox2.Controls.Add(Me.btnxoa)
@@ -82,7 +84,7 @@ Partial Class frmQLSach
         Me.GroupBox2.Controls.Add(Me.tbxdongia)
         Me.GroupBox2.Controls.Add(Me.tbxsoluong)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Location = New System.Drawing.Point(103, 85)
+        Me.GroupBox2.Location = New System.Drawing.Point(111, 54)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(726, 197)
         Me.GroupBox2.TabIndex = 9
@@ -100,7 +102,7 @@ Partial Class frmQLSach
         '
         'btnhuy
         '
-        Me.btnhuy.Location = New System.Drawing.Point(440, 154)
+        Me.btnhuy.Location = New System.Drawing.Point(425, 168)
         Me.btnhuy.Name = "btnhuy"
         Me.btnhuy.Size = New System.Drawing.Size(75, 23)
         Me.btnhuy.TabIndex = 31
@@ -109,7 +111,7 @@ Partial Class frmQLSach
         '
         'btnxoa
         '
-        Me.btnxoa.Location = New System.Drawing.Point(348, 154)
+        Me.btnxoa.Location = New System.Drawing.Point(344, 168)
         Me.btnxoa.Name = "btnxoa"
         Me.btnxoa.Size = New System.Drawing.Size(75, 23)
         Me.btnxoa.TabIndex = 30
@@ -118,7 +120,7 @@ Partial Class frmQLSach
         '
         'btncapnhat
         '
-        Me.btncapnhat.Location = New System.Drawing.Point(247, 154)
+        Me.btncapnhat.Location = New System.Drawing.Point(263, 168)
         Me.btncapnhat.Name = "btncapnhat"
         Me.btncapnhat.Size = New System.Drawing.Size(75, 23)
         Me.btncapnhat.TabIndex = 29
@@ -128,7 +130,7 @@ Partial Class frmQLSach
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(502, 121)
+        Me.Label7.Location = New System.Drawing.Point(502, 145)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 28
@@ -199,7 +201,7 @@ Partial Class frmQLSach
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(186, 117)
+        Me.Label5.Location = New System.Drawing.Point(189, 149)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(44, 13)
         Me.Label5.TabIndex = 20
@@ -218,14 +220,14 @@ Partial Class frmQLSach
         '
         'tbxdongia
         '
-        Me.tbxdongia.Location = New System.Drawing.Point(284, 114)
+        Me.tbxdongia.Location = New System.Drawing.Point(284, 142)
         Me.tbxdongia.Name = "tbxdongia"
         Me.tbxdongia.Size = New System.Drawing.Size(212, 20)
         Me.tbxdongia.TabIndex = 25
         '
         'tbxsoluong
         '
-        Me.tbxsoluong.Location = New System.Drawing.Point(284, 213)
+        Me.tbxsoluong.Location = New System.Drawing.Point(284, 114)
         Me.tbxsoluong.Name = "tbxsoluong"
         Me.tbxsoluong.Size = New System.Drawing.Size(212, 20)
         Me.tbxsoluong.TabIndex = 26
@@ -240,14 +242,24 @@ Partial Class frmQLSach
         Me.Label6.Text = "Số Lượng"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(188, 121)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.TabIndex = 33
+        Me.Label8.Text = "Số lượng tồn"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frmQLSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(880, 348)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(965, 352)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Name = "frmQLSach"
         Me.Text = "frmQLSach"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -278,4 +290,5 @@ Partial Class frmQLSach
     Friend WithEvents btnxoa As Button
     Friend WithEvents btncapnhat As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label8 As Label
 End Class
