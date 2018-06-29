@@ -26,6 +26,7 @@ Partial Class frmCHONKHACHHANG
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvListKhachHang = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnall = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -38,7 +39,6 @@ Partial Class frmCHONKHACHHANG
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btnthoat = New System.Windows.Forms.Button()
-        Me.btnall = New System.Windows.Forms.Button()
         Me.TabControl2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvListKhachHang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +71,7 @@ Partial Class frmCHONKHACHHANG
         Me.dgvListKhachHang.Location = New System.Drawing.Point(6, 6)
         Me.dgvListKhachHang.MultiSelect = False
         Me.dgvListKhachHang.Name = "dgvListKhachHang"
+        Me.dgvListKhachHang.ReadOnly = True
         Me.dgvListKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListKhachHang.Size = New System.Drawing.Size(624, 153)
         Me.dgvListKhachHang.TabIndex = 19
@@ -93,6 +94,15 @@ Partial Class frmCHONKHACHHANG
         Me.GroupBox1.TabIndex = 42
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tìm Khách Hàng"
+        '
+        'btnall
+        '
+        Me.btnall.Location = New System.Drawing.Point(282, 82)
+        Me.btnall.Name = "btnall"
+        Me.btnall.Size = New System.Drawing.Size(148, 23)
+        Me.btnall.TabIndex = 43
+        Me.btnall.Text = "Lấy danh sách khách hàng"
+        Me.btnall.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -197,15 +207,6 @@ Partial Class frmCHONKHACHHANG
         Me.btnthoat.TabIndex = 45
         Me.btnthoat.Text = "Hủy"
         Me.btnthoat.UseVisualStyleBackColor = True
-        '
-        'btnall
-        '
-        Me.btnall.Location = New System.Drawing.Point(282, 82)
-        Me.btnall.Name = "btnall"
-        Me.btnall.Size = New System.Drawing.Size(148, 23)
-        Me.btnall.TabIndex = 43
-        Me.btnall.Text = "Lấy danh sách khách hàng"
-        Me.btnall.UseVisualStyleBackColor = True
         '
         'frmCHONKHACHHANG
         '

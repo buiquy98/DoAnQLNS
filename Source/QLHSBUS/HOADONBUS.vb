@@ -56,7 +56,7 @@ Public Class HoaDonBUS
         '1. verify data here!!
 
         '2. insert to DB
-        Return hdDAL.selectALL_ByMaHD(maHD, listhd)
+        Return hdDAL.selectALL_BymaHoaDon(maHD, listhd)
     End Function
 
     Public Function update(hoadon As HoaDonDTO) As Result

@@ -4,12 +4,15 @@ Imports Utility
 Public Class frmHoaDonBanSach
     Private qdbus As QUYDINHBUS
     Private khbus As KHACHHANGBUS
+    Private cthdbus As CHITIETHOADONBUS
     Private sbus As SACHBUS
     Private hdbus As HoaDonBUS
     Private listsach As List(Of SACHDTO)
     Private Sub frmHoaDonBanSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         qdbus = New QUYDINHBUS()
+
         hdbus = New HoaDonBUS()
+        cthdbus = New CHITIETHOADONBUS()
         LoadQuiDinh()
         LoadContent()
 
@@ -24,7 +27,7 @@ Public Class frmHoaDonBanSach
         If (result.FlagResult = True) Then
             tbxmaphieu.Text = nextID.ToString()
         Else
-            MessageBox.Show("Lấy ID kế tiếp của mã phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy ID kế tiếp của mã hóa đơn không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Function
@@ -167,10 +170,7 @@ Public Class frmHoaDonBanSach
 
                 dgvsach.Columns(0).Width = 50
                 dgvsach.Columns(1).Width = 50
-
                 dgvsach.Columns(7).Width = 50
-
-
                 For index = 0 To dgvsach.RowCount - 1
                     dgvsach.Rows(index).Cells(0).Value = index + 1
                     dgvsach.Rows(index).Cells(8).Value = 0
@@ -195,7 +195,7 @@ Public Class frmHoaDonBanSach
         Dim frmdg As frmThayDoiQuyDinh = New frmThayDoiQuyDinh()
         '   frmdg.MdiParent = Me
         frmdg.ShowDialog()
-        tbxquidinh1.Text = frmdg.txtLuongTonToiDa.Text
+        tbxquidinh1.Text = frmdg.txtLuongNhapToiThieu.Text
         tbxquidinh2.Text = frmdg.txtTienNoToiDa.Text
 
     End Sub
@@ -253,18 +253,109 @@ Public Class frmHoaDonBanSach
         'Không bị chặn bởi 2 ông trên
 
 
+        Dim hd As HoaDonDTO
+        hd = New HoaDonDTO
+        hd.MaHoaDon = tbxmaphieu.Text
+        hd.NgayHoaDon = dtpngaylap.Value
+        hd.MaKhachHang = txtMaKH.Text
+        hd.TongTriGia = tbxtongtien.Text
+        Dim result As Result
+        result = hdbus.insert(hd)
+        If result.FlagResult = True Then
+
+        Else
+            MessageBox.Show("Thêm hóa đơn không thành công")
+            Return
+        End If
+
+        For index = 0 To dgvsach.RowCount - 1
+            Dim CThd = New CHITIETHOADONDTO()
+            Dim nextID As Integer
+
+            result = cthdbus.getNextID(nextID)
+            If (result.FlagResult = True) Then
+            Else
+                MessageBox.Show("Lấy ID kế tiếp của mã CT Hóa đơn không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                System.Console.WriteLine(result.SystemMessage)
+            End If
+            Dim sachDTO As New SACHDTO()
+
+            'chiTietPhieuNhapDTO.Imachitietphieunhap =
+            sachDTO.Imasach = dgvsach.Rows(index).Cells(1).Value
+            sachDTO.Isoluongton = dgvsach.Rows(index).Cells(5).Value - dgvsach.Rows(index).Cells(7).Value
+            sbus.update_SoLuongTon(sachDTO)
 
 
 
+            CThd.MaChiTietHoaDon1 = nextID
+            CThd.MaHoaDon1 = tbxmaphieu.Text
+            CThd.MaSach1 = dgvsach.Rows(index).Cells(1).Value
+            CThd.SoLuongBan1 = dgvsach.Rows(index).Cells(7).Value
+            CThd.ThanhTien1 = dgvsach.Rows(index).Cells(8).Value
+            CThd.DonGiaBan1 = dgvsach.Rows(index).Cells(6).Value
+
+            result = cthdbus.insert(CThd)
+            If result.FlagResult = True Then
+            Else
+                MessageBox.Show("Thêm chi tiết hóa đơn k thành công")
+                Return
+            End If
+
+        Next
+
+        MessageBox.Show("Thêm hóa đơn thành công", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
-
-
-
-
+        btnlapphieu.Enabled = False
+        btnphieumoi.Enabled = True
+        btnthem.Enabled = False
+        Button1.Enabled = False
+        dgvsach.Controls.Clear()
     End Sub
 
     Private Sub dgvsach_MouseLeave(sender As Object, e As EventArgs) Handles dgvsach.MouseLeave
         btnlapphieu.Focus()
+    End Sub
+
+    Private Sub btnhuy_Click(sender As Object, e As EventArgs) Handles btnhuy.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgvsach_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvsach.CellValidating
+        If e.ColumnIndex = 7 Then
+            If IsNumeric(e.FormattedValue) = False Then
+                MessageBox.Show(" Nhập sai định dạng")
+
+                dgvsach.CurrentCell.Value = 0
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+
+    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs) Handles GroupBox3.Enter
+
+    End Sub
+
+    Private Sub btnphieumoi_Click(sender As Object, e As EventArgs) Handles btnphieumoi.Click
+        btnthem.Enabled = True
+        Button1.Enabled = True
+        btnphieumoi.Enabled = False
+        btnlapphieu.Enabled = True
+        tbxmaphieu.Clear()
+        txtDiaChi.Clear()
+        txtHoTenKH.Clear()
+        txtMaKH.Clear()
+        txtSDT.Clear()
+
+        Dim nextID As Integer
+        Dim result As Result
+        result = hdbus.getNextID(nextID)
+        If (result.FlagResult = True) Then
+            tbxmaphieu.Text = nextID.ToString()
+        Else
+            MessageBox.Show("Lấy ID kế tiếp của mã hóa đơn không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+        End If
+
     End Sub
 End Class

@@ -75,7 +75,7 @@ Public Class frmPhieuThuTien
             btnlapphieu.Enabled = True
             tbxsotienno.Text = kh(0).TienNoKH1
         Else
-            MessageBox.Show("Chưa chọn khách hàng")
+            MessageBox.Show("Chưa chọn khách hàng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 

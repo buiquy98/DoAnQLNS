@@ -17,9 +17,9 @@ Public Class CTHoaDonDAL
     Public Function getNextID(ByRef nextID As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MActhd] "
-        query &= "FROM [tblCTHoaDon] "
-        query &= "ORDER BY [MACTHD] DESC "
+        query &= "SELECT TOP 1 [maChiTietHoaDon] "
+        query &= "FROM [tblChiTietHoaDon] "
+        query &= "ORDER BY [maChiTietHoaDon] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -36,7 +36,7 @@ Public Class CTHoaDonDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MACTHD")
+                            idOnDB = reader("maChiTietHoaDon")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -54,8 +54,8 @@ Public Class CTHoaDonDAL
     Public Function insert(cthd As CHITIETHOADONDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblCTHoaDon] ([MACTHD], [MAHD], [MASACH], [SoLuongBan], [DonGiaBan], [ThanhTien])"
-        query &= "VALUES (@macthd, @mahd, @masach, @soluongban, @dongia, @thanhtien)"
+        query &= "INSERT INTO [tblChiTietHoaDon] ([maChiTietHoaDon], [maHoaDon], [maSach], [SoLuongBan], [DonGiaBan], [ThanhTien])"
+        query &= "VALUES (@maChiTietHoaDon, @maHoaDon, @maSach, @soluongban, @dongia, @thanhtien)"
 
         Dim nextID = 0
         Dim result As Result
@@ -63,16 +63,16 @@ Public Class CTHoaDonDAL
         If (result.FlagResult = False) Then
             Return result
         End If
-        cthd.MaChiTietPhieuNhap1 = nextID
+        cthd.MaChiTietHoaDon1 = nextID
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@macthd", cthd.MaChiTietPhieuNhap1)
-                    .Parameters.AddWithValue("@mahd", cthd.MaPhieuNhap1)
-                    .Parameters.AddWithValue("@masach", cthd.MaSach1)
+                    .Parameters.AddWithValue("@maChiTietHoaDon", cthd.MaChiTietHoaDon1)
+                    .Parameters.AddWithValue("@maHoaDon", cthd.MaHoaDon1)
+                    .Parameters.AddWithValue("@maSach", cthd.MaSach1)
                     .Parameters.AddWithValue("@soluongban", cthd.SoLuongBan1)
                     .Parameters.AddWithValue("@dongia", cthd.DonGiaBan1)
                     .Parameters.AddWithValue("@thanhtien", cthd.ThanhTien1)
@@ -93,9 +93,9 @@ Public Class CTHoaDonDAL
     Public Function update(cthd As CHITIETHOADONDTO) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [tblCTHoaDon] SET [MAHD] = @mahd, [MASACH] = @masach, [SoLuongBan] = @soluongban, [DonGiaBan] = @dongia, [ThanhTien] = @thanhtien"
+        query &= " UPDATE [tblChiTietHoaDon] SET [maHoaDon] = @maHoaDon, [maSach] = @maSach, [SoLuongBan] = @soluongban, [DonGiaBan] = @dongia, [ThanhTien] = @thanhtien"
         query &= " WHERE "
-        query &= " [MACTHD] = @macthd "
+        query &= " [maChiTietHoaDon] = @maChiTietHoaDon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -103,9 +103,9 @@ Public Class CTHoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@macthd", cthd.MaChiTietPhieuNhap1)
-                    .Parameters.AddWithValue("@mahd", cthd.MaPhieuNhap1)
-                    .Parameters.AddWithValue("@masach", cthd.MaSach1)
+                    .Parameters.AddWithValue("@maChiTietHoaDon", cthd.MaChiTietHoaDon1)
+                    .Parameters.AddWithValue("@maHoaDon", cthd.MaHoaDon1)
+                    .Parameters.AddWithValue("@maSach", cthd.MaSach1)
                     .Parameters.AddWithValue("@soluongban", cthd.SoLuongBan1)
                     .Parameters.AddWithValue("@dongia", cthd.DonGiaBan1)
                     .Parameters.AddWithValue("@thanhtien", cthd.ThanhTien1)
@@ -128,7 +128,7 @@ Public Class CTHoaDonDAL
 
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [tblCTHoaDon]"
+        query &= " FROM [tblChiTietHoaDon]"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -145,7 +145,7 @@ Public Class CTHoaDonDAL
                     If reader.HasRows = True Then
                         listHoaDon.Clear()
                         While reader.Read()
-                            listHoaDon.Add(New CHITIETHOADONDTO(reader("MACTHD"), reader("MAHD"), reader("MASACH"), reader("SoLuongBan"), reader("DonGiaBan"), reader("ThanhTien")))
+                            listHoaDon.Add(New CHITIETHOADONDTO(reader("maChiTietHoaDon"), reader("maHoaDon"), reader("maSach"), reader("SoLuongBan"), reader("DonGiaBan"), reader("ThanhTien")))
                         End While
                     End If
                 Catch ex As Exception
@@ -159,12 +159,12 @@ Public Class CTHoaDonDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL_byMaHD(maHD As Integer, ByRef listHoaDon As List(Of CHITIETHOADONDTO)) As Result
+    Public Function selectALL_bymaHoaDon(maHoaDon As Integer, ByRef listHoaDon As List(Of CHITIETHOADONDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
-        query &= " FROM [tblCTHoaDon]"
-        query &= "WHERE [MAHD] = @mahd"
+        query &= " FROM [tblChiTietHoaDon]"
+        query &= "WHERE [maHoaDon] = @maHoaDon"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -173,7 +173,7 @@ Public Class CTHoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@mahd", maHD)
+                    .Parameters.AddWithValue("@maHoaDon", maHoaDon)
                 End With
                 Try
                     conn.Open()
@@ -182,7 +182,7 @@ Public Class CTHoaDonDAL
                     If reader.HasRows = True Then
                         listHoaDon.Clear()
                         While reader.Read()
-                            listHoaDon.Add(New CHITIETHOADONDTO(reader("MACTHD"), reader("MAHD"), reader("MASACH"), reader("SoLuongBan"), reader("DonGiaBan"), reader("ThanhTien")))
+                            listHoaDon.Add(New CHITIETHOADONDTO(reader("maChiTietHoaDon"), reader("maHoaDon"), reader("maSach"), reader("SoLuongBan"), reader("DonGiaBan"), reader("ThanhTien")))
                         End While
                     End If
                 Catch ex As Exception
@@ -196,12 +196,12 @@ Public Class CTHoaDonDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function delete(macthd As Integer) As Result
+    Public Function delete(maChiTietHoaDon As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= " DELETE FROM [tblCTHoaDon] "
+        query &= " DELETE FROM [tblChiTietHoaDon] "
         query &= " WHERE "
-        query &= " [MACTHD] = @macthd "
+        query &= " [maChiTietHoaDon] = @maChiTietHoaDon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -209,7 +209,7 @@ Public Class CTHoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@macthd", macthd)
+                    .Parameters.AddWithValue("@maChiTietHoaDon", maChiTietHoaDon)
                 End With
                 Try
                     conn.Open()

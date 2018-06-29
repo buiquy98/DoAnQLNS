@@ -1,6 +1,6 @@
 ﻿Public Class CHITIETHOADONDTO
-    Private maChiTietPhieuNhap As Integer
-    Private maPhieuNhap As Integer
+    Private maChiTietHoaDon As Integer
+    Private maHoaDon As Integer
     Private maSach As Integer
     Private soLuongBan As Integer
     Private donGiaBan As Integer
@@ -9,8 +9,8 @@
 
     End Sub
     Public Sub New(maChiTietPhieuNhap As Integer, maPhieuNhap As Integer, maSach As Integer, soLuongBan As Integer, donGiaBan As Integer, thanhTien As Integer)
-        Me.maChiTietPhieuNhap = maChiTietPhieuNhap
-        Me.maPhieuNhap = maPhieuNhap
+        Me.MaChiTietHoaDon1 = maChiTietPhieuNhap
+        Me.MaHoaDon1 = maPhieuNhap
         Me.maSach = maSach
         Me.soLuongBan = soLuongBan
         Me.donGiaBan = donGiaBan
@@ -18,23 +18,6 @@
 
     End Sub
 
-    Public Property MaChiTietPhieuNhap1 As Integer
-        Get
-            Return maChiTietPhieuNhap
-        End Get
-        Set(value As Integer)
-            maChiTietPhieuNhap = value
-        End Set
-    End Property
-
-    Public Property MaPhieuNhap1 As Integer
-        Get
-            Return maPhieuNhap
-        End Get
-        Set(value As Integer)
-            maPhieuNhap = value
-        End Set
-    End Property
 
     Public Property MaSach1 As Integer
         Get
@@ -69,6 +52,24 @@
         End Get
         Set(value As Integer)
             thanhTien = value
+        End Set
+    End Property
+
+    Public Property MaChiTietHoaDon1 As Integer
+        Get
+            Return maChiTietHoaDon
+        End Get
+        Set(value As Integer)
+            maChiTietHoaDon = value
+        End Set
+    End Property
+
+    Public Property MaHoaDon1 As Integer
+        Get
+            Return maHoaDon
+        End Get
+        Set(value As Integer)
+            maHoaDon = value
         End Set
     End Property
 End Class

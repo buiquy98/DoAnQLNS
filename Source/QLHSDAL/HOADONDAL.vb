@@ -54,8 +54,8 @@ Public Class HoaDonDAL
     Public Function insert(hd As HoaDonDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblHoaDon] ([MAHD], [NgayHoaDon], [MAKH], [TongTriGiaHD])"
-        query &= "VALUES (@MAHD,@ngayhoadon,@MAKH,@trigia)"
+        query &= "INSERT INTO [tblHoaDon] ([maHoaDon], [ngayHoaDon], [maKH], [tongGiaTriHD])"
+        query &= "VALUES (@maHoaDon,@ngayhoadon,@MAKH,@trigia)"
 
         Dim nextID = 0
         Dim result As Result
@@ -70,7 +70,7 @@ Public Class HoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MAHD", hd.MaHoaDon)
+                    .Parameters.AddWithValue("@maHoaDon", hd.MaHoaDon)
                     .Parameters.AddWithValue("@ngayhoadon", hd.NgayHoaDon)
                     .Parameters.AddWithValue("@MAKH", hd.MaKhachHang)
                     .Parameters.AddWithValue("@trigia", hd.TongTriGia)
@@ -93,7 +93,7 @@ Public Class HoaDonDAL
         Dim query As String = String.Empty
         query &= " UPDATE [tblHoaDon] SET "
         query &= " [TongTriGiaHD] = @trigia "
-        query &= " WHERE [MAHD] = @mahd"
+        query &= " WHERE [maHoaDon] = @maHoaDon"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -102,7 +102,7 @@ Public Class HoaDonDAL
                     .CommandType = CommandType.Text
                     .CommandText = query
                     .Parameters.AddWithValue("@trigia", hoadon.TongTriGia)
-                    .Parameters.AddWithValue("@mahd", hoadon.MaHoaDon)
+                    .Parameters.AddWithValue("@maHoaDon", hoadon.MaHoaDon)
                 End With
                 Try
                     conn.Open()
@@ -121,7 +121,7 @@ Public Class HoaDonDAL
     Public Function update(hoadon As HoaDonDTO) As Result
         Dim query As String = String.Empty
         query &= " UPDATE [tblHoaDon] SET [NgayHoaDon] = @ngayhd, [TongTriGiaHD] = @trigia "
-        query &= " WHERE [MAHD] = @mahd"
+        query &= " WHERE [maHoaDon] = @maHoaDon"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -131,7 +131,7 @@ Public Class HoaDonDAL
                     .CommandText = query
                     .Parameters.AddWithValue("@ngayhd", hoadon.NgayHoaDon)
                     .Parameters.AddWithValue("@trigia", hoadon.TongTriGia)
-                    .Parameters.AddWithValue("@mahd", hoadon.MaHoaDon)
+                    .Parameters.AddWithValue("@maHoaDon", hoadon.MaHoaDon)
                 End With
                 Try
                     conn.Open()
@@ -168,7 +168,7 @@ Public Class HoaDonDAL
                     If reader.HasRows = True Then
                         listHoaDon.Clear()
                         While reader.Read()
-                            listHoaDon.Add(New HoaDonDTO(reader("MAHD"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
+                            listHoaDon.Add(New HoaDonDTO(reader("maHoaDon"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
                         End While
                     End If
                 Catch ex As Exception
@@ -206,7 +206,7 @@ Public Class HoaDonDAL
                     If reader.HasRows = True Then
                         listHD.Clear()
                         While reader.Read()
-                            listHD.Add(New HoaDonDTO(reader("MAHD"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
+                            listHD.Add(New HoaDonDTO(reader("maHoaDon"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
                         End While
                     End If
                 Catch ex As Exception
@@ -220,13 +220,13 @@ Public Class HoaDonDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL_ByMaHD(maHD As Integer, ByRef listHD As List(Of HoaDonDTO)) As Result
+    Public Function selectALL_BymaHoaDon(maHoaDon As Integer, ByRef listHD As List(Of HoaDonDTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
         query &= " FROM [tblHoaDon]"
         query &= "WHERE "
-        query &= "[MAHD] = @mahoadon"
+        query &= "[maHoaDon] = @mahoadon"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -235,7 +235,7 @@ Public Class HoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@mahoadon", maHD)
+                    .Parameters.AddWithValue("@mahoadon", maHoaDon)
                 End With
                 Try
                     conn.Open()
@@ -244,7 +244,7 @@ Public Class HoaDonDAL
                     If reader.HasRows = True Then
                         listHD.Clear()
                         While reader.Read()
-                            listHD.Add(New HoaDonDTO(reader("MAHD"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
+                            listHD.Add(New HoaDonDTO(reader("maHoaDon"), reader("NgayHoaDon"), reader("MAKH"), reader("TongTriGiaHD")))
                         End While
                     End If
                 Catch ex As Exception
@@ -258,12 +258,12 @@ Public Class HoaDonDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function delete(mahd As Integer) As Result
+    Public Function delete(maHoaDon As Integer) As Result
 
         Dim query As String = String.Empty
         query &= " DELETE FROM [tblHoaDon] "
         query &= " WHERE "
-        query &= " [MAHD] = @MAHD "
+        query &= " [maHoaDon] = @maHoaDon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -271,7 +271,7 @@ Public Class HoaDonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MAHD", mahd)
+                    .Parameters.AddWithValue("@maHoaDon", maHoaDon)
                 End With
                 Try
                     conn.Open()

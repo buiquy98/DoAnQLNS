@@ -250,7 +250,7 @@ Public Class FrmPhieuNhapSach
                         result = ctpnbus.getNextID(nextID)
                         If (result.FlagResult = True) Then
                         Else
-                            MessageBox.Show("Lấy ID kế tiếp của mã phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Lấy ID kế tiếp của mã CT phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                         Dim sachDTO As New SACHDTO()

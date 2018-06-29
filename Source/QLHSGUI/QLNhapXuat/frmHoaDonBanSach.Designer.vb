@@ -22,6 +22,7 @@ Partial Class frmHoaDonBanSach
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblMain = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -56,6 +57,7 @@ Partial Class frmHoaDonBanSach
         Me.btnphieumoi = New System.Windows.Forms.Button()
         Me.btnhuy = New System.Windows.Forms.Button()
         Me.btnlapphieu = New System.Windows.Forms.Button()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -404,6 +406,11 @@ Partial Class frmHoaDonBanSach
         Me.btnlapphieu.Text = "Lập phiếu"
         Me.btnlapphieu.UseVisualStyleBackColor = True
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Visible = True
+        '
         'frmHoaDonBanSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -472,4 +479,5 @@ Partial Class frmHoaDonBanSach
     Friend WithEvents btnhuy As Button
     Friend WithEvents btnlapphieu As Button
     Friend WithEvents dgvsach As DataGridView
+    Friend WithEvents NotifyIcon1 As NotifyIcon
 End Class

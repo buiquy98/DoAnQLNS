@@ -2,7 +2,7 @@
 Imports QLHSDTO
 Imports Utility
 
-Public Class CTHoaDonBUS
+Public Class CHITIETHOADONBUS
     Private cthdDAL As CTHoaDonDAL
 
     Public Sub New()
@@ -42,7 +42,7 @@ Public Class CTHoaDonBUS
         '1. verify data here!!
 
         '2. insert to DB
-        Return cthdDAL.selectALL_byMaHD(maHD, listHoaDon)
+        Return cthdDAL.selectALL_bymaHoaDon(maHD, listHoaDon)
     End Function
 
     Public Function delete(macthd As Integer) As Result
