@@ -16,23 +16,60 @@ Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnectionString = ConfigurationManager.AppSettings("ConnectionString")
 
-
         Dim frmLogin As New frmDangNhap
         If (frmLogin.ShowDialog() = DialogResult.OK) Then
-            'isDangNhap(True)
+            nguoidunghientai = frmLogin.NguoiDungKetQua1
+            tbxuser.Text = nguoidunghientai.StrHoTenNguoiDung
+            LoadPhanQuyen()
 
-            'nguoidunghientai = frmLogin.
-            'Me.Text = nguoidunghientai.StrHoTenNguoiDung
-            'KhoiTaoQuyenNguoiDung(nguoidunghientai)
         Else
             Me.Close()
         End If
-
-
-
-
-
     End Sub
+
+    Public Function LoadPhanQuyen()
+        Select Case nguoidunghientai.StrMaLoaiNguoiDung
+            Case Is = 1 'admin trùm cuối
+                khtool.Enabled = True
+                bctool.Enabled = True
+                nxtool.Enabled = True
+                tstool.Enabled = True
+                tltool.Enabled = True
+                tctool.Enabled = True
+                qlsachtool.Enabled = True
+                qltltool.Enabled = True
+                httool.Enabled = True
+            Case Is = 2 ' khách
+                khtool.Enabled = False
+                bctool.Enabled = False
+                nxtool.Enabled = False
+                tstool.Enabled = False
+                tltool.Enabled = False
+                tctool.Enabled = True
+                qlsachtool.Enabled = False
+                qltltool.Enabled = False
+                httool.Enabled = False
+
+            Case Is = 3 'quản trị hệ thống
+                khtool.Enabled = False
+                bctool.Enabled = False
+
+            Case Is = 4 'Giám đốc
+                khtool.Enabled = False
+                bctool.Enabled = False
+                nxtool.Enabled = False
+                tstool.Enabled = False
+                tltool.Enabled = False
+                tctool.Enabled = True
+                qlsachtool.Enabled = False
+                qltltool.Enabled = False
+                httool.Enabled = True
+            Case Is = 5 'Nhân viên
+                khtool.Enabled = True
+
+
+        End Select
+    End Function
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
@@ -50,13 +87,13 @@ Public Class frmMain
         frmdg.Show()
     End Sub
 
-    Private Sub ThêmThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmThểLoạiToolStripMenuItem.Click
+    Private Sub ThêmThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tltool.Click
         Dim frmtl As frmTheLoai = New frmTheLoai()
         frmtl.MdiParent = Me
         frmtl.Show()
     End Sub
 
-    Private Sub TheToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TheToolStripMenuItem.Click
+    Private Sub TheToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tstool.Click
         Dim frmdg As frmSach = New frmSach()
         frmdg.MdiParent = Me
         frmdg.Show()
@@ -92,13 +129,13 @@ Public Class frmMain
         frmdg.Show()
     End Sub
 
-    Private Sub QuảnLýThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýThểLoạiToolStripMenuItem.Click
+    Private Sub QuảnLýThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles qltltool.Click
         Dim frmdg As frmQLTheLoai = New frmQLTheLoai()
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub
 
-    Private Sub QuảnLýSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýSáchToolStripMenuItem.Click
+    Private Sub QuảnLýSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles qlsachtool.Click
         Dim frmdg As frmQLSach = New frmQLSach()
         frmdg.MdiParent = Me
         frmdg.Show()
@@ -126,7 +163,7 @@ Public Class frmMain
         frmdg.Show()
     End Sub
 
-    Private Sub HệThốngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HệThốngToolStripMenuItem.Click
+    Private Sub HệThốngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles httool.Click
 
     End Sub
 
@@ -142,9 +179,28 @@ Public Class frmMain
         frmdg.Show()
     End Sub
 
-    Private Sub TraCứuSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuSáchToolStripMenuItem.Click
+    Private Sub TraCứuSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tctool.Click
         Dim frmdg As frmTraCuuSach = New frmTraCuuSach()
         frmdg.MdiParent = Me
         frmdg.Show()
+    End Sub
+
+    Private Sub ThêmNgườiDùngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmNgườiDùngToolStripMenuItem.Click
+        Dim frmdg As frmThemNguoiDung = New frmThemNguoiDung()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
+
+    Private Sub btndangxuat_Click(sender As Object, e As EventArgs) Handles btndangxuat.Click
+        Dim frmLogin As New frmDangNhap
+
+        If (frmLogin.ShowDialog() = DialogResult.OK) Then
+            nguoidunghientai = frmLogin.NguoiDungKetQua1
+            tbxuser.Text = nguoidunghientai.StrHoTenNguoiDung
+            LoadPhanQuyen()
+
+        Else
+            Me.Close()
+        End If
     End Sub
 End Class

@@ -42,7 +42,7 @@ Public Class frmDangNhap
         Dim listuser As List(Of NguoiDungDTO)
         listuser = New List(Of NguoiDungDTO)
         Dim result As Result
-        result = ndbus.selectAll(listuser)
+        result = ndbus.selectAll_bytdn(tbxten.Text, listuser)
         If result.FlagResult = False Then
             MessageBox.Show("Load danh sách người dùng không thành công")
             Return
@@ -53,6 +53,7 @@ Public Class frmDangNhap
 
             If (listuser(index).StrTenDangNhap = tbxten.Text) And (listuser(index).StrMatKhau = tbxpass.Text) Then
                 MessageBox.Show("Đăng nhập thành công")
+                NguoiDungKetQua = listuser(index)
                 DialogResult = DialogResult.OK
                 Close()
             Else
@@ -65,5 +66,23 @@ Public Class frmDangNhap
 
 
 
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ndbus = New NGUOIDUNGBUS()
+        Dim listuser As List(Of NguoiDungDTO)
+        listuser = New List(Of NguoiDungDTO)
+        Dim result As Result
+        result = ndbus.selectAll_bytdn("guest", listuser)
+        If result.FlagResult = False Then
+            MessageBox.Show("Có lỗi xảy ra khi load dữ liệu vui lòng liên hệ lập trình viên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        NguoiDungKetQua = listuser(0)
+        DialogResult = DialogResult.OK
+        Close()
     End Sub
 End Class

@@ -215,6 +215,12 @@
     <Compile Include="System\frmQLNguoiDung.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\frmSuaNguoiDung.Designer.vb">
+      <DependentUpon>frmSuaNguoiDung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\frmSuaNguoiDung.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\frmThayDoiQuyDinh.Designer.vb">
       <DependentUpon>frmThayDoiQuyDinh.vb</DependentUpon>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\frmThayDoiQuyDinh.resx">
       <DependentUpon>frmThayDoiQuyDinh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmThemNguoiDung.resx">
+      <DependentUpon>frmThemNguoiDung.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

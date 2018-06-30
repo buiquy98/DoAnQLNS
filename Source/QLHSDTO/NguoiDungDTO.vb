@@ -18,7 +18,8 @@
 
 
 
-
+    Public Sub New()
+    End Sub
 
 
     Public Property StrMaNguoiDung As String

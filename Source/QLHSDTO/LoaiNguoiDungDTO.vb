@@ -10,6 +10,15 @@
         End Set
     End Property
 
+    Public Sub New()
+        StrMaLoaiNguoiDung = 0
+        StrTenLoaiNguoiDung = String.Empty
+    End Sub
+    Public Sub New(maloainguoidung As Integer, tenloainguoidung As String)
+        StrMaLoaiNguoiDung = maloainguoidung
+        StrTenLoaiNguoiDung = tenloainguoidung
+    End Sub
+
     Public Property StrTenLoaiNguoiDung As String
         Get
             Return _strTenLoaiNguoiDung
