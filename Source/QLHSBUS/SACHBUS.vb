@@ -43,12 +43,48 @@ Public Class SACHBUS
         Return sachDAL.selectALL_ByMaSach(maSach, listSach)
     End Function
 
+
+    Public Function selectALL_ByTacgia(tacgia As String, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.selectALL_ByTacgia(tacgia, listSach)
+    End Function
+
     Public Function selectALL_ByName(tensach As String, ByRef listSach As List(Of SACHDTO)) As Result
         '1. verify data here!!
 
         '2. insert to DB
         Return sachDAL.selectALL_ByName(tensach, listSach)
     End Function
+
+
+
+    Public Function selectALL_ByLoaiSach(maloai As String, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.selectALL_ByTheloai(maloai, listSach)
+    End Function
+
+
+    Public Function selectALL_ByDonGia(tu As String, den As String, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.Sellecall_byDonGia(tu, den, listSach)
+    End Function
+
+    Public Function selectALL_BySLT(tondau As String, toncuoi As String, ByRef listSach As List(Of SACHDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return sachDAL.Sellecall_byslt(tondau, toncuoi, listSach)
+    End Function
+
+
+
+
 
     Public Function update_SoLuongTon(sach As SACHDTO) As Result
         '1. verify data here!!

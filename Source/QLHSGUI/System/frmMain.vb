@@ -1,6 +1,8 @@
 ﻿Imports System.Configuration
+Imports QLHSDTO
 Public Class frmMain
     Private ConnectionString As String
+    Private nguoidunghientai As NguoiDungDTO
     Private Sub QuảnLíToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíToolStripMenuItem.Click
 
     End Sub
@@ -13,6 +15,23 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConnectionString = ConfigurationManager.AppSettings("ConnectionString")
+
+
+        Dim frmLogin As New frmDangNhap
+        If (frmLogin.ShowDialog() = DialogResult.OK) Then
+            'isDangNhap(True)
+
+            'nguoidunghientai = frmLogin.
+            'Me.Text = nguoidunghientai.StrHoTenNguoiDung
+            'KhoiTaoQuyenNguoiDung(nguoidunghientai)
+        Else
+            Me.Close()
+        End If
+
+
+
+
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -119,6 +138,12 @@ Public Class frmMain
 
     Private Sub LậpHóaĐơnBánSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpHóaĐơnBánSáchToolStripMenuItem.Click
         Dim frmdg As frmHoaDonBanSach = New frmHoaDonBanSach()
+        frmdg.MdiParent = Me
+        frmdg.Show()
+    End Sub
+
+    Private Sub TraCứuSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuSáchToolStripMenuItem.Click
+        Dim frmdg As frmTraCuuSach = New frmTraCuuSach()
         frmdg.MdiParent = Me
         frmdg.Show()
     End Sub

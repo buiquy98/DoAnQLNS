@@ -38,6 +38,7 @@ Partial Class frmMain
         Me.QuảnLýNhậpXuấtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LậpPhiếuNhậpSáchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LậpPhiếuThuTiềnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LậpHóaĐơnBánSáchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LậpBáoCáoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuànLíBáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,7 +53,6 @@ Partial Class frmMain
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LậpHóaĐơnBánSáchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -160,6 +160,12 @@ Partial Class frmMain
         Me.LậpPhiếuThuTiềnToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LậpPhiếuThuTiềnToolStripMenuItem.Text = "Lập phiếu thu tiền"
         '
+        'LậpHóaĐơnBánSáchToolStripMenuItem
+        '
+        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Name = "LậpHóaĐơnBánSáchToolStripMenuItem"
+        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Text = "Lập hóa đơn bán sách"
+        '
         'LậpBáoCáoToolStripMenuItem
         '
         Me.LậpBáoCáoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BáoCáoCôngNợToolStripMenuItem, Me.QuànLíBáoCáoCôngNợToolStripMenuItem, Me.ToolStripSeparator1, Me.BáoCáoTồnToolStripMenuItem, Me.QuảnLíBáoCáoTồnToolStripMenuItem, Me.QuảnLíChiTiếtBáoCáoCôngNọToolStripMenuItem, Me.QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem})
@@ -235,25 +241,21 @@ Partial Class frmMain
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(736, 4)
+        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Location = New System.Drawing.Point(950, 0)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(151, 20)
         Me.TextBox1.TabIndex = 2
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(701, 7)
+        Me.Label1.Location = New System.Drawing.Point(915, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(29, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "User"
-        '
-        'LậpHóaĐơnBánSáchToolStripMenuItem
-        '
-        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Name = "LậpHóaĐơnBánSáchToolStripMenuItem"
-        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.LậpHóaĐơnBánSáchToolStripMenuItem.Text = "Lập hóa đơn bán sách"
         '
         'frmMain
         '

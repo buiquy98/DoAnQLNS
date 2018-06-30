@@ -71,6 +71,7 @@
     <Compile Include="CHITIETHOADONDTO.vb" />
     <Compile Include="HOADONDTO.vb" />
     <Compile Include="KHACHHANGDTO.vb" />
+    <Compile Include="LoaiNguoiDungDTO.vb" />
     <Compile Include="LOAISACHDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -87,6 +88,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NguoiDungDTO.vb" />
     <Compile Include="PHIEUNHAPDTO.vb" />
     <Compile Include="PHIEUTHUTIENDTO.vb" />
     <Compile Include="QUYDINHDTO.vb" />

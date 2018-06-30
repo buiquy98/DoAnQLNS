@@ -27,9 +27,9 @@ Partial Class frmDangNhap
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tbxpass = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxten = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,9 +59,9 @@ Partial Class frmDangNhap
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.tbxpass)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.tbxten)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 53)
         Me.GroupBox1.Name = "GroupBox1"
@@ -88,12 +88,13 @@ Partial Class frmDangNhap
         Me.Button1.Text = "ĐĂNG NHẬP"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'tbxpass
         '
-        Me.TextBox2.Location = New System.Drawing.Point(99, 88)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.tbxpass.Location = New System.Drawing.Point(99, 88)
+        Me.tbxpass.Name = "tbxpass"
+        Me.tbxpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbxpass.Size = New System.Drawing.Size(240, 20)
+        Me.tbxpass.TabIndex = 4
         '
         'Label3
         '
@@ -104,12 +105,12 @@ Partial Class frmDangNhap
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Mật Khẩu"
         '
-        'TextBox1
+        'tbxten
         '
-        Me.TextBox1.Location = New System.Drawing.Point(99, 50)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.tbxten.Location = New System.Drawing.Point(99, 50)
+        Me.tbxten.Name = "tbxten"
+        Me.tbxten.Size = New System.Drawing.Size(240, 20)
+        Me.tbxten.TabIndex = 2
         '
         'frmDangNhap
         '
@@ -121,6 +122,7 @@ Partial Class frmDangNhap
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmDangNhap"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmDangNhap"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -134,7 +136,7 @@ Partial Class frmDangNhap
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents tbxpass As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbxten As TextBox
 End Class

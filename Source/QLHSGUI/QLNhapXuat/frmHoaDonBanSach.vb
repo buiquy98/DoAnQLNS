@@ -78,12 +78,10 @@ Public Class frmHoaDonBanSach
         Dim frmdg As frmCHONSACH = New frmCHONSACH()
         '   frmdg.MdiParent = Me
         frmdg.ShowDialog()
-        Dim istrung = False
-        Dim listtemp = New List(Of SACHDTO)
-
         If (frmdg.listSachDuocChon.Count <> 0) Then
             sbus = New SACHBUS
-
+            Dim istrung = False
+            Dim listtemp = New List(Of SACHDTO)
             Dim result As Result
             result = sbus.selectALL_ByMaSach(frmdg.listSachDuocChon(0), listtemp)
             listsach.AddRange(listtemp)
@@ -99,15 +97,28 @@ Public Class frmHoaDonBanSach
             Next
 
             If istrung = False Then
+                LoadDataGridSach()
+            Else
 
-                dgvsach.DataSource = Nothing
-                dgvsach.Columns.Clear()
-                dgvsach.AutoGenerateColumns = False
-                dgvsach.AllowUserToAddRows = False
-                dgvsach.DataSource = listsach
+                MessageBox.Show("Chưa chọn sách hoặc bị trùng")
+            End If
+        End If
+
+    End Sub
 
 
-                Dim clStt = New DataGridViewTextBoxColumn()
+
+    Public Function LoadDataGridSach()
+
+
+        dgvsach.DataSource = Nothing
+        dgvsach.Columns.Clear()
+        dgvsach.AutoGenerateColumns = False
+        dgvsach.AllowUserToAddRows = False
+        dgvsach.DataSource = listsach
+
+
+        Dim clStt = New DataGridViewTextBoxColumn()
                 clStt.Name = ""
                 clStt.HeaderText = "STT"
                 clStt.DataPropertyName = ""
@@ -181,21 +192,14 @@ Public Class frmHoaDonBanSach
                     dgvsach.Columns(index).ReadOnly = True
 
                 Next
-                dgvsach.Columns(8).ReadOnly = True
-
-            Else
-                MessageBox.Show("Chưa chọn sách hoặc bị trùng")
-            End If
-
-        End If
-
-    End Sub
+        dgvsach.Columns(8).ReadOnly = True
+    End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim frmdg As frmThayDoiQuyDinh = New frmThayDoiQuyDinh()
         '   frmdg.MdiParent = Me
         frmdg.ShowDialog()
-        tbxquidinh1.Text = frmdg.txtLuongNhapToiThieu.Text
+        tbxquidinh1.Text = frmdg.txtLuongTonToiThieu.Text
         tbxquidinh2.Text = frmdg.txtTienNoToiDa.Text
 
     End Sub
@@ -230,6 +234,12 @@ Public Class frmHoaDonBanSach
     End Sub
 
     Private Sub btnlapphieu_Click(sender As Object, e As EventArgs) Handles btnlapphieu.Click
+        If txtHoTenKH.Text = "" Or tbxtongtien.Text = "" Or dgvsach.RowCount() = 0 Then
+            MessageBox.Show("Chưa chọn khách hàng hoặc sách", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            Return
+        End If
+
         Dim SoLuongTonToiThieuSauKhiBan = Integer.Parse(tbxquidinh1.Text)
         Dim TienNoToiDaCuaKhachHang = Integer.Parse(tbxquidinh2.Text)
         Dim TienNoHienTai = Integer.Parse(tbxsotienno.Text)
@@ -246,7 +256,6 @@ Public Class frmHoaDonBanSach
             End If
 
         Next
-
 
 
 
@@ -356,6 +365,23 @@ Public Class frmHoaDonBanSach
             MessageBox.Show("Lấy ID kế tiếp của mã hóa đơn không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+
+    End Sub
+
+    Private Sub btnxoa_Click(sender As Object, e As EventArgs) Handles btnxoa.Click
+        Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y
+        'dgvsach.Rows.Remove(dgvsach.Rows(currentRowIndex))
+        Dim MScanXoa = dgvsach.Rows(currentRowIndex).Cells(1).Value
+        Dim ms = 0
+        For index = 0 To listsach.Count() - 1
+            If listsach(index).Imasach = MScanXoa Then
+                ms = index
+            End If
+
+        Next
+
+        listsach.RemoveAt(ms)
+        LoadDataGridSach()
 
     End Sub
 End Class

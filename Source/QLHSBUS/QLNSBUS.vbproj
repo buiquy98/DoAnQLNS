@@ -71,6 +71,7 @@
     <Compile Include="CHITIETPHIEUNHAPBUS.vb" />
     <Compile Include="HOADONBUS.vb" />
     <Compile Include="KHACHHANGBUS.vb" />
+    <Compile Include="NGUOIDUNGBUS.vb" />
     <Compile Include="PHIEUNHAPBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

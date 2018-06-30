@@ -270,6 +270,155 @@ Public Class SACHDAL
         Return New Result(True) ' thanh cong
     End Function
 
+    Public Function Sellecall_byDonGia(giadau As Integer, giacuoi As Integer, ByRef listSach As List(Of SACHDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT *"
+        query &= "FROM [tblSach]"
+        query &= "WHERE"
+        query &= "[DONGIA]>=@giadau AND [DONGIA]<=@giacuoi"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@giadau", giadau)
+                    .Parameters.AddWithValue("@giacuoi", giacuoi)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất số lượng tồn theo mã sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+    Public Function Sellecall_byslt(tondau As Integer, toncuoi As Integer, ByRef listSach As List(Of SACHDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT *"
+        query &= "FROM [tblSach]"
+        query &= "WHERE"
+        query &= "[SOLUONGTON]>=@giadau AND [SOLUONGTON]<=@giacuoi"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@giadau", tondau)
+                    .Parameters.AddWithValue("@giacuoi", toncuoi)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất số lượng tồn theo mã sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function selectALL_ByTacgia(tacgia As String, ByRef listSach As List(Of SACHDTO)) As Result
+        Dim query As String = String.Empty
+        query &= "SELECT *"
+        query &= "FROM [tblSach]"
+        query &= "WHERE"
+        query &= "[tacGia] = @tacGia "
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@tacGia", tacgia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả đầu sách theo tác giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+    Public Function selectALL_ByTheloai(matheloai As String, ByRef listSach As List(Of SACHDTO)) As Result
+        Dim query As String = String.Empty
+        query &= "SELECT *"
+        query &= "FROM [tblSach]"
+        query &= "WHERE"
+        query &= "[maLoaiSach] = @maloai "
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@maloai", matheloai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả đầu sách theo tác giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
 
     Public Function update_SoLuongTon(sach As SACHDTO) As Result
 

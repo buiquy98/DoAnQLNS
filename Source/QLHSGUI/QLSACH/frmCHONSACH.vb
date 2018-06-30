@@ -20,6 +20,10 @@ Public Class frmCHONSACH
         dgvsach.AllowUserToAddRows = False
         dgvsach.DataSource = listsach
 
+
+
+
+
         Dim clMaSach = New DataGridViewTextBoxColumn()
         clMaSach.Name = "Imasach"
         clMaSach.HeaderText = "Mã Sách"

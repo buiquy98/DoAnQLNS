@@ -71,6 +71,8 @@
     <Compile Include="CHITIETPHIEUNHAPDAL.vb" />
     <Compile Include="HOADONDAL.vb" />
     <Compile Include="KHACHHANGDAL.vb" />
+    <Compile Include="LOAINGUOIDUNGDAL.vb" />
+    <Compile Include="NGUOIDUNGDAL.vb" />
     <Compile Include="PHIEUNHAPDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
