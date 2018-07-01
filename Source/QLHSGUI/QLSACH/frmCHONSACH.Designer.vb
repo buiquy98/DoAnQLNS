@@ -28,10 +28,8 @@ Partial Class frmCHONSACH
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnall = New System.Windows.Forms.Button()
         Me.btntim = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbxtensach = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btndong = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -77,10 +75,8 @@ Partial Class frmCHONSACH
         '
         Me.GroupBox1.Controls.Add(Me.btnall)
         Me.GroupBox1.Controls.Add(Me.btntim)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.tbxtensach)
-        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(87, 128)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(726, 88)
@@ -90,7 +86,7 @@ Partial Class frmCHONSACH
         '
         'btnall
         '
-        Me.btnall.Location = New System.Drawing.Point(372, 57)
+        Me.btnall.Location = New System.Drawing.Point(205, 47)
         Me.btnall.Name = "btnall"
         Me.btnall.Size = New System.Drawing.Size(122, 23)
         Me.btnall.TabIndex = 37
@@ -99,20 +95,12 @@ Partial Class frmCHONSACH
         '
         'btntim
         '
-        Me.btntim.Location = New System.Drawing.Point(372, 28)
+        Me.btntim.Location = New System.Drawing.Point(115, 47)
         Me.btntim.Name = "btntim"
         Me.btntim.Size = New System.Drawing.Size(75, 23)
         Me.btntim.TabIndex = 36
         Me.btntim.Text = "Tìm"
         Me.btntim.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(115, 47)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(212, 21)
-        Me.ComboBox1.TabIndex = 35
         '
         'Label8
         '
@@ -130,16 +118,6 @@ Partial Class frmCHONSACH
         Me.tbxtensach.Name = "tbxtensach"
         Me.tbxtensach.Size = New System.Drawing.Size(212, 20)
         Me.tbxtensach.TabIndex = 34
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 55)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 13)
-        Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Thể Loại"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnchon
         '
@@ -197,10 +175,8 @@ Partial Class frmCHONSACH
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents dgvsach As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents tbxtensach As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents btnchon As Button
     Friend WithEvents btndong As Button
     Friend WithEvents Label3 As Label

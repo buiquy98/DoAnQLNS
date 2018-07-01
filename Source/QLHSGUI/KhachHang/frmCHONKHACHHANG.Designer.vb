@@ -27,9 +27,6 @@ Partial Class frmCHONKHACHHANG
         Me.dgvListKhachHang = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnall = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.btTimKiemTheHoTen = New System.Windows.Forms.Button()
         Me.txtMaKHTimKiem = New System.Windows.Forms.TextBox()
         Me.btTimKiemTheoMAKH = New System.Windows.Forms.Button()
@@ -79,9 +76,6 @@ Partial Class frmCHONKHACHHANG
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnall)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.btTimKiemTheHoTen)
         Me.GroupBox1.Controls.Add(Me.txtMaKHTimKiem)
         Me.GroupBox1.Controls.Add(Me.btTimKiemTheoMAKH)
@@ -97,37 +91,12 @@ Partial Class frmCHONKHACHHANG
         '
         'btnall
         '
-        Me.btnall.Location = New System.Drawing.Point(282, 82)
+        Me.btnall.Location = New System.Drawing.Point(417, 51)
         Me.btnall.Name = "btnall"
         Me.btnall.Size = New System.Drawing.Size(148, 23)
         Me.btnall.TabIndex = 43
         Me.btnall.Text = "Lấy danh sách khách hàng"
         Me.btnall.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(468, 61)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 20)
-        Me.Button1.TabIndex = 42
-        Me.Button1.Text = "Tìm"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(468, 30)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(122, 20)
-        Me.TextBox1.TabIndex = 41
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(387, 32)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 13)
-        Me.Label9.TabIndex = 40
-        Me.Label9.Text = "Số Điện Thoại"
         '
         'btTimKiemTheHoTen
         '
@@ -235,9 +204,6 @@ Partial Class frmCHONKHACHHANG
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgvListKhachHang As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents btTimKiemTheHoTen As Button
     Friend WithEvents txtMaKHTimKiem As TextBox
     Friend WithEvents btTimKiemTheoMAKH As Button

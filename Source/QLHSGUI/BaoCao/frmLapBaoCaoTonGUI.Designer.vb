@@ -28,10 +28,10 @@ Partial Class frmLapBaoCaoTonGUI
         Me.nudnam = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvsach = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.nudthang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudnam, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -93,6 +93,15 @@ Partial Class frmLapBaoCaoTonGUI
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "BÁO CÁO TỒN"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(517, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(103, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Lập báo cáo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
@@ -124,15 +133,6 @@ Partial Class frmLapBaoCaoTonGUI
         Me.dgvsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvsach.Size = New System.Drawing.Size(727, 247)
         Me.dgvsach.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(517, 42)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Xem báo cáo"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmLapBaoCaoTonGUI
         '

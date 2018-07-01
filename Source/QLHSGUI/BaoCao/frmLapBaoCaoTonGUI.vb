@@ -42,14 +42,12 @@ Public Class frmLapBaoCaoTonGUI
         dgvsach.DataSource = listctbtt
 
 
+        Dim clStt = New DataGridViewTextBoxColumn()
+        clStt.Name = ""
+        clStt.HeaderText = "STT"
+        clStt.DataPropertyName = ""
+        dgvsach.Columns.Add(clStt)
 
-
-
-        Dim clMaSach = New DataGridViewTextBoxColumn()
-        clMaSach.Name = "MaChiTietBaoCaoTon1"
-        clMaSach.HeaderText = "Mã ctbct"
-        clMaSach.DataPropertyName = "MaChiTietBaoCaoTon1"
-        dgvsach.Columns.Add(clMaSach)
 
         Dim clTenSach = New DataGridViewTextBoxColumn()
         clTenSach.Name = "MaSach1"
@@ -77,7 +75,10 @@ Public Class frmLapBaoCaoTonGUI
         clSoLuongTon.DataPropertyName = "tonCuoi1"
         dgvsach.Columns.Add(clSoLuongTon)
 
-
+        For index = 0 To dgvsach.RowCount - 1
+            dgvsach.Rows(index).Cells(0).Value = index + 1
+            ' dgvsach.Rows(index).Cells(8).Value = 0
+        Next
 
 
 
