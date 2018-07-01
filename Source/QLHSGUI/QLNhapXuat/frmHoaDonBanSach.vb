@@ -277,6 +277,14 @@ Public Class frmHoaDonBanSach
             Return
         End If
 
+        Dim lkh As List(Of KHACHHANGDTO)
+        lkh = New List(Of KHACHHANGDTO)
+        Dim khbus = New KHACHHANGBUS
+        khbus.selectALL_ByType(txtMaKH.Text, lkh)
+
+
+        lkh(0).TienNoKH1 = Integer.Parse(tbxtongtien.Text) + Integer.Parse(tbxsotienno.Text)
+        khbus.update(lkh(0))
         For index = 0 To dgvsach.RowCount - 1
             Dim CThd = New CHITIETHOADONDTO()
             Dim nextID As Integer
@@ -382,6 +390,10 @@ Public Class frmHoaDonBanSach
 
         listsach.RemoveAt(ms)
         LoadDataGridSach()
+
+    End Sub
+
+    Private Sub dgvsach_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvsach.CellContentClick
 
     End Sub
 End Class

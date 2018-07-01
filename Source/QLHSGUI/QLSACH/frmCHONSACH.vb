@@ -96,7 +96,7 @@ Public Class frmCHONSACH
 
         Dim clMaLoaiSach = New DataGridViewTextBoxColumn()
         clMaLoaiSach.Name = "Imaloaisach"
-        clMaLoaiSach.HeaderText = "TheLoai"
+        clMaLoaiSach.HeaderText = "The Loai"
         clMaLoaiSach.DataPropertyName = "Imaloaisach"
         dgvsach.Columns.Add(clMaLoaiSach)
 

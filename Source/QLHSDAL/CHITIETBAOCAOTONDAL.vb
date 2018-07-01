@@ -165,7 +165,7 @@ Public Class CHITIETBAOCAOTONDAL
         Dim query As String = String.Empty
         query &= "SELECT *"
         query &= "FROM [dbo].[tblChiTietBaoCaoTon] "
-        query &= "WHERE [maChiTietBaoCaoTon] = @maChiTietBaoCaoTon "
+        query &= "WHERE [maBaoCaoTon] = @maBaoCaoTon "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -173,7 +173,7 @@ Public Class CHITIETBAOCAOTONDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", maBaoCao)
+                    .Parameters.AddWithValue("@maBaoCaoTon", maBaoCao)
                 End With
                 Try
                     conn.Open()
@@ -195,6 +195,54 @@ Public Class CHITIETBAOCAOTONDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
+    Public Function updatect(ctbct As CHITIETBAOCAOTONDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblChiTietBaoCaoTon] SET"
+        query &= " [maSach] = @maSach "
+        query &= " ,[maBaoCaoTon] = @maBaoCaoTon "
+        query &= " ,[tonDau] = @tonDau "
+        query &= " ,[tonPhatSinh] = @tonPhatSinh "
+        query &= " ,[tonCuoi] = @tonCuoi "
+        query &= "WHERE "
+        query &= " [maChiTietBaoCaoTon] = @maChiTietBaoCaoTon"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@maChiTietBaoCaoTon", ctbct.MaChiTietBaoCaoTon1)
+                    .Parameters.AddWithValue("@maSach", ctbct.MaSach1)
+                    .Parameters.AddWithValue("@maBaoCaoTon", ctbct.MaBaoCaoTon1)
+                    .Parameters.AddWithValue("@tonDau", ctbct.TonDau1)
+                    .Parameters.AddWithValue("@tonPhatSinh", ctbct.TonPhatSinh1)
+                    .Parameters.AddWithValue("@tonCuoi", ctbct.TonCuoi1)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Cập nhật ct bct k thanh cong", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+
+
+
+
+
 
     Public Function delete(maCTBCT As Integer) As Result
 

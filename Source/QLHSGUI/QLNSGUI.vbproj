@@ -74,40 +74,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao\frmLapBaoCaoTon.Designer.vb">
-      <DependentUpon>frmLapBaoCaoTon.vb</DependentUpon>
+    <Compile Include="BaoCao\frmLapBaoCaoTonGUI.Designer.vb">
+      <DependentUpon>frmLapBaoCaoTonGUI.vb</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\frmLapBaoCaoTon.vb">
+    <Compile Include="BaoCao\frmLapBaoCaoTonGUI.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\frmLapBaoCaoCongNo.Designer.vb">
-      <DependentUpon>frmLapBaoCaoCongNo.vb</DependentUpon>
+    <Compile Include="BaoCao\frmLapBaoCaoCongNoGui.Designer.vb">
+      <DependentUpon>frmLapBaoCaoCongNoGui.vb</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\frmLapBaoCaoCongNo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiBaoCaoCongNo.Designer.vb">
-      <DependentUpon>frmQuanLiBaoCaoCongNo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiBaoCaoCongNo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiBaoCaoTon.Designer.vb">
-      <DependentUpon>frmQuanLiBaoCaoTon.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiBaoCaoTon.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.Designer.vb">
-      <DependentUpon>frmQuanLiChiTietBaoCaoCongNo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoTon.Designer.vb">
-      <DependentUpon>frmQuanLiChiTietBaoCaoTon.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmQuanLiChiTietBaoCaoTon.vb">
+    <Compile Include="BaoCao\frmLapBaoCaoCongNoGui.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KhachHang\frmCHONKHACHHANG.Designer.vb">
@@ -235,23 +211,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BaoCao\frmLapBaoCaoCongNo.resx">
-      <DependentUpon>frmLapBaoCaoCongNo.vb</DependentUpon>
+    <EmbeddedResource Include="BaoCao\frmLapBaoCaoCongNoGui.resx">
+      <DependentUpon>frmLapBaoCaoCongNoGui.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmLapBaoCaoTon.resx">
-      <DependentUpon>frmLapBaoCaoTon.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmQuanLiBaoCaoCongNo.resx">
-      <DependentUpon>frmQuanLiBaoCaoCongNo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmQuanLiBaoCaoTon.resx">
-      <DependentUpon>frmQuanLiBaoCaoTon.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoCongNo.resx">
-      <DependentUpon>frmQuanLiChiTietBaoCaoCongNo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmQuanLiChiTietBaoCaoTon.resx">
-      <DependentUpon>frmQuanLiChiTietBaoCaoTon.vb</DependentUpon>
+    <EmbeddedResource Include="BaoCao\frmLapBaoCaoTonGUI.resx">
+      <DependentUpon>frmLapBaoCaoTonGUI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\frmCHONKHACHHANG.resx">
       <DependentUpon>frmCHONKHACHHANG.vb</DependentUpon>

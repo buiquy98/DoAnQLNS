@@ -98,6 +98,10 @@ Public Class frmPhieuThuTien
         Dim phieuThu As PHIEUTHUTIENDTO
         phieuThu = New PHIEUTHUTIENDTO()
         '1. Mapping data from GUI control
+        If txtMaKH.Text = "" Then
+            MessageBox.Show("Chưa chọn khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
         phieuThu.MaPhieuThu1 = Convert.ToInt32(tbxmaphieu.Text)
         phieuThu.MaKH1 = Convert.ToInt32(txtMaKH.Text)
         phieuThu.NgayThuTien1 = dtpngaylap.Text
@@ -108,17 +112,33 @@ Public Class frmPhieuThuTien
         If cbapdung.Checked = True Then
             If sotienthu <= sotienno Then
                 Dim result As Result
+
+                Dim khbus = New KHACHHANGBUS
+                Dim lkh = New List(Of KHACHHANGDTO)
+                result = khbus.selectALL_ByType(txtMaKH.Text, lkh)
+                Dim tiennomoi = sotienthu - sotienno
+                lkh(0).TienNoKH1 = tiennomoi
+                khbus.update(lkh(0))
+                tbxsotienno.Text=tiennomoi
                 result = ptbus.insert(phieuThu)
-                MessageBox.Show("Thêm sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Thêm phiếu thu thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 btnphieumoi.Enabled = True
                 btnlapphieu.Enabled = False
             Else
                 MessageBox.Show("Thêm không thành công vì số tiền thu lớn hơn số tiền nợ.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 tbxsotienthu.Focus()
+                Return
                 'System.Console.WriteLine(Result.SystemMessage)
             End If
         Else
             Dim result As Result
+            Dim khbus = New KHACHHANGBUS
+            Dim lkh = New List(Of KHACHHANGDTO)
+            result = khbus.selectALL_ByType(txtMaKH.Text, lkh)
+            Dim tiennomoi = 0
+            lkh(0).TienNoKH1 = tiennomoi
+            khbus.update(lkh(0))
+            tbxsotienno.Text = tiennomoi
             result = ptbus.insert(phieuThu)
             MessageBox.Show("Thêm thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             btnlapphieu.Enabled = False

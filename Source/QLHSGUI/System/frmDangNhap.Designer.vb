@@ -25,12 +25,12 @@ Partial Class frmDangNhap
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.tbxpass = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbxten = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +40,7 @@ Partial Class frmDangNhap
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(123, 19)
+        Me.Label1.Location = New System.Drawing.Point(149, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(170, 31)
         Me.Label1.TabIndex = 0
@@ -71,6 +71,15 @@ Partial Class frmDangNhap
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "User"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(217, 121)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(80, 38)
+        Me.Button3.TabIndex = 7
+        Me.Button3.Text = "KHÁCH"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -114,22 +123,13 @@ Partial Class frmDangNhap
         Me.tbxten.Size = New System.Drawing.Size(297, 20)
         Me.tbxten.TabIndex = 2
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(217, 121)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(80, 38)
-        Me.Button3.TabIndex = 7
-        Me.Button3.Text = "KHÁCH"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'frmDangNhap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(500, 301)
+        Me.ClientSize = New System.Drawing.Size(485, 250)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmDangNhap"

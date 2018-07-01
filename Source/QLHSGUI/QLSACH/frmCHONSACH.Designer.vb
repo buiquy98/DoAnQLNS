@@ -26,6 +26,7 @@ Partial Class frmCHONSACH
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvsach = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnall = New System.Windows.Forms.Button()
         Me.btntim = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -34,7 +35,6 @@ Partial Class frmCHONSACH
         Me.btnchon = New System.Windows.Forms.Button()
         Me.btndong = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnall = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +87,15 @@ Partial Class frmCHONSACH
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tìm kiếm"
+        '
+        'btnall
+        '
+        Me.btnall.Location = New System.Drawing.Point(372, 57)
+        Me.btnall.Name = "btnall"
+        Me.btnall.Size = New System.Drawing.Size(122, 23)
+        Me.btnall.TabIndex = 37
+        Me.btnall.Text = "Lấy tất cả đầu sách"
+        Me.btnall.UseVisualStyleBackColor = True
         '
         'btntim
         '
@@ -160,15 +169,6 @@ Partial Class frmCHONSACH
         Me.Label3.Size = New System.Drawing.Size(167, 31)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "CHỌN SÁCH"
-        '
-        'btnall
-        '
-        Me.btnall.Location = New System.Drawing.Point(372, 57)
-        Me.btnall.Name = "btnall"
-        Me.btnall.Size = New System.Drawing.Size(122, 23)
-        Me.btnall.TabIndex = 37
-        Me.btnall.Text = "Lấy tất cả đầu sách"
-        Me.btnall.UseVisualStyleBackColor = True
         '
         'frmCHONSACH
         '

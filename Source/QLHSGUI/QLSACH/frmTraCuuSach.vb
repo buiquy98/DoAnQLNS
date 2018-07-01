@@ -263,11 +263,13 @@ Public Class frmTraCuuSach
         If tbxmasach.Text <> "" Then
             Dim ms = tbxmasach.Text
             loadListSach_ByMaLoaiSach(ms)
+            Return
         End If
 
         If tbxtensach.Text <> "" Then
             Dim ts = tbxtensach.Text
             loadListSach_ByTenSach(ts)
+            Return
         End If
 
 
@@ -275,7 +277,7 @@ Public Class frmTraCuuSach
 
             Dim tg = tbxtacgia.Text
             loadlistsachbytacgia(tg)
-
+            Return
 
 
         End If
@@ -284,7 +286,7 @@ Public Class frmTraCuuSach
 
             Dim maloai = cbxtheloai.SelectedValue
             loadListSach_ByTheloai(maloai)
-
+            Return
 
         End If
 

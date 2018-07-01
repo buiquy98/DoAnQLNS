@@ -95,11 +95,6 @@ C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSG
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoTon.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNo.resources
 C:\Users\buiqu\Documents\GitHub\DoAnCNPM\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoCongNo.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNo.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTon.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoCongNo.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoTon.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoCongNo.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLTheLoai.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLSach.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONSACH.resources
@@ -145,9 +140,10 @@ C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.e
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.xml
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.pdb
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resources
-D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONKHACHHANG.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmPhieuThuTien.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThayDoiQuyDinh.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmHoaDonBanSach.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThemNguoiDung.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNoGui.resources
+D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTonGUI.resources

@@ -99,34 +99,24 @@ Public Class frmMain
         frmdg.Show()
     End Sub
 
-    Private Sub BáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoCôngNợToolStripMenuItem.Click
-        Dim frmdg As frmLapBaoCaoCongNo = New frmLapBaoCaoCongNo()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub BáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub QuànLíBáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuànLíBáoCáoCôngNợToolStripMenuItem.Click
-        Dim frmdg As frmQuanLiBaoCaoCongNo = New frmQuanLiBaoCaoCongNo()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub QuànLíBáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub BáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoTồnToolStripMenuItem.Click
-        Dim frmdg As frmLapBaoCaoTon = New frmLapBaoCaoTon()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub BáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub QuảnLíBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíBáoCáoTồnToolStripMenuItem.Click
-        Dim frmdg As frmQuanLiBaoCaoTon = New frmQuanLiBaoCaoTon()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub QuảnLíBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub QuảnLíChiTiếtBáoCáoCôngNọToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíChiTiếtBáoCáoCôngNọToolStripMenuItem.Click
-        Dim frmdg As frmQuanLiChiTietBaoCaoCongNo = New frmQuanLiChiTietBaoCaoCongNo()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub QuảnLíChiTiếtBáoCáoCôngNọToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub QuảnLýThểLoạiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles qltltool.Click
@@ -151,10 +141,8 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem.Click
-        Dim frmdg As frmQuanLiChiTietBaoCaoTon = New frmQuanLiChiTietBaoCaoTon()
-        frmdg.MdiParent = Me
-        frmdg.Show()
+    Private Sub QuảnLíChiTiếtBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub LậpPhiếuThuTiềnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpPhiếuThuTiềnToolStripMenuItem.Click
@@ -202,5 +190,11 @@ Public Class frmMain
         Else
             Me.Close()
         End If
+    End Sub
+
+    Private Sub LậpBáoCáoTồnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpBáoCáoTồnToolStripMenuItem.Click
+        Dim frmdg As frmLapBaoCaoTonGUI = New frmLapBaoCaoTonGUI()
+        frmdg.MdiParent = Me
+        frmdg.Show()
     End Sub
 End Class

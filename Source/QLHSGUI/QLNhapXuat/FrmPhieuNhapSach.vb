@@ -8,6 +8,8 @@ Public Class FrmPhieuNhapSach
     Private sbus As SACHBUS
     Private listsach As List(Of SACHDTO)
     Private qdbus As QUYDINHBUS
+    Private ctbctbus As CHITIETBAOCAOTONBUS
+    Private bctbus As BAOCAOTONBUS
     Private Sub FrmPhieuNhapSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadContent()
         listsach = New List(Of SACHDTO)
@@ -16,7 +18,8 @@ Public Class FrmPhieuNhapSach
         listqd = New List(Of QUYDINHDTO)
         qdbus.selectAll(listqd)
         ctpnbus = New CHITIETPHIEUNHAPBUS()
-
+        bctbus = New BAOCAOTONBUS()
+        ctbctbus = New CHITIETBAOCAOTONBUS()
     End Sub
 
 
@@ -221,20 +224,31 @@ Public Class FrmPhieuNhapSach
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnluu.Click
-        Dim soluongnhaptoithieu = quydinh.LuongNhapToiThieu1
+        Dim  soluongnhaptoithieu = quydinh.LuongNhapToiThieu1
         Dim soluongnhaptoida = quydinh.LuongTonToiDa1
 
-        Dim soluongnhap = Integer.Parse(tbxsoluongnhap.Text)
-        If soluongnhap < soluongnhaptoithieu Or soluongnhap > soluongnhaptoida Then
-            MessageBox.Show("Số lượng nhập vào không thỏa Quy định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
 
 
-        If soluongnhap > soluongnhaptoithieu Then
-            If soluongnhap < soluongnhaptoida Then
+        For index = 0 To dgvsach.RowCount() - 1
+            If dgvsach.Rows(index).Cells(6).Value = "" Then
+                MessageBox.Show("Chưa nhập số lượng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+            Dim soluongnhap = Integer.Parse(dgvsach.Rows(index).Cells(6).Value)
+            If soluongnhap < soluongnhaptoithieu Or soluongnhap > soluongnhaptoida Then
+                MessageBox.Show("Số lượng nhập vào không thỏa Quy định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+        Next
 
-                Dim pndto = New PHIEUNHAPDTO()
+
+
+
+
+
+
+
+        Dim pndto = New PHIEUNHAPDTO()
                 pndto.Imaphieunhap = tbxmaphieunhap.Text
                 'Thêm chi tiết phiếu nhập và cập nhật lượng tồn mới trong sách
                 Dim chiTietPhieuNhapDTO As New CHITIETPHIEUNHAPDTO
@@ -242,42 +256,105 @@ Public Class FrmPhieuNhapSach
                 pnbus.insert(pndto)
 
 
-                If dgvsach.RowCount <> 0 Then
-                    For index = 0 To dgvsach.RowCount - 1
-                        chiTietPhieuNhapDTO = New CHITIETPHIEUNHAPDTO()
-                        Dim nextID As Integer
-                        Dim result As Result
-                        result = ctpnbus.getNextID(nextID)
-                        If (result.FlagResult = True) Then
-                        Else
-                            MessageBox.Show("Lấy ID kế tiếp của mã CT phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            System.Console.WriteLine(result.SystemMessage)
-                        End If
-                        Dim sachDTO As New SACHDTO()
+        If dgvsach.RowCount <> 0 Then
+            'new ma bct
+            Dim bct As BAOCAOTONDTO
+            bct = New BAOCAOTONDTO()
 
-                        'chiTietPhieuNhapDTO.Imachitietphieunhap =
-                        sachDTO.Imasach = dgvsach.Rows(index).Cells(1).Value
-                        sachDTO.Isoluongton = dgvsach.Rows(index).Cells(5).Value + dgvsach.Rows(index).Cells(6).Value
-                        sbus.update_SoLuongTon(sachDTO)
+            'Load báo cáo tồn nếu tháng bị trùng sẽ không phát sinh thêm ID
+            Dim listbct = New List(Of BAOCAOTONDTO)
+            Dim thang = Integer.Parse(dtpngaynhap.Value.Month())
+            Dim nam = Integer.Parse(dtpngaynhap.Value.Year())
 
-
-                        ' cập nhật chi tiết phiếu nhập cho mỗi đầu sách thêm vào phiếu nhập
-
-                        chiTietPhieuNhapDTO.Imachitietphieunhap = nextID
-                        chiTietPhieuNhapDTO.Imaphieunhap = Int32.Parse(tbxmaphieunhap.Text)
-                        chiTietPhieuNhapDTO.Imasach = sachDTO.Imasach
-                        chiTietPhieuNhapDTO.Isoluongnhap = Int32.Parse(tbxsoluongnhap.Text)
-                        ctpnbus.insert(chiTietPhieuNhapDTO)
-
-
-                    Next
+            Dim result As Result
+            result = bctbus.selectAll_byThang(thang, nam, listbct)
+            If listbct.Count <> 0 Then
+                bct.MaBaoCaoTon1 = listbct(0).MaBaoCaoTon1
+                bct.Thang1 = thang
+                bct.Nam1 = nam
+            Else
+                Dim nextid As Integer
+                result = bctbus.getNextID(nextid)
+                bct.MaBaoCaoTon1 = nextid
+                bct.Nam1 = nam
+                bct.Thang1 = thang
+                result = bctbus.insert(bct)
+                If result.FlagResult = False Then
+                    MessageBox.Show("Lỗi")
+                    Return
                 End If
-                MessageBox.Show("Lập Phiếu nhập thành công")
-                btnluu.Enabled = False
             End If
+            For index = 0 To dgvsach.RowCount - 1
+                chiTietPhieuNhapDTO = New CHITIETPHIEUNHAPDTO()
+                Dim ctbct = New CHITIETBAOCAOTONDTO()
+                Dim nextID As Integer
+                result = ctpnbus.getNextID(nextID)
+                If (result.FlagResult = True) Then
+                Else
+                    MessageBox.Show("Lấy ID kế tiếp của mã CT phiếu nhập không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    System.Console.WriteLine(result.SystemMessage)
+                End If
+                Dim sachDTO As New SACHDTO()
+
+                'chiTietPhieuNhapDTO.Imachitietphieunhap =
+                sachDTO.Imasach = dgvsach.Rows(index).Cells(1).Value
+                sachDTO.Isoluongton = dgvsach.Rows(index).Cells(5).Value + dgvsach.Rows(index).Cells(6).Value
+                sbus.update_SoLuongTon(sachDTO)
+
+
+                ' cập nhật chi tiết phiếu nhập cho mỗi đầu sách thêm vào phiếu nhập
+
+                chiTietPhieuNhapDTO.Imachitietphieunhap = nextID
+                chiTietPhieuNhapDTO.Imaphieunhap = sachDTO.Imasach
+                chiTietPhieuNhapDTO.Imasach = sachDTO.Imasach
+                chiTietPhieuNhapDTO.Isoluongnhap = dgvsach.Rows(index).Cells(6).Value
+                ctpnbus.insert(chiTietPhieuNhapDTO)
+
+                'Cập nhật vào báo cáo tồn
+
+                ctbct.MaBaoCaoTon1 = bct.MaBaoCaoTon1
+
+                ctbct.MaSach1 = sachDTO.Imasach
+                ctbct.MaBaoCaoTon1 = bct.MaBaoCaoTon1
+                ctbct.TonCuoi1 = sachDTO.Isoluongton
+                ctbct.TonDau1 = dgvsach.Rows(index).Cells(5).Value
+                ctbct.TonPhatSinh1 = dgvsach.Rows(index).Cells(6).Value
+
+                ' Load list chi tiet bao cao ton,  kt xem neu sach da co thi cap nhat lai ton dau ton phat sinh va ton cuoi
+                Dim trung = False
+                Dim lsctbct = New List(Of CHITIETBAOCAOTONDTO)
+
+                result = ctbctbus.selectAll(lsctbct)
+                For temp = 0 To lsctbct.Count - 1
+                    'MS đã có trước đó, cập nhật lại 
+                    If ctbct.MaBaoCaoTon1 = lsctbct(temp).MaBaoCaoTon1 And ctbct.MaSach1 = lsctbct(temp).MaSach1 Then
+                        ctbct.MaChiTietBaoCaoTon1 = lsctbct(temp).MaChiTietBaoCaoTon1
+                        ctbct.TonDau1 = lsctbct(temp).TonDau1
+                        ctbct.TonPhatSinh1 = lsctbct(temp).TonPhatSinh1 + Integer.Parse(dgvsach.Rows(index).Cells(6).Value)
+                        ctbct.TonCuoi1 = ctbct.TonDau1 + ctbct.TonPhatSinh1
+                        result = ctbctbus.updatect(ctbct)
+                        If result.FlagResult = False Then
+                            MessageBox.Show("Lỗi")
+                            Return
+                        End If
+                        trung = True
+                    End If
+                Next
+                ' nếu k có sẵn thì add vào 
+                If trung = False Then
+                    Dim idctbct As Integer
+                    result = ctbctbus.getNextID(idctbct)
+                    ctbct.MaChiTietBaoCaoTon1 = idctbct
+                    result = ctbctbus.insert(ctbct)
+                    If result.FlagResult = False Then
+                        MessageBox.Show("Lỗi")
+                        Return
+                    End If
+                End If
+            Next
         End If
-
-
+        MessageBox.Show("Lập Phiếu nhập thành công")
+        btnluu.Enabled = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

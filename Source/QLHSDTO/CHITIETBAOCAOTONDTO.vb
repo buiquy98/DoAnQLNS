@@ -14,7 +14,9 @@
         Me.tonPhatSinh = tonPhatSinh
         Me.tonCuoi = tonCuoi
     End Sub
+    Public Sub New()
 
+    End Sub
     Public Property MaChiTietBaoCaoTon1 As Integer
         Get
             Return maChiTietBaoCaoTon

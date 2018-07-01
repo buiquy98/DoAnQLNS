@@ -20,6 +20,13 @@ Public Class CHITIETBAOCAOTONBUS
         Return ctbctDAL.insert(ct)
     End Function
 
+    Public Function updatect(ct As CHITIETBAOCAOTONDTO) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return ctbctDAL.updatect(ct)
+    End Function
+
 
     Public Function update(mact As Integer, tonDau As Integer, phatSinh As Integer, tonCuoi As Integer, listCTBCT As List(Of CHITIETBAOCAOTONDTO)) As Result
         '1. verify data here!!

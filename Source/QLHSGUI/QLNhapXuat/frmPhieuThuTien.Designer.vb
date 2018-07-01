@@ -202,7 +202,6 @@ Partial Class frmPhieuThuTien
         Me.txtMaKH.ReadOnly = True
         Me.txtMaKH.Size = New System.Drawing.Size(189, 20)
         Me.txtMaKH.TabIndex = 47
-        Me.txtMaKH.Text = "<tự động>"
         Me.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtMaKH.WordWrap = False
         '

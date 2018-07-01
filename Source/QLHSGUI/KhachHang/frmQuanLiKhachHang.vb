@@ -76,7 +76,7 @@ Public Class frmQuanLiKhachHang
                 Try
                     '1. Delete from DB
                     Dim result As Result
-                    result = khBus.delete(txtMaKH.Text)
+                    result = khBus.delete(Integer.Parse(txtMaKH.Text))
                     If (result.FlagResult = True) Then
                         MessageBox.Show("Xóa khách hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else

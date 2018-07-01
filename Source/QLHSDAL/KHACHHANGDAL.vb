@@ -127,6 +127,16 @@ Public Class KHACHHANGDAL
         Return New Result(True)
     End Function
 
+
+
+
+
+
+
+
+
+
+
     Public Function selectALL(ByRef listKH As List(Of KHACHHANGDTO)) As Result
         Dim query As String = String.Empty
         query &= " SELECT *"

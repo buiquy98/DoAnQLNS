@@ -51,6 +51,7 @@ Public Class frmThemNguoiDung
 
         If cbxloainguoidung.SelectedValue = 2 Then
             MessageBox.Show("Không thể tạo người dùng là khách", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
 
         Dim result As Result
