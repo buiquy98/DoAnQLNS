@@ -54,7 +54,7 @@ Partial Class frmLapBaoCaoTonGUI
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(191, 122)
+        Me.Label1.Location = New System.Drawing.Point(47, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(104, 13)
         Me.Label1.TabIndex = 43
@@ -62,14 +62,14 @@ Partial Class frmLapBaoCaoTonGUI
         '
         'nudthang
         '
-        Me.nudthang.Location = New System.Drawing.Point(311, 120)
+        Me.nudthang.Location = New System.Drawing.Point(157, 42)
         Me.nudthang.Name = "nudthang"
         Me.nudthang.Size = New System.Drawing.Size(62, 20)
         Me.nudthang.TabIndex = 44
         '
         'nudnam
         '
-        Me.nudnam.Location = New System.Drawing.Point(505, 122)
+        Me.nudnam.Location = New System.Drawing.Point(335, 44)
         Me.nudnam.Name = "nudnam"
         Me.nudnam.Size = New System.Drawing.Size(62, 20)
         Me.nudnam.TabIndex = 46
@@ -77,7 +77,7 @@ Partial Class frmLapBaoCaoTonGUI
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(428, 127)
+        Me.Label2.Location = New System.Drawing.Point(242, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 45
@@ -86,6 +86,10 @@ Partial Class frmLapBaoCaoTonGUI
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.nudnam)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.nudthang)
         Me.GroupBox1.Location = New System.Drawing.Point(72, 76)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(727, 81)
@@ -95,7 +99,7 @@ Partial Class frmLapBaoCaoTonGUI
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(517, 42)
+        Me.Button1.Location = New System.Drawing.Point(425, 41)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(103, 23)
         Me.Button1.TabIndex = 0
@@ -108,7 +112,7 @@ Partial Class frmLapBaoCaoTonGUI
         Me.TabControl1.Location = New System.Drawing.Point(68, 172)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(735, 276)
+        Me.TabControl1.Size = New System.Drawing.Size(609, 276)
         Me.TabControl1.TabIndex = 48
         '
         'TabPage1
@@ -118,7 +122,7 @@ Partial Class frmLapBaoCaoTonGUI
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TabPage1.Size = New System.Drawing.Size(727, 250)
+        Me.TabPage1.Size = New System.Drawing.Size(601, 250)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Danh sách đầu sách"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -131,7 +135,7 @@ Partial Class frmLapBaoCaoTonGUI
         Me.dgvsach.Name = "dgvsach"
         Me.dgvsach.ReadOnly = True
         Me.dgvsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvsach.Size = New System.Drawing.Size(727, 247)
+        Me.dgvsach.Size = New System.Drawing.Size(604, 247)
         Me.dgvsach.TabIndex = 0
         '
         'frmLapBaoCaoTonGUI
@@ -140,10 +144,6 @@ Partial Class frmLapBaoCaoTonGUI
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(855, 476)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.nudnam)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.nudthang)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmLapBaoCaoTonGUI"
@@ -151,6 +151,7 @@ Partial Class frmLapBaoCaoTonGUI
         CType(Me.nudthang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudnam, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).EndInit()

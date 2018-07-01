@@ -204,9 +204,9 @@ Public Class frmHoaDonBanSach
 
     End Sub
 
-    Private Sub dtpngaylap_ValueChanged(sender As Object, e As EventArgs) Handles dtpngaylap.ValueChanged
-        If dtpngaylap.Value < DateTime.Now Then
-            dtpngaylap.Value = DateTime.Now
+    Private Sub dtpngaylap_ValueChanged(sender As Object, e As EventArgs) Handles dtpngaynhap.ValueChanged
+        If dtpngaynhap.Value < DateTime.Now Then
+            dtpngaynhap.Value = DateTime.Now
         End If
     End Sub
 
@@ -265,7 +265,7 @@ Public Class frmHoaDonBanSach
         Dim hd As HoaDonDTO
         hd = New HoaDonDTO
         hd.MaHoaDon = tbxmaphieu.Text
-        hd.NgayHoaDon = dtpngaylap.Value
+        hd.NgayHoaDon = dtpngaynhap.Value
         hd.MaKhachHang = txtMaKH.Text
         hd.TongTriGia = tbxtongtien.Text
         Dim result As Result
@@ -285,7 +285,49 @@ Public Class frmHoaDonBanSach
 
         lkh(0).TienNoKH1 = Integer.Parse(tbxtongtien.Text) + Integer.Parse(tbxsotienno.Text)
         khbus.update(lkh(0))
+
+
+
+
+        'new ma bct
+        ' Kiểm tra mã tháng báo cáo
+
+        Dim bct As BAOCAOTONDTO
+        bct = New BAOCAOTONDTO()
+        Dim bctbus = New BAOCAOTONBUS
+        'Load báo cáo tồn nếu tháng bị trùng sẽ không phát sinh thêm ID
+        Dim listbct = New List(Of BAOCAOTONDTO)
+        Dim thang = Integer.Parse(dtpngaynhap.Value.Month())
+        Dim nam = Integer.Parse(dtpngaynhap.Value.Year())
+
+        result = bctbus.selectAll_byThang(thang, nam, listbct)
+        If listbct.Count <> 0 Then
+            bct.MaBaoCaoTon1 = listbct(0).MaBaoCaoTon1
+            bct.Thang1 = thang
+            bct.Nam1 = nam
+        Else
+            Dim nextidt As Integer
+            result = bctbus.getNextID(nextidt)
+            bct.MaBaoCaoTon1 = nextidt
+            bct.Nam1 = nam
+            bct.Thang1 = thang
+            result = bctbus.insert(bct)
+            If result.FlagResult = False Then
+                MessageBox.Show("Lỗi")
+                Return
+            End If
+        End If
+
+
+
+
         For index = 0 To dgvsach.RowCount - 1
+
+            Dim ctbct = New CHITIETBAOCAOTONDTO()
+
+            ctbct.MaBaoCaoTon1 = bct.MaBaoCaoTon1
+
+            Dim ctbctbus = New CHITIETBAOCAOTONBUS
             Dim CThd = New CHITIETHOADONDTO()
             Dim nextID As Integer
 
@@ -301,6 +343,27 @@ Public Class frmHoaDonBanSach
             sachDTO.Imasach = dgvsach.Rows(index).Cells(1).Value
             sachDTO.Isoluongton = dgvsach.Rows(index).Cells(5).Value - dgvsach.Rows(index).Cells(7).Value
             sbus.update_SoLuongTon(sachDTO)
+            ctbct.MaSach1 = sachDTO.Imasach
+
+            ' Load list chi tiet bao cao ton,  kt xem neu sach da co thi cap nhat lai ton dau ton phat sinh va ton cuoi
+            Dim trung = False
+            Dim lsctbct = New List(Of CHITIETBAOCAOTONDTO)
+
+            result = ctbctbus.selectAll(lsctbct)
+            For temp = 0 To lsctbct.Count - 1
+                'MS đã có trước đó, cập nhật lại 
+                If ctbct.MaBaoCaoTon1 = lsctbct(temp).MaBaoCaoTon1 And ctbct.MaSach1 = lsctbct(temp).MaSach1 Then
+                    ctbct.MaChiTietBaoCaoTon1 = lsctbct(temp).MaChiTietBaoCaoTon1
+                    ctbct.TonDau1 = lsctbct(temp).TonDau1
+                    ctbct.TonPhatSinh1 = lsctbct(temp).TonPhatSinh1 - dgvsach.Rows(index).Cells(7).Value
+                    ctbct.TonCuoi1 = sachDTO.Isoluongton
+                    result = ctbctbus.updatect(ctbct)
+                    If result.FlagResult = False Then
+                        MessageBox.Show("Lỗi")
+                        Return
+                    End If
+                End If
+            Next
 
 
 
@@ -312,6 +375,14 @@ Public Class frmHoaDonBanSach
             CThd.DonGiaBan1 = dgvsach.Rows(index).Cells(6).Value
 
             result = cthdbus.insert(CThd)
+
+
+
+
+
+
+
+
             If result.FlagResult = True Then
             Else
                 MessageBox.Show("Thêm chi tiết hóa đơn k thành công")

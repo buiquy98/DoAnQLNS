@@ -25,7 +25,7 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.dgvsach = New System.Windows.Forms.DataGridView()
+        Me.dgvkh = New System.Windows.Forms.DataGridView()
         Me.nudnam = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.nudthang = New System.Windows.Forms.NumericUpDown()
@@ -34,7 +34,7 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvkh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudnam, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudthang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -57,31 +57,31 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.TabControl1.Location = New System.Drawing.Point(72, 177)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(735, 276)
+        Me.TabControl1.Size = New System.Drawing.Size(653, 276)
         Me.TabControl1.TabIndex = 55
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.dgvsach)
+        Me.TabPage1.Controls.Add(Me.dgvkh)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TabPage1.Size = New System.Drawing.Size(727, 250)
+        Me.TabPage1.Size = New System.Drawing.Size(645, 250)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Danh sách đầu sách"
+        Me.TabPage1.Text = "Danh sách khách hàng"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'dgvsach
+        'dgvkh
         '
-        Me.dgvsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvsach.Location = New System.Drawing.Point(0, 0)
-        Me.dgvsach.MultiSelect = False
-        Me.dgvsach.Name = "dgvsach"
-        Me.dgvsach.ReadOnly = True
-        Me.dgvsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvsach.Size = New System.Drawing.Size(727, 247)
-        Me.dgvsach.TabIndex = 0
+        Me.dgvkh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvkh.Location = New System.Drawing.Point(0, 0)
+        Me.dgvkh.MultiSelect = False
+        Me.dgvkh.Name = "dgvkh"
+        Me.dgvkh.ReadOnly = True
+        Me.dgvkh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvkh.Size = New System.Drawing.Size(646, 247)
+        Me.dgvkh.TabIndex = 0
         '
         'nudnam
         '
@@ -120,7 +120,7 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(76, 81)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(727, 81)
+        Me.GroupBox1.Size = New System.Drawing.Size(649, 81)
         Me.GroupBox1.TabIndex = 54
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "BÁO CÁO TỒN"
@@ -138,7 +138,7 @@ Partial Class frmLapBaoCaoCongNoGui
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(886, 483)
+        Me.ClientSize = New System.Drawing.Size(781, 483)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.nudnam)
         Me.Controls.Add(Me.Label2)
@@ -150,7 +150,7 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.Text = "frmLapBaoCaoCongNoGui"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        CType(Me.dgvsach, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvkh, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudnam, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudthang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -161,7 +161,7 @@ Partial Class frmLapBaoCaoCongNoGui
     Friend WithEvents Label10 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents dgvsach As DataGridView
+    Friend WithEvents dgvkh As DataGridView
     Friend WithEvents nudnam As NumericUpDown
     Friend WithEvents Label2 As Label
     Friend WithEvents nudthang As NumericUpDown

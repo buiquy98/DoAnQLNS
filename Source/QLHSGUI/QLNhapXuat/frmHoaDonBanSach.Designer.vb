@@ -27,7 +27,7 @@ Partial Class frmHoaDonBanSach
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtpngaylap = New System.Windows.Forms.DateTimePicker()
+        Me.dtpngaynhap = New System.Windows.Forms.DateTimePicker()
         Me.tbxmaphieu = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -83,7 +83,7 @@ Partial Class frmHoaDonBanSach
         '
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.dtpngaylap)
+        Me.GroupBox1.Controls.Add(Me.dtpngaynhap)
         Me.GroupBox1.Controls.Add(Me.tbxmaphieu)
         Me.GroupBox1.Location = New System.Drawing.Point(22, 80)
         Me.GroupBox1.Name = "GroupBox1"
@@ -110,12 +110,12 @@ Partial Class frmHoaDonBanSach
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Mã hóa đơn"
         '
-        'dtpngaylap
+        'dtpngaynhap
         '
-        Me.dtpngaylap.Location = New System.Drawing.Point(442, 23)
-        Me.dtpngaylap.Name = "dtpngaylap"
-        Me.dtpngaylap.Size = New System.Drawing.Size(200, 20)
-        Me.dtpngaylap.TabIndex = 1
+        Me.dtpngaynhap.Location = New System.Drawing.Point(442, 23)
+        Me.dtpngaynhap.Name = "dtpngaynhap"
+        Me.dtpngaynhap.Size = New System.Drawing.Size(200, 20)
+        Me.dtpngaynhap.TabIndex = 1
         '
         'tbxmaphieu
         '
@@ -449,7 +449,7 @@ Partial Class frmHoaDonBanSach
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents dtpngaylap As DateTimePicker
+    Friend WithEvents dtpngaynhap As DateTimePicker
     Friend WithEvents tbxmaphieu As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label7 As Label
