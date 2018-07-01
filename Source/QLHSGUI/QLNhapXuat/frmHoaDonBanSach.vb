@@ -285,6 +285,64 @@ Public Class frmHoaDonBanSach
 
         lkh(0).TienNoKH1 = Integer.Parse(tbxtongtien.Text) + Integer.Parse(tbxsotienno.Text)
         khbus.update(lkh(0))
+        Dim thang = Integer.Parse(dtpngaynhap.Value.Month())
+        Dim nam = Integer.Parse(dtpngaynhap.Value.Year())
+        '---------Load Báo cáo công nợ, nếu trùng tháng thì k add ngược lại thì tạo phiếu mới
+        Dim cnbus = New BAOCAOCONGNOBUS
+        Dim cn = New BAOCAOCONGNODTO
+        Dim lcn = New List(Of BAOCAOCONGNODTO)
+        result = cnbus.selectAll_byThang(thang, nam, lcn)
+        If lcn.Count <> 0 Then
+            cn.MaBaoCaoCongNo1 = lcn(0).MaBaoCaoCongNo1
+            cn.Thang1 = thang
+            cn.Nam1 = nam
+        Else
+            Dim nextcn As Integer
+            result = cnbus.getNextID(nextcn)
+            cn.MaBaoCaoCongNo1 = nextcn
+            cn.Thang1 = thang
+            cn.Nam1 = nam
+            result = cnbus.insert(cn)
+        End If
+
+
+        Dim ctcnbus = New CHITIETBAOCAOCONGNOBUS
+        Dim ctcn = New CHITIETBAOCAOCONGNODTO
+        Dim listctcn = New List(Of CHITIETBAOCAOCONGNODTO)
+        result = ctcnbus.selectAll(listctcn)
+        ctcn.MaKH1 = txtMaKH.Text
+        ctcn.MaBaoCaoCongNo1 = cn.MaBaoCaoCongNo1
+        Dim temp1 = False
+        For index = 0 To listctcn.Count() - 1
+            If ctcn.MaBaoCaoCongNo1 = listctcn(index).MaBaoCaoCongNo1 And ctcn.MaKH1 = listctcn(index).MaKH1 Then
+                ctcn.MaChiTietBaoCaoCongNo1 = listctcn(index).MaChiTietBaoCaoCongNo1
+                ctcn.NoDau1 = listctcn(index).NoDau1
+                ctcn.NoPhatSinh1 = listctcn(index).NoPhatSinh1 + Integer.Parse(tbxtongtien.Text)
+                ctcn.NoCuoi1 = ctcn.NoDau1 + ctcn.NoPhatSinh1
+                ctcnbus.update(ctcn)
+                temp1 = True
+            End If
+        Next
+        If temp1 = False Then
+            Dim newid As Integer
+            ctcnbus.getNextID(newid)
+            ctcn.MaChiTietBaoCaoCongNo1 = newid
+            ctcn.NoDau1 = tbxsotienno.Text
+            ctcn.NoPhatSinh1 = tbxtongtien.Text
+            ctcn.NoCuoi1 = Integer.Parse(tbxsotienno.Text) + Integer.Parse(tbxtongtien.Text)
+            ctcnbus.insert(ctcn)
+
+
+        End If
+
+
+
+
+
+
+
+
+
 
 
 
@@ -297,8 +355,7 @@ Public Class frmHoaDonBanSach
         Dim bctbus = New BAOCAOTONBUS
         'Load báo cáo tồn nếu tháng bị trùng sẽ không phát sinh thêm ID
         Dim listbct = New List(Of BAOCAOTONDTO)
-        Dim thang = Integer.Parse(dtpngaynhap.Value.Month())
-        Dim nam = Integer.Parse(dtpngaynhap.Value.Year())
+
 
         result = bctbus.selectAll_byThang(thang, nam, listbct)
         If listbct.Count <> 0 Then
@@ -366,7 +423,7 @@ Public Class frmHoaDonBanSach
             Next
 
 
-
+            'add chi tiết hóa đơn
             CThd.MaChiTietHoaDon1 = nextID
             CThd.MaHoaDon1 = tbxmaphieu.Text
             CThd.MaSach1 = dgvsach.Rows(index).Cells(1).Value

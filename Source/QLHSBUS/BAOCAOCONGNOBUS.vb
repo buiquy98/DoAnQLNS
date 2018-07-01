@@ -51,10 +51,10 @@ Public Class BAOCAOCONGNOBUS
         Return bccnDAL.selectAll_byMaBaoCaoCongNo(maBaoCaoCongNo, listBaoCaoCongNo)
     End Function
 
-    Public Function selectAll_byThang(thang As Integer, ByRef listBaoCaoCongNo As List(Of BAOCAOCONGNODTO)) As Result
+    Public Function selectAll_byThang(thang As Integer, nam As Integer, ByRef listBaoCaoCongNo As List(Of BAOCAOCONGNODTO)) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return bccnDAL.selectAll_byThang(thang, listBaoCaoCongNo)
+        Return bccnDAL.selectAll_byThang(thang, nam, listBaoCaoCongNo)
     End Function
 End Class

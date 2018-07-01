@@ -52,8 +52,8 @@ Public Class BAOCAOCONGNODAL
     Public Function insert(bccn As BAOCAOCONGNODTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [dbo].[tblBaoCaoCongNo]([maBaoCaoCongNo],[thang])"
-        query &= "VALUES (@maBaoCaoCongNo,@thang)"
+        query &= "INSERT INTO [dbo].[tblBaoCaoCongNo]([maBaoCaoCongNo],[thang],[nam])"
+        query &= "VALUES (@maBaoCaoCongNo,@thang,@nam)"
 
         Dim nextID = 0
         Dim result As Result
@@ -71,6 +71,7 @@ Public Class BAOCAOCONGNODAL
                     .CommandText = query
                     .Parameters.AddWithValue("@maBaoCaoCongNo", bccn.MaBaoCaoCongNo1)
                     .Parameters.AddWithValue("@thang", bccn.Thang1)
+                    .Parameters.AddWithValue("@nam", bccn.Nam1)
                 End With
                 Try
                     conn.Open()
@@ -137,7 +138,7 @@ Public Class BAOCAOCONGNODAL
                     If reader.HasRows = True Then
                         listBaoCaoCongNo.Clear()
                         While reader.Read()
-                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang")))
+                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang"), reader("nam")))
                         End While
                     End If
                 Catch ex As Exception
@@ -174,7 +175,7 @@ Public Class BAOCAOCONGNODAL
                     If reader.HasRows = True Then
                         listBaoCaoCongNo.Clear()
                         While reader.Read()
-                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang")))
+                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang"), reader("nam")))
                         End While
                     End If
                 Catch ex As Exception
@@ -188,13 +189,13 @@ Public Class BAOCAOCONGNODAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectAll_byThang(thang As Integer, ByRef listBaoCaoCongNo As List(Of BAOCAOCONGNODTO)) As Result
+    Public Function selectAll_byThang(thang As Integer, nam As Integer, ByRef listBaoCaoCongNo As List(Of BAOCAOCONGNODTO)) As Result
 
         Dim query As String = String.Empty
         query &= " SELECT *"
         query &= " FROM [dbo].[tblBaoCaoCongNo]"
         query &= " WHERE "
-        query &= " month([thang]) = @thang"
+        query &= " [thang]= @thang and [nam]=@nam"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -204,6 +205,7 @@ Public Class BAOCAOCONGNODAL
                     .CommandType = CommandType.Text
                     .CommandText = query
                     .Parameters.AddWithValue("@thang", thang)
+                    .Parameters.AddWithValue("@nam", nam)
                 End With
                 Try
                     conn.Open()
@@ -212,7 +214,7 @@ Public Class BAOCAOCONGNODAL
                     If reader.HasRows = True Then
                         listBaoCaoCongNo.Clear()
                         While reader.Read()
-                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang")))
+                            listBaoCaoCongNo.Add(New BAOCAOCONGNODTO(reader("maBaoCaoCongNo"), reader("thang"), reader("nam")))
                         End While
                     End If
                 Catch ex As Exception
