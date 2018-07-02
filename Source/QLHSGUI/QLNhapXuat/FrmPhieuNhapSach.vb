@@ -151,6 +151,10 @@ Public Class FrmPhieuNhapSach
                     dgvsach.Rows(index).Cells(0).Value = index + 1
                 Next
 
+                For index = 0 To 5
+                    dgvsach.Columns(index).Width = dgvsach.Width / 7
+                Next
+
 
                 For index = 0 To 5
                     dgvsach.Columns(index).ReadOnly = True

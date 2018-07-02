@@ -55,9 +55,9 @@ Public Class frmTraCuuSach
         dgvsach.Columns.Add(clTenSach)
 
         Dim clMaLoaiSach = New DataGridViewTextBoxColumn()
-        clMaLoaiSach.Name = "Imatheloai"
+        clMaLoaiSach.Name = "Imaloaisach"
         clMaLoaiSach.HeaderText = "Thể Loại"
-        clMaLoaiSach.DataPropertyName = "Imatheloai"
+        clMaLoaiSach.DataPropertyName = "Imaloaisach"
         dgvsach.Columns.Add(clMaLoaiSach)
 
 
@@ -81,7 +81,9 @@ Public Class frmTraCuuSach
         dgvsach.Columns.Add(clDonGia)
 
 
-
+        For index = 0 To 5
+            dgvsach.Columns(index).Width = dgvsach.Width / 6
+        Next
 
 
 
@@ -154,6 +156,9 @@ Public Class frmTraCuuSach
         clDonGia.HeaderText = "Đơn giá"
         clDonGia.DataPropertyName = "Idongia"
         dgvsach.Columns.Add(clDonGia)
+        For index = 0 To 5
+            dgvsach.Columns(index).Width = dgvsach.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvsach.DataSource)
         myCurrencyManager.Refresh()
 
@@ -292,43 +297,7 @@ Public Class frmTraCuuSach
         dgvsach.AllowUserToAddRows = False
         dgvsach.DataSource = listSach
 
-        Dim clMaSach = New DataGridViewTextBoxColumn()
-        clMaSach.Name = "Imasach"
-        clMaSach.HeaderText = "Mã Sách"
-        clMaSach.DataPropertyName = "Imasach"
-        dgvsach.Columns.Add(clMaSach)
-
-        Dim clTenSach = New DataGridViewTextBoxColumn()
-        clTenSach.Name = "Strtensach"
-        clTenSach.HeaderText = "Ten Sach"
-        clTenSach.DataPropertyName = "Strtensach"
-        dgvsach.Columns.Add(clTenSach)
-
-        Dim clMaLoaiSach = New DataGridViewTextBoxColumn()
-        clMaLoaiSach.Name = "Imaloaisach"
-        clMaLoaiSach.HeaderText = "TheLoai"
-        clMaLoaiSach.DataPropertyName = "Imaloaisach"
-        dgvsach.Columns.Add(clMaLoaiSach)
-
-
-        Dim clTacGia = New DataGridViewTextBoxColumn()
-        clTacGia.Name = "Strtacgia"
-        clTacGia.HeaderText = "tác giả"
-        clTacGia.DataPropertyName = "Strtacgia"
-        dgvsach.Columns.Add(clTacGia)
-
-
-        Dim clSoLuongTon = New DataGridViewTextBoxColumn()
-        clSoLuongTon.Name = "Isoluongton"
-        clSoLuongTon.HeaderText = "Số lượng tồn"
-        clSoLuongTon.DataPropertyName = "Isoluongton"
-        dgvsach.Columns.Add(clSoLuongTon)
-
-        Dim clDonGia = New DataGridViewTextBoxColumn()
-        clDonGia.Name = "Idongia"
-        clDonGia.HeaderText = "Đơn giá"
-        clDonGia.DataPropertyName = "Idongia"
-        dgvsach.Columns.Add(clDonGia)
+        LoadData()
 
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvsach.DataSource)
         myCurrencyManager.Refresh()

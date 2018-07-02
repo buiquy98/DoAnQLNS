@@ -61,6 +61,11 @@ Public Class frmCHONSACH
         clDonGia.HeaderText = "Đơn giá"
         clDonGia.DataPropertyName = "Idongia"
         dgvsach.Columns.Add(clDonGia)
+
+
+        For index = 0 To 5
+            dgvsach.Columns(index).Width = dgvsach.Width / 6
+        Next
     End Function
 
 
@@ -119,6 +124,10 @@ Public Class frmCHONSACH
         clDonGia.HeaderText = "Đơn giá"
         clDonGia.DataPropertyName = "Idongia"
         dgvsach.Columns.Add(clDonGia)
+
+        For index = 0 To 5
+            dgvsach.Columns(index).Width = dgvsach.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvsach.DataSource)
         myCurrencyManager.Refresh()
     End Sub
@@ -177,6 +186,9 @@ Public Class frmCHONSACH
         clDonGia.DataPropertyName = "Idongia"
         dgvsach.Columns.Add(clDonGia)
 
+        For index = 0 To 5
+            dgvsach.Columns(index).Width = dgvsach.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvsach.DataSource)
         myCurrencyManager.Refresh()
     End Sub

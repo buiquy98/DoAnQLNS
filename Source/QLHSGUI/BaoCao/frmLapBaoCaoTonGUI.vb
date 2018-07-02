@@ -74,7 +74,9 @@ Public Class frmLapBaoCaoTonGUI
         clSoLuongTon.HeaderText = "Tồn cuối"
         clSoLuongTon.DataPropertyName = "tonCuoi1"
         dgvsach.Columns.Add(clSoLuongTon)
-
+        For index = 0 To 4
+            dgvsach.Columns(index).Width = dgvsach.Width / 5
+        Next
         For index = 0 To dgvsach.RowCount - 1
             dgvsach.Rows(index).Cells(0).Value = index + 1
             ' dgvsach.Rows(index).Cells(8).Value = 0

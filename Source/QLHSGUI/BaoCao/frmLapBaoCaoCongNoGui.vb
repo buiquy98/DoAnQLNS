@@ -65,7 +65,9 @@ Public Class frmLapBaoCaoCongNoGui
         clSoLuongTon.HeaderText = "Nợ cuối"
         clSoLuongTon.DataPropertyName = "NoCuoi1"
         dgvkh.Columns.Add(clSoLuongTon)
-
+        For index = 0 To 4
+            dgvkh.Columns(index).Width = dgvkh.Width / 5
+        Next
         For index = 0 To dgvkh.RowCount - 1
             dgvkh.Rows(index).Cells(0).Value = index + 1
             ' dgvkh.Rows(index).Cells(8).Value = 0
@@ -77,7 +79,10 @@ Public Class frmLapBaoCaoCongNoGui
         nudnam.Maximum = 10000
         nudthang.Minimum = 1
         nudthang.Maximum = 12
+        nudthang.Value = DateTime.Now.Month()
+        nudnam.Value = DateTime.Now.Year()
 
 
     End Sub
+
 End Class

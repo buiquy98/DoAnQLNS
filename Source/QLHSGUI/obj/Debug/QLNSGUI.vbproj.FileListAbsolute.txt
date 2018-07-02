@@ -115,11 +115,6 @@ C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\bin\Debug\QLHSDTO.x
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.pdb
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\bin\Debug\Utility.xml
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLNSGUI.vbprojAssemblyReference.cache
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNo.resources
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTon.resources
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoCongNo.resources
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiBaoCaoTon.resources
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoCongNo.resources
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONSACH.resources
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLSach.resources
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQLTheLoai.resources
@@ -139,7 +134,6 @@ C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLNSGUI.v
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.exe
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.xml
 C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.pdb
-C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmQuanLiChiTietBaoCaoTon.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONKHACHHANG.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmPhieuThuTien.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThayDoiQuyDinh.resources
@@ -147,3 +141,10 @@ D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmHoaDonBanSach.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThemNguoiDung.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNoGui.resources
 D:\Git\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTonGUI.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoCongNoGui.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmLapBaoCaoTonGUI.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmCHONKHACHHANG.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmHoaDonBanSach.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmPhieuThuTien.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThayDoiQuyDinh.resources
+C:\Users\buiqu\Documents\GitHub\DoAn\DoAnQLNS\Source\QLHSGUI\obj\Debug\QLHSGUI.frmThemNguoiDung.resources

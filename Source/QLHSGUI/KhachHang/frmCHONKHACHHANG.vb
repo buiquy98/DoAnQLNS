@@ -70,6 +70,9 @@ Public Class frmCHONKHACHHANG
         clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
 
+        For index = 0 To 5
+            dgvListKhachHang.Columns(index).Width = dgvListKhachHang.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
         myCurrencyManager.Refresh()
     End Sub
@@ -130,7 +133,9 @@ Public Class frmCHONKHACHHANG
         clSDT.HeaderText = "SDT"
         clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
-
+        For index = 0 To 5
+            dgvListKhachHang.Columns(index).Width = dgvListKhachHang.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
         myCurrencyManager.Refresh()
     End Sub
@@ -190,7 +195,9 @@ Public Class frmCHONKHACHHANG
         clSDT.HeaderText = "SDT"
         clSDT.DataPropertyName = "sdt1"
         dgvListKhachHang.Columns.Add(clSDT)
-
+        For index = 0 To 5
+            dgvListKhachHang.Columns(index).Width = dgvListKhachHang.Width / 6
+        Next
         Dim myCurrencyManager As CurrencyManager = Me.BindingContext(dgvListKhachHang.DataSource)
         myCurrencyManager.Refresh()
     End Sub

@@ -179,16 +179,21 @@ Public Class frmHoaDonBanSach
                 dgvsach.Columns.Add(clthanhtien)
 
 
-                dgvsach.Columns(0).Width = 50
-                dgvsach.Columns(1).Width = 50
-                dgvsach.Columns(7).Width = 50
-                For index = 0 To dgvsach.RowCount - 1
-                    dgvsach.Rows(index).Cells(0).Value = index + 1
-                    dgvsach.Rows(index).Cells(8).Value = 0
-                Next
+        '        dgvsach.Columns(0).Width = 50
+        '        dgvsach.Columns(1).Width = 50
+        'dgvsach.Columns(7).Width = 100
+        'dgvsach.Columns(8).Width = 100
 
+        ' For index = 0 To 
 
-                For index = 0 To 6
+        '  Next
+        For index = 0 To dgvsach.RowCount - 1
+            dgvsach.Rows(index).Cells(0).Value = index + 1
+            dgvsach.Rows(index).Cells(8).Value = 0
+        Next
+        dgvsach.Columns(2).Width = 250
+
+        For index = 0 To 6
                     dgvsach.Columns(index).ReadOnly = True
 
                 Next
