@@ -40,16 +40,15 @@ Partial Class frmMain
         Me.LậpPhiếuThuTiềnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LậpHóaĐơnBánSáchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.bctool = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LậpBáoCáoTồnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LậpBáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.httool = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PhânQuyềnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThayĐổiQuyĐịnhToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmNgườiDùngToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbxuser = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btndangxuat = New System.Windows.Forms.Button()
-        Me.LậpBáoCáoTồnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LậpBáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,7 +135,7 @@ Partial Class frmMain
         '
         Me.TraCứuKháchHànhToolStripMenuItem.Name = "TraCứuKháchHànhToolStripMenuItem"
         Me.TraCứuKháchHànhToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.TraCứuKháchHànhToolStripMenuItem.Text = "Tra cứu khách hành"
+        Me.TraCứuKháchHànhToolStripMenuItem.Text = "Chọn khách hàng"
         '
         'nxtool
         '
@@ -170,18 +169,24 @@ Partial Class frmMain
         Me.bctool.Size = New System.Drawing.Size(85, 20)
         Me.bctool.Text = "Lập Báo Cáo"
         '
+        'LậpBáoCáoTồnToolStripMenuItem
+        '
+        Me.LậpBáoCáoTồnToolStripMenuItem.Name = "LậpBáoCáoTồnToolStripMenuItem"
+        Me.LậpBáoCáoTồnToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.LậpBáoCáoTồnToolStripMenuItem.Text = "Lập báo cáo tồn"
+        '
+        'LậpBáoCáoCôngNợToolStripMenuItem
+        '
+        Me.LậpBáoCáoCôngNợToolStripMenuItem.Name = "LậpBáoCáoCôngNợToolStripMenuItem"
+        Me.LậpBáoCáoCôngNợToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.LậpBáoCáoCôngNợToolStripMenuItem.Text = "Lập báo cáo công nợ"
+        '
         'httool
         '
-        Me.httool.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PhânQuyềnToolStripMenuItem, Me.ThayĐổiQuyĐịnhToolStripMenuItem, Me.ThêmNgườiDùngToolStripMenuItem})
+        Me.httool.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThayĐổiQuyĐịnhToolStripMenuItem, Me.ThêmNgườiDùngToolStripMenuItem})
         Me.httool.Name = "httool"
         Me.httool.Size = New System.Drawing.Size(72, 20)
         Me.httool.Text = "Hệ Thống"
-        '
-        'PhânQuyềnToolStripMenuItem
-        '
-        Me.PhânQuyềnToolStripMenuItem.Name = "PhânQuyềnToolStripMenuItem"
-        Me.PhânQuyềnToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
-        Me.PhânQuyềnToolStripMenuItem.Text = "Phân Quyền"
         '
         'ThayĐổiQuyĐịnhToolStripMenuItem
         '
@@ -230,18 +235,6 @@ Partial Class frmMain
         Me.btndangxuat.Text = "Đăng xuất"
         Me.btndangxuat.UseVisualStyleBackColor = True
         '
-        'LậpBáoCáoTồnToolStripMenuItem
-        '
-        Me.LậpBáoCáoTồnToolStripMenuItem.Name = "LậpBáoCáoTồnToolStripMenuItem"
-        Me.LậpBáoCáoTồnToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.LậpBáoCáoTồnToolStripMenuItem.Text = "Lập báo cáo tồn"
-        '
-        'LậpBáoCáoCôngNợToolStripMenuItem
-        '
-        Me.LậpBáoCáoCôngNợToolStripMenuItem.Name = "LậpBáoCáoCôngNợToolStripMenuItem"
-        Me.LậpBáoCáoCôngNợToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.LậpBáoCáoCôngNợToolStripMenuItem.Text = "Lập báo cáo công nợ"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -282,7 +275,6 @@ Partial Class frmMain
     Friend WithEvents bctool As ToolStripMenuItem
     Friend WithEvents httool As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PhânQuyềnToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tbxuser As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents qltltool As ToolStripMenuItem

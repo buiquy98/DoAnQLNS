@@ -131,7 +131,7 @@ Partial Class frmLapBaoCaoCongNoGui
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(103, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Xem báo cáo"
+        Me.Button1.Text = "Lập báo cáo"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'frmLapBaoCaoCongNoGui

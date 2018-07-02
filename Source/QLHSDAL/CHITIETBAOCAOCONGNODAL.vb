@@ -171,7 +171,7 @@ Public Class CHITIETBAOCAOCONGNODAL
         Dim query As String = String.Empty
         query &= " SELECT *"
         query &= " FROM [QLNS].[dbo].[tblChiTietBaoCaoCongNo]"
-        query &= " WHERE [maChiTietBaoCaoCongNo] = @maChiTietBaoCaoCongNo"
+        query &= " WHERE [maBaoCaoCongNo] = @maBaoCaoCongNo"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -180,7 +180,7 @@ Public Class CHITIETBAOCAOCONGNODAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@maChiTietBaoCaoCongNo", maBaoCao)
+                    .Parameters.AddWithValue("@maBaoCaoCongNo", maBaoCao)
                 End With
                 Try
                     conn.Open()

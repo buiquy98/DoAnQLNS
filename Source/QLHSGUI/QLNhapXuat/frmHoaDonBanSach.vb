@@ -317,8 +317,8 @@ Public Class frmHoaDonBanSach
             If ctcn.MaBaoCaoCongNo1 = listctcn(index).MaBaoCaoCongNo1 And ctcn.MaKH1 = listctcn(index).MaKH1 Then
                 ctcn.MaChiTietBaoCaoCongNo1 = listctcn(index).MaChiTietBaoCaoCongNo1
                 ctcn.NoDau1 = listctcn(index).NoDau1
-                ctcn.NoPhatSinh1 = listctcn(index).NoPhatSinh1 + Integer.Parse(tbxtongtien.Text)
-                ctcn.NoCuoi1 = ctcn.NoDau1 + ctcn.NoPhatSinh1
+                ctcn.NoPhatSinh1 = Integer.Parse(listctcn(index).NoPhatSinh1) + Integer.Parse(tbxtongtien.Text)
+                ctcn.NoCuoi1 = Integer.Parse(ctcn.NoDau1) + Integer.Parse(ctcn.NoPhatSinh1)
                 ctcnbus.update(ctcn)
                 temp1 = True
             End If

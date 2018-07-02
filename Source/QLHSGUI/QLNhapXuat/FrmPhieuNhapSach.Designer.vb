@@ -40,7 +40,6 @@ Partial Class FrmPhieuNhapSach
         Me.btnluu = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnthem = New System.Windows.Forms.Button()
-        Me.btnxoa = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.tbxsoluongnhap = New System.Windows.Forms.TextBox()
         Me.tbxmasach = New System.Windows.Forms.TextBox()
@@ -231,15 +230,6 @@ Partial Class FrmPhieuNhapSach
         Me.btnthem.Text = "Thêm sách"
         Me.btnthem.UseVisualStyleBackColor = True
         '
-        'btnxoa
-        '
-        Me.btnxoa.Location = New System.Drawing.Point(139, 510)
-        Me.btnxoa.Name = "btnxoa"
-        Me.btnxoa.Size = New System.Drawing.Size(142, 23)
-        Me.btnxoa.TabIndex = 66
-        Me.btnxoa.Text = "Xóa dòng đã chọn"
-        Me.btnxoa.UseVisualStyleBackColor = True
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.tbxsoluongnhap)
@@ -294,7 +284,6 @@ Partial Class FrmPhieuNhapSach
         Me.ClientSize = New System.Drawing.Size(956, 728)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnthem)
-        Me.Controls.Add(Me.btnxoa)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnluu)
         Me.Controls.Add(Me.GroupBox2)
@@ -335,7 +324,6 @@ Partial Class FrmPhieuNhapSach
     Friend WithEvents btnluu As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnthem As Button
-    Friend WithEvents btnxoa As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents tbxsoluongnhap As TextBox
     Friend WithEvents tbxmasach As TextBox

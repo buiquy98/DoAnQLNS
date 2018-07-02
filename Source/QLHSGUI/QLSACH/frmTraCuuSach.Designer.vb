@@ -23,30 +23,17 @@ Partial Class frmTraCuuSach
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnall = New System.Windows.Forms.Button()
+        Me.cbxtheloai = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.tbxgia2 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.tbxgia1 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.tbxton2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbxton1 = New System.Windows.Forms.TextBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.cboxdongia = New System.Windows.Forms.CheckBox()
         Me.cbxslt = New System.Windows.Forms.CheckBox()
         Me.tbxtacgia = New System.Windows.Forms.TextBox()
@@ -60,8 +47,6 @@ Partial Class frmTraCuuSach
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvsach = New System.Windows.Forms.DataGridView()
-        Me.cbxtheloai = New System.Windows.Forms.ComboBox()
-        Me.btnall = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -73,29 +58,14 @@ Partial Class frmTraCuuSach
         Me.GroupBox1.Controls.Add(Me.btnall)
         Me.GroupBox1.Controls.Add(Me.cbxtheloai)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox13)
-        Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Controls.Add(Me.TextBox14)
         Me.GroupBox1.Controls.Add(Me.tbxgia2)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.tbxgia1)
-        Me.GroupBox1.Controls.Add(Me.TextBox9)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.TextBox10)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox8)
         Me.GroupBox1.Controls.Add(Me.tbxton2)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.tbxton1)
-        Me.GroupBox1.Controls.Add(Me.CheckBox5)
-        Me.GroupBox1.Controls.Add(Me.CheckBox4)
-        Me.GroupBox1.Controls.Add(Me.CheckBox3)
         Me.GroupBox1.Controls.Add(Me.cboxdongia)
         Me.GroupBox1.Controls.Add(Me.cbxslt)
         Me.GroupBox1.Controls.Add(Me.tbxtacgia)
@@ -112,50 +82,35 @@ Partial Class frmTraCuuSach
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tra Cứu"
         '
+        'btnall
+        '
+        Me.btnall.Location = New System.Drawing.Point(60, 195)
+        Me.btnall.Name = "btnall"
+        Me.btnall.Size = New System.Drawing.Size(122, 23)
+        Me.btnall.TabIndex = 67
+        Me.btnall.Text = "Lấy tất cả đầu sách"
+        Me.btnall.UseVisualStyleBackColor = True
+        '
+        'cbxtheloai
+        '
+        Me.cbxtheloai.FormattingEnabled = True
+        Me.cbxtheloai.Location = New System.Drawing.Point(336, 36)
+        Me.cbxtheloai.Name = "cbxtheloai"
+        Me.cbxtheloai.Size = New System.Drawing.Size(154, 21)
+        Me.cbxtheloai.TabIndex = 66
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(626, 187)
+        Me.Button1.Location = New System.Drawing.Point(255, 195)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 65
         Me.Button1.Text = "Tìm kiếm"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(698, 145)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox13.TabIndex = 64
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(665, 149)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(27, 13)
-        Me.Label13.TabIndex = 63
-        Me.Label13.Text = "Đến"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(533, 149)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(20, 13)
-        Me.Label14.TabIndex = 62
-        Me.Label14.Text = "Từ"
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Location = New System.Drawing.Point(559, 144)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox14.TabIndex = 61
-        '
         'tbxgia2
         '
-        Me.tbxgia2.Location = New System.Drawing.Point(698, 110)
+        Me.tbxgia2.Location = New System.Drawing.Point(273, 145)
         Me.tbxgia2.Name = "tbxgia2"
         Me.tbxgia2.Size = New System.Drawing.Size(100, 20)
         Me.tbxgia2.TabIndex = 60
@@ -163,7 +118,7 @@ Partial Class frmTraCuuSach
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(665, 114)
+        Me.Label11.Location = New System.Drawing.Point(240, 149)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(27, 13)
         Me.Label11.TabIndex = 59
@@ -172,7 +127,7 @@ Partial Class frmTraCuuSach
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(533, 114)
+        Me.Label12.Location = New System.Drawing.Point(108, 149)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(20, 13)
         Me.Label12.TabIndex = 58
@@ -180,78 +135,14 @@ Partial Class frmTraCuuSach
         '
         'tbxgia1
         '
-        Me.tbxgia1.Location = New System.Drawing.Point(560, 110)
+        Me.tbxgia1.Location = New System.Drawing.Point(135, 145)
         Me.tbxgia1.Name = "tbxgia1"
         Me.tbxgia1.Size = New System.Drawing.Size(100, 20)
         Me.tbxgia1.TabIndex = 57
         '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(303, 183)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox9.TabIndex = 56
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(270, 187)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(27, 13)
-        Me.Label9.TabIndex = 55
-        Me.Label9.Text = "Đến"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(138, 187)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(20, 13)
-        Me.Label10.TabIndex = 54
-        Me.Label10.Text = "Từ"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(164, 183)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox10.TabIndex = 53
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(303, 145)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 52
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(270, 149)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(27, 13)
-        Me.Label7.TabIndex = 51
-        Me.Label7.Text = "Đến"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(138, 149)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(20, 13)
-        Me.Label8.TabIndex = 50
-        Me.Label8.Text = "Từ"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(164, 145)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 49
-        '
         'tbxton2
         '
-        Me.tbxton2.Location = New System.Drawing.Point(303, 105)
+        Me.tbxton2.Location = New System.Drawing.Point(274, 106)
         Me.tbxton2.Name = "tbxton2"
         Me.tbxton2.Size = New System.Drawing.Size(100, 20)
         Me.tbxton2.TabIndex = 48
@@ -259,7 +150,7 @@ Partial Class frmTraCuuSach
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(270, 109)
+        Me.Label6.Location = New System.Drawing.Point(241, 110)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(27, 13)
         Me.Label6.TabIndex = 47
@@ -268,7 +159,7 @@ Partial Class frmTraCuuSach
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(138, 109)
+        Me.Label5.Location = New System.Drawing.Point(109, 110)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(20, 13)
         Me.Label5.TabIndex = 46
@@ -276,45 +167,15 @@ Partial Class frmTraCuuSach
         '
         'tbxton1
         '
-        Me.tbxton1.Location = New System.Drawing.Point(164, 105)
+        Me.tbxton1.Location = New System.Drawing.Point(135, 106)
         Me.tbxton1.Name = "tbxton1"
         Me.tbxton1.Size = New System.Drawing.Size(100, 20)
         Me.tbxton1.TabIndex = 45
         '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(19, 183)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(72, 17)
-        Me.CheckBox5.TabIndex = 44
-        Me.CheckBox5.Text = "Ngày bán"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(19, 148)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(115, 17)
-        Me.CheckBox4.TabIndex = 43
-        Me.CheckBox4.Text = "Tổng số lượng bán"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(444, 148)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(92, 17)
-        Me.CheckBox3.TabIndex = 42
-        Me.CheckBox3.Text = "Tổng tiền bán"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
         'cboxdongia
         '
         Me.cboxdongia.AutoSize = True
-        Me.cboxdongia.Location = New System.Drawing.Point(444, 110)
+        Me.cboxdongia.Location = New System.Drawing.Point(19, 145)
         Me.cboxdongia.Name = "cboxdongia"
         Me.cboxdongia.Size = New System.Drawing.Size(63, 17)
         Me.cboxdongia.TabIndex = 41
@@ -429,23 +290,6 @@ Partial Class frmTraCuuSach
         Me.dgvsach.Size = New System.Drawing.Size(788, 220)
         Me.dgvsach.TabIndex = 19
         '
-        'cbxtheloai
-        '
-        Me.cbxtheloai.FormattingEnabled = True
-        Me.cbxtheloai.Location = New System.Drawing.Point(336, 36)
-        Me.cbxtheloai.Name = "cbxtheloai"
-        Me.cbxtheloai.Size = New System.Drawing.Size(154, 21)
-        Me.cbxtheloai.TabIndex = 66
-        '
-        'btnall
-        '
-        Me.btnall.Location = New System.Drawing.Point(431, 187)
-        Me.btnall.Name = "btnall"
-        Me.btnall.Size = New System.Drawing.Size(122, 23)
-        Me.btnall.TabIndex = 67
-        Me.btnall.Text = "Lấy tất cả đầu sách"
-        Me.btnall.UseVisualStyleBackColor = True
-        '
         'frmTraCuuSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -469,8 +313,6 @@ Partial Class frmTraCuuSach
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents lblMain As Label
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents cboxdongia As CheckBox
     Friend WithEvents cbxslt As CheckBox
     Friend WithEvents tbxtacgia As TextBox
@@ -483,23 +325,10 @@ Partial Class frmTraCuuSach
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgvsach As DataGridView
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox14 As TextBox
     Friend WithEvents tbxgia2 As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents tbxgia1 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox8 As TextBox
     Friend WithEvents tbxton2 As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label

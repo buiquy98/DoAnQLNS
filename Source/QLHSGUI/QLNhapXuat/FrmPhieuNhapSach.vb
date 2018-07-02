@@ -217,7 +217,7 @@ Public Class FrmPhieuNhapSach
 
     End Sub
 
-    Private Sub btnxoa_Click(sender As Object, e As EventArgs) Handles btnxoa.Click
+    Private Sub btnxoa_Click(sender As Object, e As EventArgs)
         Dim currentRowIndex As Integer = dgvsach.CurrentCellAddress.Y 'current row selected
 
         dgvsach.Rows.RemoveAt(currentRowIndex)

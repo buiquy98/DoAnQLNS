@@ -112,14 +112,13 @@ Public Class frmPhieuThuTien
         If cbapdung.Checked = True Then
             If sotienthu <= sotienno Then
                 Dim result As Result
-
                 Dim khbus = New KHACHHANGBUS
                 Dim lkh = New List(Of KHACHHANGDTO)
                 result = khbus.selectALL_ByType(txtMaKH.Text, lkh)
-                Dim tiennomoi = sotienthu - sotienno
+                Dim tiennomoi = sotienno - sotienthu
                 lkh(0).TienNoKH1 = tiennomoi
                 khbus.update(lkh(0))
-                tbxsotienno.Text=tiennomoi
+                tbxsotienno.Text = tiennomoi
                 result = ptbus.insert(phieuThu)
                 MessageBox.Show("Thêm phiếu thu thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 btnphieumoi.Enabled = True
