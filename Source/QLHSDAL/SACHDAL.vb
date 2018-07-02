@@ -56,8 +56,8 @@ Public Class SACHDAL
     Public Function insert(sach As SACHDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblSach] ([maSach], [tenSach], [maLoaiSach], [tacGia], [soLuongTon],[dongia])"
-        query &= "VALUES (@masach,@tensach,@maloaisach,@tacgia,@soluongton,@dongia)"
+        query &= "INSERT INTO [tblSach] ([maSach], [tenSach], [maLoaiSach], [tacGia], [soLuongTon],[donGia])"
+        query &= "VALUES (@masach,@tensach,@maloaisach,@tacgia,@soluongton,@donGia)"
 
         'get nextms
         Dim inextMS = 0
@@ -78,7 +78,7 @@ Public Class SACHDAL
                     .Parameters.AddWithValue("@maloaisach", sach.Imaloaisach)
                     .Parameters.AddWithValue("@tacgia", sach.Strtacgia)
                     .Parameters.AddWithValue("@soluongton", sach.Isoluongton)
-                    .Parameters.AddWithValue("@dongia", sach.Idongia)
+                    .Parameters.AddWithValue("@donGia", sach.Idongia)
 
                 End With
                 Try
@@ -101,7 +101,7 @@ Public Class SACHDAL
         query &= " ,[maloaisach] = @maloaisach "
         query &= " ,[tacgia] = @tacgia "
         query &= " ,[soluongton] = @soluongton "
-        query &= " ,[dongia] = @dongia "
+        query &= " ,[donGia] = @donGia "
         query &= "WHERE "
         query &= " [masach] = @masach "
 
@@ -116,7 +116,7 @@ Public Class SACHDAL
                     .Parameters.AddWithValue("@maloaisach", sach.Imaloaisach)
                     .Parameters.AddWithValue("@tacgia", sach.Strtacgia)
                     .Parameters.AddWithValue("@soluongton", sach.Isoluongton)
-                    .Parameters.AddWithValue("@dongia", sach.Idongia)
+                    .Parameters.AddWithValue("@donGia", sach.Idongia)
                 End With
                 Try
                     conn.Open()
@@ -219,7 +219,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
@@ -256,7 +256,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
@@ -276,7 +276,7 @@ Public Class SACHDAL
         query &= "SELECT *"
         query &= "FROM [tblSach]"
         query &= "WHERE"
-        query &= "[DONGIA]>=@giadau AND [DONGIA]<=@giacuoi"
+        query &= "[donGia]>=@giadau AND [donGia]<=@giacuoi"
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
@@ -293,7 +293,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
@@ -333,7 +333,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
@@ -368,7 +368,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
@@ -405,7 +405,7 @@ Public Class SACHDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("DONGIA")))
+                            listSach.Add(New SACHDTO(reader("MASACH"), reader("TENSACH"), reader("MALOAISACH"), reader("TACGIA"), reader("SOLUONGTON"), reader("donGia")))
                         End While
                     End If
 
